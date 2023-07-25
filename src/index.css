@@ -1,0 +1,117 @@
+* {
+ font-size: 100%;
+ font-family: Arial;
+}
+
+
+@page  
+{ 
+    size: 8.5in 11in;
+
+    /* this affects the margin in the printer settings */ 
+    margin: .25in .25in .25in .25in;
+}
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  /* break-after: always; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2.5in);
+  grid-template-rows: repeat(3, 3.5in);
+}
+
+.card {
+  width: 2.5in;
+  height: 3.5in;
+  grid-column: span 1;
+  border-color: black;
+  border-style: solid;
+  border-color: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-type {
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+.ally-top-line {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.overlay-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+}
+
+.ally-name-box {
+  border-radius: 10px;
+  font-size: 12pt;
+  margin: 10px;
+  margin-right: 5px;
+  grid-column: span 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  display: block;
+}
+
+.ally-score-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: .1in;
+  grid-column: span 1;
+  font-size: 20pt;
+  margin: 10px;
+  margin-left: 5px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+  clip-path: polygon(100% 100%, 30% 100%, 0% 50%, 30% 0%, 100% 0%);
+}
+
+.ally-action-box {
+  margin: 10px;
+  margin-top: auto;
+  border-radius: 10px;
+}
+
+
+.first-contract {
+  /*transform: translateY(-1px);*/
+  display: inline-block;
+  z-index: 3;
+  position: relative;
+}
+
+.second-contract {
+  color: #444;
+  transform: rotate(10deg) translateX(-3px);
+  transform-origin: left;
+  z-index: 2;
+  display: inline-block;
+  position: relative;
+}
+
+.third-contract {
+  color: #666;
+  transform: rotate(20deg) translateX(-6px) translateY(1px);
+  transform-origin: left;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  margin-right: -5px;
+}

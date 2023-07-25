@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?96a51c893866904b02b5e52c52214606#iefix") format("embedded-opentype"),
+url("./icons.woff?96a51c893866904b02b5e52c52214606") format("woff"),
+url("./icons.woff2?96a51c893866904b02b5e52c52214606") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-action:before {
+    content: "\f101";
+}
+.icon-asteroid:before {
+    content: "\f102";
+}
+.icon-contract:before {
+    content: "\f103";
+}
+.icon-destroy:before {
+    content: "\f104";
+}
+.icon-empty-space:before {
+    content: "\f105";
+}
+.icon-facility:before {
+    content: "\f106";
+}
+.icon-file-invoice:before {
+    content: "\f107";
+}
+.icon-move:before {
+    content: "\f108";
+}
+.icon-rocket:before {
+    content: "\f109";
+}
+.icon-rotate-clockwise:before {
+    content: "\f10a";
+}
