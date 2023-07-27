@@ -1,116 +1,116 @@
 import React from 'react';
-import { Icon, Contracts } from './icons.jsx';
+import { Contracts, Action, Facility, Asteroid, Destroy, Rotate, Rocket, Contract, Move } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
 
   (<AllyCard name="Diplomat" score={1} ability={(
     <>
-      <Icon name="action" /> Build an opponent's <Icon name="facility" />. That opponent builds 2 of your <Icon name="facility" /> adjacent to each other.
+      <Action /> Build an opponent's <Facility />. That opponent builds 2 of your <Facility /> adjacent to each other.
     </>
   )}/>),
 
   (<AllyCard name="Rocket Scientist" score={1} ability={(
       <>
-        <Icon name="action" /> Draw 2 <Icon name="rocket" />.
+        <Action /> Draw 2 <Rocket />.
       </>
     )}/>),
 
   (<AllyCard name='Remodeler' score={1} ability={(
       <>
-        <Icon name="action" /> Swap the position of 2 of your <Icon name="facility" />.
+        <Action /> Swap the position of 2 of your <Facility />.
       </>
     )
   }/>),
 
   (<AllyCard name='Foreman' score={-1} ability={(
       <>
-        <Icon name="action" /> Build a <Icon name="facility" />. Complete 1 <Icon name="contract" /> worth 4 or more points with a route using that <Icon name="facility" />.
+        <Action /> Build a <Facility />. Complete 1 <Contract /> worth 4 or more points with a route using that <Facility />.
       </>
     )
   }/>),
 
   (<AllyCard name="Coordinator" score={0} ability={(
     <>
-      <Icon name="action" /> Play <Icon name="rocket" />. Then, complete 1 <Icon name="contract" /> you have a route for.
+      <Action /> Play <Rocket />. Then, complete 1 <Contract /> you have a route for.
     </>
   )}/>),
 
   (<AllyCard name="Rogue Pilot" score={1} ability={(
     <>
-      <Icon name="action" /> <Icon name="move" /> 1 of your <Icon name="facility" /> to any <Icon name="empty-space" />.
+      <Action /> <Move /> 1 of your <Facility /> to any empty space.
     </>
   )}/>),
 
   (<AllyCard name="Spy" score={1} ability={(
     <>
-      <Icon name="action" /> Perform the <Icon name="action" /> on another player's ally.
+      <Action /> Perform the <Action /> on another player's ally.
     </>
   )}/>),
 
   (<AllyCard name="Negotiator" score={0} ability={(
     <>
-      <Icon name="action" /> Complete 1 <Icon name="contract" /> treating 1 <Icon name="facility" /> that is not yours as though it were your <Icon name="facility" />.
+      <Action /> Complete 1 <Contract /> treating 1 <Facility /> that is not yours as though it were your <Facility />.
     </>
   )}/>),
 
   (<AllyCard name="Generalist" score={0} ability={(
     <>
-      <Icon name="action" /> Draw 1 of each type of card you do not have any of in your hand from the contracts deck, rockets deck, and your faction deck.
+      <Action /> Draw 1 of each type of card you do not have any of in your hand from the contracts deck, rockets deck, and your faction deck.
     </>
   )}/>),
 
   (<AllyCard name="Supplier" score={1} ability={(
     <>
-      <Icon name="action" /> Rotate 1 <Icon name="asteroid" /> to any position.
+      <Action /> Rotate 1 <Asteroid /> to any position.
     </>
   )}/>),
 
   (<AllyCard name="Informant" score={0} ability={(
     <>
-      <Icon name="action" /> Look at the top card of any deck. Take a different <Icon name="action" />.
+      <Action /> Look at the top card of any deck. Take a different <Action />.
     </>
   )}/>),
 
   (<AllyCard name="Evictor" score={0} ability={(
     <>
-      <Icon name="action" /> Move an opponent's <Icon name="facility" /> that is adjacent to at least 1 of your <Icon name="facility" /> to a space adjacent to 1 of their <Icon name="facility" />. Build a <Icon name="facility" />.
+      <Action /> Move an opponent's <Facility /> that is adjacent to at least 1 of your <Facility /> to a space adjacent to 1 of their <Facility />. Build a <Facility />.
     </>
   )}/>),
 
   (<AllyCard name="Warlord" score={1} ability={(
     <>
-      <Icon name="action" /> Score a <Icon name="rocket" /> without performing its ability. Then <Icon name="destroy" /> any 1 <Icon name="facility" />.
+      <Action /> Score a <Rocket /> without performing its ability. Then <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
   (<AllyCard name='Launch Director' score={1} ability={(
     <>
-      <Icon name="action" /> <Icon name="rotate-clockwise" /> any <Icon name="asteroid" /> 1 space clockwise. Play <Icon name="rocket" />.
+      <Action /> <Rotate /> any <Asteroid /> 1 space clockwise. Play <Rocket />.
     </>
   )}/>),
 
   (<AllyCard name="Streamliner" score={0} ability={(
     <>
-      <Icon name="action" /> Complete 1 <Icon name="contract" />. Draw a <Icon name="contract" />.
+      <Action /> Complete 1 <Contract />. Draw a <Contract />.
     </>
   )}/>),
 
   (<AllyCard name="Recycling Expert" score={0} ability={(
     <>
-      <Icon name="action" /> <Icon name="destroy" /> 1 of your <Icon name="facility" /> to build 2 <Icon name="facility" />.
+      <Action /> <Destroy /> 1 of your <Facility /> to build 2 <Facility />.
     </>
   )}/>),
 
   (<AllyCard name="Researcher" score={0} ability={(
     <>
-      <Icon name="action" /> Put a card from your hand onto the bottom of its deck. Draw from that deck. Take a different <Icon name="action" />.
+      <Action /> Put a card from your hand onto the bottom of its deck. Draw from that deck. Take a different <Action />.
     </>
   )}/>),
 
   (<AllyCard name="Opportunist" score={0} ability={(
     <>
-      <Icon name="action" /> Complete <Contracts />. If you completed any public <Contracts />, restock them immediately and take this <Icon name="action" /> again.
+      <Action /> Complete <Contracts />. If you completed any public <Contracts />, restock them immediately and take this <Action /> again.
     </>
   )}/>),
 
