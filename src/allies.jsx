@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, ContractsIcon } from './icons.jsx';
+import { Icon, Contracts } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -110,7 +110,7 @@ export let allies = [
 
   (<AllyCard name="Opportunist" score={0} ability={(
     <>
-      <Icon name="action" /> Complete <ContractsIcon />. If you completed any public <ContractsIcon />, restock them immediately and take this <Icon name="action" /> again.
+      <Icon name="action" /> Complete <Contracts />. If you completed any public <Contracts />, restock them immediately and take this <Icon name="action" /> again.
     </>
   )}/>),
 
