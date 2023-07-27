@@ -27,3 +27,22 @@ export function AllyCard({name, score, ability}) {
     </div>
   );
 }
+
+export function RocketCard({name, score, ability}) {
+  return (
+    <div className="card">
+      <div className="ally-top-line">
+        <div className="ally-name-box overlay-box">
+          {name}
+          <div className="card-type">Rocket</div>
+        </div>
+        <div className="ally-score-box overlay-box">
+          {score}
+        </div>
+      </div>
+      <div className="ally-action-box overlay-box">
+        {ability}
+      </div>
+    </div>
+  );
+}

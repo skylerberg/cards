@@ -2,6 +2,18 @@ export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
 }
 
+export function Contract() {
+  return <Icon name="contract" />;
+}
+
+export function Rotate() {
+  return <Icon name="rotate" />;
+}
+
+export function Asteroid() {
+  return <Icon name="asteroid" />;
+}
+
 export function ContractsIcon() {
   return (
     <>
