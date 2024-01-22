@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, Action, Facility, Asteroid, Destroy, Rotate, Rocket, Contract, Move } from './icons.jsx';
+import { Contracts, Action, Facility, Destroy, Rocket, Contract, Move } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -23,7 +23,7 @@ export let allies = [
     )
   }/>),
 
-  (<AllyCard name='Foreman' score={-1} ability={(
+  (<AllyCard name='Foreman' score={0} ability={(
       <>
         <Action /> Build a <Facility />. Complete 1 <Contract /> worth 4 or more points with a route using that <Facility />.
       </>
@@ -32,19 +32,20 @@ export let allies = [
 
   (<AllyCard name="Coordinator" score={0} ability={(
     <>
-      <Action /> Play <Rocket />. Then, complete 1 <Contract /> you have a route for.
+      <Action /> Play <Rocket />. Complete <Contracts />.
     </>
   )}/>),
 
-  (<AllyCard name="Rogue Pilot" score={1} ability={(
+  (<AllyCard name="Rogue Pilot" score={0} ability={(
     <>
-      <Action /> <Move /> 1 of your <Facility /> to any empty space.
+      <Action /> <Move /> a <Facility /> you own. Complete <Contracts />. <Destroy /> the <Facility /> you moved.
+
     </>
   )}/>),
 
-  (<AllyCard name="Spy" score={1} ability={(
+  (<AllyCard name="Architect" score={0} ability={(
     <>
-      <Action /> Perform the <Action /> on another player's ally.
+      <Action /> Build a <Facility />. You may replace each adjacent <Facility /> you own with a <Facility /> of any shape.
     </>
   )}/>),
 
@@ -62,31 +63,32 @@ export let allies = [
 
   (<AllyCard name="Supplier" score={1} ability={(
     <>
-      <Action /> Rotate 1 <Asteroid /> to any position.
+      <Action /> All players draw a rocket. Take another <Action />. You may not use this <Action /> again this turn.
     </>
   )}/>),
 
-  (<AllyCard name="Informant" score={0} ability={(
+  (<AllyCard name="Publicist" score={0} ability={(
     <>
-      <Action /> Look at the top card of any deck. Take a different <Action />.
+      <Action /> Complete <Contracts />. Restock public <Contracts /> by taking random <Contract /> cards from your opponents’ hands or drawing from the deck.
+
     </>
   )}/>),
 
-  (<AllyCard name="Evictor" score={0} ability={(
+  (<AllyCard name="Insider" score={0} ability={(
     <>
-      <Action /> Move an opponent's <Facility /> that is adjacent to at least 1 of your <Facility /> to a space adjacent to 1 of their <Facility />. Build a <Facility />.
+      <Action /> Put a public <Contract /> on the bottom of the <Contract /> deck. Draw <Contract />.
     </>
   )}/>),
 
   (<AllyCard name="Warlord" score={1} ability={(
     <>
-      <Action /> Score a <Rocket /> without performing its ability. Then <Destroy /> any 1 <Facility />.
+      <Action /> Score a <Rocket /> without performing its ability to <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
   (<AllyCard name='Launch Director' score={1} ability={(
     <>
-      <Action /> <Rotate /> any <Asteroid /> 1 space clockwise. Play <Rocket />.
+      <Action /> This card is no longer in the game.
     </>
   )}/>),
 
@@ -104,14 +106,15 @@ export let allies = [
 
   (<AllyCard name="Researcher" score={0} ability={(
     <>
-      <Action /> Put a card from your hand onto the bottom of its deck. Draw from that deck. Take a different <Action />.
+      <Action /> Put a card from your hand onto the bottom of its deck. Draw from that deck. Take a another <Action />. You may not use this <Action /> again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Opportunist" score={0} ability={(
     <>
-      <Action /> Complete <Contracts />. If you completed any public <Contracts />, restock them immediately and take this <Action /> again.
+      <Action /> Complete <Contracts />. Restock public <Contracts /> immediately. You may take this <Action /> again.
     </>
+
   )}/>),
 
 ].map((ally) => React.cloneElement(ally, { key: ally.props.name }));

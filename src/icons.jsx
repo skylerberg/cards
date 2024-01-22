@@ -26,6 +26,30 @@ export function Facility() {
   return <Icon name="facility" />;
 }
 
+export function Action() {
+  return <Icon name="action" />;
+}
+
+export function Move() {
+  return <Icon name="move" />;
+}
+
+export function Rocket() {
+  return <Icon name="rocket" />;
+}
+
+export function Ally() {
+  return <Icon name="ally" />;
+}
+
+export function Comet() {
+  return <Icon name="comet" />;
+}
+
+export function VictoryPoints() {
+  return <Icon name="victory-points" />;
+}
+
 export function Contracts() {
   return (
     <>
