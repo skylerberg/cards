@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, Action, Facility, Destroy, Rocket, Contract, Move } from './icons.jsx';
+import { Contracts, Action, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -25,7 +25,7 @@ export let allies = [
 
   (<AllyCard name='Foreman' score={0} ability={(
       <>
-        <Action /> Build a <Facility />. Complete 1 <Contract /> worth 4 or more points with a route using that <Facility />.
+        <Action /> Build a <Facility />. Complete 1 <Contract /> worth 4 or more <VictoryPoints /> with a route using that <Facility />.
       </>
     )
   }/>),
@@ -63,7 +63,7 @@ export let allies = [
 
   (<AllyCard name="Supplier" score={1} ability={(
     <>
-      <Action /> All players draw a rocket. Take another <Action />. You may not use this <Action /> again this turn.
+      <Action /> All players draw a <Rocket />. Take another <Action />. You may not use this <Action /> again this turn.
     </>
   )}/>),
 
