@@ -1,0 +1,29 @@
+import React from 'react';
+import { FactionCardIcon, Contract, Rocket } from './icons.jsx';
+import { TurnOrderCard } from './cardTemplates.jsx';
+
+export const turnOrderCards = [
+  (<TurnOrderCard name="1st Player" score={0} type="Turn Order" text={(
+    <>
+      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Rocket />.
+    </>
+  )}/>),
+
+  (<TurnOrderCard name="2nd Player" score={1} type="Turn Order" text={(
+    <>
+      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Rocket />.
+    </>
+  )}/>),
+
+  (<TurnOrderCard name="3rd Player" score={0} type="Turn Order" text={(
+    <>
+      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+    </>
+  )}/>),
+
+  (<TurnOrderCard name="4th Player" score={1} type="Turn Order" text={(
+    <>
+      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+    </>
+  )}/>),
+].map((turnOrderCard) => [React.cloneElement(turnOrderCard, { key: turnOrderCard.props.name })]).flat();

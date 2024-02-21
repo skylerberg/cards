@@ -3,28 +3,43 @@
  font-family: 'Roboto', sans-serif;
 }
 
+html, body, .main, .tabs, .tabbed-content { float: none; }
+
+body {
+  margin: 0px;
+}
 
 @page  
 { 
     size: 8.5in 11in;
 
     /* this affects the margin in the printer settings */ 
-    margin: .25in .25in .25in .25in;
+    padding: .25in .25in .25in .25in;
 }
 
 .page {
+  box-sizing: border-box;
   width: 8.5in;
   height: 11in;
-  /* break-after: always; */
+  break-after: always;
+  page-break-after: always;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card-grid {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, 2.5in);
   grid-template-rows: repeat(3, 3.5in);
+  border-color: black;
+  border-style: solid;
+  border-color: 4px;
+}
+
+.card, .card * {
+  box-sizing: border-box;
 }
 
 .card {
@@ -45,45 +60,89 @@
 
 .ally-top-line {
   display: grid;
-  grid-template-columns: 72% 28%;
-}
-
-.overlay-box {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px;
-}
-
-.ally-name-box {
-  border-radius: 10px;
-  font-size: 12pt;
+  grid-template-columns: 22% 50% 28%;
   margin: 10px;
+  border-radius: 10px;
+}
+
+.banner-plate-box {
+  width: 50px;
+  height: 100px;
+  margin-top: 5px;
   margin-right: 5px;
-  grid-column: span 1;
+  margin-left: auto;
+}
+
+.victory-points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.card-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.card-title {
+  font-size: 16pt;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
   font-weight: bold;
-  display: block;
+  margin: 0px;
 }
 
-.ally-score-box {
+.card-back-title {
+  font-size: 38pt;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: 20pt;
-  margin: 10px;
-  border-radius: 10px;
   font-weight: bold;
-  padding: 0px !important;
+  margin-top: 5px;
+  margin-bottom: -5px;
+  text-shadow: white -5px -5px 5px,
+               white -5px 5px 5px,
+               white 5px -5px 5px,
+               white 5px 5px 5px;
 }
 
-.ally-action-box {
-  margin: 10px;
+.faction-card-back-title {
+  font-size: 32pt !important;
+}
+
+.white-shadow {
+  filter: drop-shadow(-5px -5px 5px #ffffff88)
+          drop-shadow(-5px 5px 5px #ffffff88)
+          drop-shadow(5px -5px 5px #ffffff88)
+          drop-shadow(5px 5px 5px #ffffff88);
+}
+
+.white-shadow-intense {
+  filter: drop-shadow(-5px -5px 5px #ffffffcc)
+          drop-shadow(-5px 5px 5px #ffffffcc)
+          drop-shadow(5px -5px 5px #ffffffcc)
+          drop-shadow(5px 5px 5px #ffffffcc);
+}
+
+.card-text-box {
+  padding: 15px;
   margin-top: auto;
-  border-radius: 10px;
 }
 
+.newspaper-border {
+  position: relative;
+  background:
+    repeating-linear-gradient(transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.02) 2px),
+    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.02) 2px),
+  linear-gradient(to bottom, transparent 8px, #e0e0e0 8px);
+}
 
 .first-contract {
   /*transform: translateY(-1px);*/
@@ -93,8 +152,9 @@
 }
 
 .second-contract {
-  color: #444;
-  transform: rotate(10deg) translateX(-3px);
+  /*filter: grayscale(40%) brightness(120%);*/
+  opacity: 80%;
+  transform: rotate(10deg) translateX(-3px) translateY(-1px);
   transform-origin: left;
   z-index: 2;
   display: inline-block;
@@ -102,7 +162,8 @@
 }
 
 .third-contract {
-  color: #666;
+  opacity: 60%;
+  /*filter: grayscale(60%) brightness(130%);*/
   transform: rotate(20deg) translateX(-6px) translateY(1px);
   transform-origin: left;
   z-index: 1;
@@ -111,16 +172,236 @@
   margin-right: -5px;
 }
 
+.icon-image {
+  height: .15in;
+  display: inline-block;
+}
+
+.icon-margins {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.asteroid {
+  margin-bottom: -2px;
+  height: .18in;
+}
+
+.card-icon-image {
+  filter: drop-shadow(0 1px 1px #000);
+  margin-bottom: -3px;
+  height: .18in;
+  transform: rotate(-5deg);
+  display: inline-block;
+}
+
+.route-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+}
+
+.route-box::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  bottom: 20px;
+  border-left: 2px dashed #000;
+  /*transform: translateX(-25%);*/
+}
+
+.facility {
+  max-height: .4in;
+  margin-top: 7px;
+}
+
+.contract-card {
+}
+
+.contract-boxes {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-top: -15px;
+}
+
+.overlay-box-label {
+  margin-top: -2px;
+}
+
+.contract-title {
+  font-size: 18pt !important;
+  position: absolute;
+  margin: 10px;
+  margin-top: 5px;
+  width: 1.67in;
+  text-align: center;
+  height: 60px;
+}
+
+.bonus-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1.2in;
+  text-align: center;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 17px;
+  padding: 5px;
+}
+
+.bonus-line {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  height: 30px;
+}
+
+.bonus-line-item {
+  display: inline-block;
+  height: 30px;
+}
+
+.bonus-comet {
+  margin-right: 7px;
+}
+
+.bonus-colon {
+  font-size: 38px;
+  margin-top: -10px;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.bonus-line-card {
+  transform: rotate(-5deg);
+  filter: drop-shadow(0 1px 1px #000);
+}
+
+.bonus-seperator {
+  border: 0;
+  height: 2px;
+  background-color: black;
+  margin: 0px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.overlay-box {
+  background-color: #ffffffaa;
+  border-radius: 10px;
+}
+
+.faction-mat-faction-icon {
+  width: 1.2in;
+  height: 1.2in;
+  margin: 10px;
+}
+
+.faction-title-box {
+  margin: 10px;
+}
+
+.faction-title {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 38pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.turn-order {
+  padding: 10px;
+}
+
+.action-box {
+  padding: 10px;
+  margin: 10px;
+}
+
+.turn-order-box-inner {
+  padding: 10px;
+}
+
 .faction-mat-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 7.5in);
-  grid-template-rows: repeat(1, 3.5in);
+  display: flex;
+  flex-direction: column;
+}
+
+.faction-icon-and-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.faction-info-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .faction-mat {
   width: 7.5in;
   height: 3.5in;
-  border-width: 1px;
+  background-size: cover;
   border-color: black;
+  border-style: solid;
+  border-color: 4px;
+
+  display: flex;
+  flex-direction: column;
 }
 
+.faction-mat-interior {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.faction-deck-arrow {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-50%) translateX(15px) translateY(1.6in) rotate(-90deg);
+  width: 3.5in;
+  height: 30px;
+  background: #ffffffaa;
+  text-align: center;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+.scored-cards-arrow {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-50%) translateX(-15px) translateX(7.5in) translateY(1.6in) rotate(90deg);
+  width: 3.5in;
+  height: 30px;
+  background: #ffffffaa;
+  text-align: center;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+.allies-arrow {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 7.5in;
+  height: 30px;
+  background: #ffffffaa;
+  text-align: center;
+  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+}
+
+.objective-symbol {
+  margin-bottom: -4px;
+  height: .18in;
+}

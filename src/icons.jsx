@@ -1,17 +1,37 @@
+import cometIcon from './assets/general/comet.svg';
+import contractCardImage from './assets/general/contract.svg';
+import allyCardImage from './assets/general/ally-card.svg';
+import rocketCardImage from './assets/general/rocket-card.svg';
+import factionCardImage from './assets/general/faction-card.svg';
+import asteroidImage from './assets/general/asteroid.png';
+
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
 }
 
 export function Contract() {
-  return <Icon name="contract" />;
+  return <img src={contractCardImage} className="card-icon-image icon-margins" />;
+}
+
+export function FactionCardIcon() {
+  return <img src={factionCardImage} className="card-icon-image icon-margins" />;
+}
+
+export function Rocket() {
+  return <img src={rocketCardImage} className="card-icon-image icon-margins" />;
+}
+
+export function Ally() {
+  return <img src={allyCardImage} className="card-icon-image icon-margins" />;
 }
 
 export function Rotate() {
-  return <Icon name="rotate" />;
+  return <span>Rotate</span>;
+  //return <Icon name="rotate" />;
 }
 
 export function Asteroid() {
-  return <Icon name="asteroid" />;
+  return <img src={asteroidImage} className="asteroid" />;
 }
 
 export function RotateClockwise() {
@@ -31,19 +51,12 @@ export function Action() {
 }
 
 export function Move() {
-  return <Icon name="move" />;
-}
-
-export function Rocket() {
-  return <Icon name="rocket" />;
-}
-
-export function Ally() {
-  return <Icon name="ally" />;
+  return <span>Move</span>;
+  //return <Icon name="move" />;
 }
 
 export function Comet() {
-  return <Icon name="comet" />;
+  return <img src={cometIcon} className="icon-image" />;
 }
 
 export function VictoryPoints() {
@@ -53,9 +66,15 @@ export function VictoryPoints() {
 export function Contracts() {
   return (
     <>
-      <span className="first-contract"><Icon name="contract" /></span>
-      <span className="second-contract"><Icon name="contract" /></span>
-      <span className="third-contract"><Icon name="contract" /></span>
+      <span className="first-contract">
+        <img src={contractCardImage} className="card-icon-image" />
+      </span>
+      <span className="second-contract">
+        <img src={contractCardImage} className="card-icon-image" />
+      </span>
+      <span className="third-contract">
+        <img src={contractCardImage} className="card-icon-image" />
+      </span>
     </>
   );
 }
