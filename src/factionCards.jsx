@@ -1,8 +1,8 @@
 import React from 'react';
-import { Contracts, Comet, Ally, Action, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, VictoryPoints } from './icons.jsx';
+import { Contracts, Comet, Droplet, Circle, Square, Ally, Action, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, VictoryPoints } from './icons.jsx';
 import { FactionCard } from './cardTemplates.jsx';
 
-const theScavengerCards = [
+export const theScavengersCards = [
   (<FactionCard name="Close Enough" score={-1} type="The Scavengers" ability={(
     <>
       Complete 1<Contract /> treating 1 <Facility /> you own as though it is a different shape.
@@ -41,13 +41,19 @@ const theScavengerCards = [
 
   (<FactionCard name="Fly-By Job" score={0} type="The Scavengers" ability={(
     <>
-      Choose 2 neutral <Facility /> that are adjacent to the same <Asteroid />. Complete 1<Contract /> treating each chosen neutral <Facility /> as though they were adjacent to each other.
+      Choose 2 neutral <Facility />. Complete 1<Contract /> treating the chosen <Facility /> as adjacent.
     </>
   )}/>),
 
   (<FactionCard name="Overload" score={0} type="The Scavengers" ability={(
     <>
       Choose 1 <Facility /> and complete 1<Contract /> treating that <Facility /> as though it were any number of <Facility /> of the same shape.
+    </>
+  )}/>),
+
+  (<FactionCard name="Quick and Dirty" score={0} type="The Scavengers" ability={(
+    <>
+      Build a <Facility />. Complete 1<Contract />. <Destroy /> the <Facility /> you built.
     </>
   )}/>),
 
@@ -92,7 +98,7 @@ export const hydrusGangCards = [
 
   (<FactionCard name="Demand Tribute" score={1} type="Hydrus Gang" ability={(
     <>
-      Draw 1 <Rocket />. For each opponent, you may put 1<Rocket /> from their hand on the bottom of the deck or <Destroy /> a <Facility /> they own.
+      Draw 1 <Rocket />. For each opponent, you may put 1 random <Rocket /> from their hand on the bottom of the deck or <Destroy /> a <Facility /> they own.
     </>
   )}/>),
 
@@ -112,14 +118,14 @@ export const hydrusGangCards = [
 
 ];
 
-export const zenithCapitalCards = [
-  (<FactionCard name="Product Launch" score={2} type="Zenith Capital" ability={(
+export const unearthIncCards = [
+  (<FactionCard name="Product Launch" score={2} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to draw 1<Rocket /> and 1<FactionCardIcon />.
     </>
   )}/>),
 
-  (<FactionCard name="Donate Scraps" score={0} type="Zenith Capital" ability={(
+  (<FactionCard name="Donate Scraps" score={0} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to draw 1<Ally />.
 
@@ -127,7 +133,7 @@ export const zenithCapitalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Restructure" score={1} type="Zenith Capital" ability={(
+  (<FactionCard name="Restructure" score={1} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to build a <Facility />.
 
@@ -135,7 +141,7 @@ export const zenithCapitalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Settle IP Dispute" score={1} type="Zenith Capital" ability={(
+  (<FactionCard name="Settle IP Dispute" score={1} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to draw 1<Contract />.
 
@@ -143,30 +149,29 @@ export const zenithCapitalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Diversify" score={-1} type="Zenith Capital" ability={(
+  (<FactionCard name="Supplier Network" score={0} type="Unearth Inc." ability={(
     <>
-      Build a <Facility /> on an <Asteroid /> with the green resource. Build a <Facility /> on an <Asteroid /> with the red resource. Build a <Facility /> on an <Asteroid /> with the blue resource.
+      Build 2 <Facility /> adjacent to neutral <Facility />. Draw 1<Contract />.
     </>
   )}/>),
 
-  (<FactionCard name="Headquarters" score={1} type="Zenith Capital" ability={(
+  (<FactionCard name="Headquarters" score={1} type="Unearth Inc." ability={(
     <>
       Build 2 <Facility /> on the center asteroid or draw 2<FactionCardIcon />.
     </>
   )}/>),
 
-  (<FactionCard name="Mirror Protocol" score={-1} type="Zenith Capital" ability={(
+  (<FactionCard name="Establish Ice Supply" score={0} type="Unearth Inc." ability={(
     <>
-      If a <Facility /> you own is adjacent to an empty space on another <Asteroid /> you may build a <Facility /> of the same shape on that empty space. You may do this for any number of your <Facility />.
+      Choose a <Comet />. You may build a <Facility /> on each space adjacent to that <Comet />. Draw 1<Rocket />.
     </>
   )}/>),
 
-  (<FactionCard name="Expand" score={-1} type="Zenith Capital" ability={(
+  (<FactionCard name="Expand" score={1} type="Unearth Inc." ability={(
     <>
-      On up to 3 <Asteroid /> with at least 1 <Facility /> you own, you may build a <Facility />.
+      Build a <Facility /> on up to 2 <Asteroid />.
     </>
   )}/>),
-
 ];
 
 export const cyborgUnionCards = [
@@ -201,7 +206,7 @@ export const cyborgUnionCards = [
 
   (<FactionCard name="Workplace Upgrades" type="Cyborg Union" score={1} ability={(
     <>
-      Complete <Contracts />. For each card you would draw as a bonus, you may instead build a <Facility />.
+      Complete <Contracts />. For each card you would draw as a bonus, you may instead build a <Facility /> as a bonus.
     </>
   )}/>),
 
@@ -227,9 +232,27 @@ export const cyborgUnionCards = [
 ];
 
 export const explorerSocietyCards = [
-  (<FactionCard name="Crowd" type="Explorer Society" score={0} ability={(
+  (<FactionCard name="Fab Breakthrough" type="Explorer Society" score={0} ability={(
     <>
-      Move any number of your <Facility /> that are not adjacent to other players’ <Facility /> to spaces that are adjacent to other players’ <Facility />.
+      Replace up to 2 of your <Facility /> with <Square color="blue" />.
+
+
+      Take another <Action />.
+    </>
+  )}/>),
+
+  (<FactionCard name="Oil Treatments" type="Explorer Society" score={0} ability={(
+    <>
+      Replace up to 2 of your <Facility /> with <Droplet color="blue" />.
+
+
+      Take another <Action />.
+    </>
+  )}/>),
+
+  (<FactionCard name="Advanced Drilling" type="Explorer Society" score={0} ability={(
+    <>
+      Replace up to 2 of your <Facility /> with <Circle color="blue" />.
 
 
       Take another <Action />.
@@ -238,15 +261,7 @@ export const explorerSocietyCards = [
 
   (<FactionCard name="Relocate Refineries" type="Explorer Society" score={0} ability={(
     <>
-      Move any number of your droplet <Facility /> to any empty spaces.
-
-      Take another <Action />.
-    </>
-  )}/>),
-
-  (<FactionCard name="Gather" type="Explorer Society" score={-1} ability={(
-    <>
-      Choose an <Asteroid />, you may move any number of your <Facility /> on each adjacent <Asteroid /> to any empty spaces on the chosen <Asteroid />.
+      Move any number of your <Droplet color="blue" /> to any empty spaces.
 
       Take another <Action />.
     </>
@@ -254,7 +269,7 @@ export const explorerSocietyCards = [
 
   (<FactionCard name="Fling Fabricators" type="Explorer Society" score={0} ability={(
     <>
-      Move any number of your square <Facility /> to any empty spaces.
+      Move any number of your <Square color="blue" /> to any empty spaces.
 
       Take another <Action />.
     </>
@@ -262,15 +277,7 @@ export const explorerSocietyCards = [
 
   (<FactionCard name="Extract Extractors" type="Explorer Society" score={0} ability={(
     <>
-      Move any number of your circle <Facility /> to any empty spaces.
-
-      Take another <Action />.
-    </>
-  )}/>),
-
-  (<FactionCard name="Rendezvous" type="Explorer Society" score={0} ability={(
-    <>
-      Choose one <Facility /> you own, you may move any number of your other <Facility /> to spaces adjacent to the chosen <Facility />.
+      Move any number of your <Circle color="blue" /> to any empty spaces.
 
       Take another <Action />.
     </>
@@ -286,7 +293,7 @@ export const explorerSocietyCards = [
 
   (<FactionCard name="Migrate" type="Explorer Society" score={-1} ability={(
     <>
-      Move any number of your <Facility /> from 1 <Asteroid /> to another. You can rearrange them on the new <Asteroid />.
+      Move any number of your <Facility /> from 1 <Asteroid /> to another.
 
       Take another <Action />.
     </>
@@ -337,7 +344,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Scheme" type="Crux Cabal" score={1} ability={(
     <>
-      Draw 3 cards. The cards may be taken from any combination of the <Contract /> deck, <Rocket /> deck, and your <FactionCardIcon /> deck.
+      Draw 3 cards from any combination of the <Contract /> deck, <Rocket /> deck, and your <FactionCardIcon /> deck.
     </>
   )}/>),
 
@@ -354,9 +361,9 @@ export const cruxCabalCards = [
   )}/>),
 ];
 
-export let factionCards = theScavengerCards
+export let factionCards = theScavengersCards
   .concat(hydrusGangCards)
-  .concat(zenithCapitalCards)
+  .concat(unearthIncCards)
   .concat(cyborgUnionCards)
   .concat(explorerSocietyCards)
   .concat(cruxCabalCards)

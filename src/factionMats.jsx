@@ -19,7 +19,7 @@ export function FactionMats() {
         <div className="faction-mat-grid">
           <FactionMat name="Cyborg Union" />
           <FactionMat name="Crux Cabal" />
-          <FactionMat name="Zenith Capital" />
+          <FactionMat name="Unearth Inc." />
         </div>
       )} />
     </>

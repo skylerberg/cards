@@ -132,7 +132,7 @@ export const contracts = [
   (<ContractCard
     name="Forcefield Generator"
     type="Contract"
-    route={[ 'Circle', 'Square', 'Square', 'Droplet', ]}
+    route={[ 'Circle', 'Square', 'Square', 'Circle', ]}
     bonuses={[ 'Green', 'Blue', 'Gold', ]}
   />),
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, FactionCardIcon, Action, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
+import { Contracts, FactionCardIcon, Ally, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -10,14 +10,6 @@ export let allies = [
       </>
     )
   }/>),
-
-  /*
-  (<AllyCard name="Coordinator" score={0} type="Ally" ability={(
-    <>
-      <Action /> Play 1<Rocket />. Complete <Contracts />.
-    </>
-  )}/>),
-  */
 
   (<AllyCard name="Rogue Pilot" score={0} type="Ally" ability={(
     <>
@@ -44,14 +36,6 @@ export let allies = [
     </>
   )}/>),
 
-  /*
-  (<AllyCard name="Supplier" score={1} type="Ally" ability={(
-    <>
-      <Action /> All players draw 1<Rocket />. Take another <Action />. You may not use this <Action /> again this turn.
-    </>
-  )}/>),
-  */
-
   (<AllyCard name="Publicist" score={0} type="Ally" ability={(
     <>
       <Action /> Complete <Contracts />. Restock public <Contracts /> by taking random <Contract /> cards from your opponents’ hands or drawing from the deck.
@@ -67,7 +51,7 @@ export let allies = [
 
   (<AllyCard name="Warlord" score={-1} type="Ally" ability={(
     <>
-      <Action /> If you have a <Rocket /> in your hand, <Destroy /> a <Facility /> belonging to an opponent. Play 1<Rocket />.
+      <Action /> If you have a <Rocket /> in your hand, <Destroy /> a <Facility />. Play 1<Rocket />.
     </>
   )}/>),
 
@@ -83,14 +67,6 @@ export let allies = [
     </>
   )}/>),
 
-  /*
-  (<AllyCard name="Researcher" score={0} type="Ally" ability={(
-    <>
-      <Action /> Put a card from your hand onto the bottom of its deck. Draw from that deck. Take a another <Action />. You may not use this <Action /> again this turn.
-    </>
-  )}/>),
-  */
-
   (<AllyCard name="Opportunist" score={0} type="Ally" ability={(
     <>
       <Action /> Complete <Contracts />. Restock public <Contracts /> immediately. Complete <Contracts />.
@@ -99,7 +75,25 @@ export let allies = [
 
   (<AllyCard name="Technician" score={1} type="Ally" ability={(
     <>
-      Draw 2<Rocket />.
+      <Action /> Draw 2<Rocket />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Cybernetic Surgeon" score={0} type="Ally" ability={(
+    <>
+      <Action /> Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />. Draw 1<Contract/>.
+    </>
+  )}/>),
+
+  (<AllyCard name="Liason" score={0} type="Ally" ability={(
+    <>
+      <Action /> Give an opponent a card from your hand to build 2 <Facility /> that are adjacent at least 1 of opponent's <Facility />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Spy" score={0} type="Ally" ability={(
+    <>
+      <Action /> Take a <FactionCardIcon /> from another player's hand into your hand.
     </>
   )}/>),
 

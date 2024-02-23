@@ -1,14 +1,8 @@
 import React from 'react';
-import { Asteroid, Ally, FactionCardIcon, Comet, Contract, Rocket, Contracts, Facility, VictoryPoints } from './icons.jsx';
+import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Action, Comet, Contract, Rocket, Contracts, Facility, VictoryPoints } from './icons.jsx';
 import { ObjectiveCard } from './cardTemplates.jsx';
 
 export const objectives = [
-  (<ObjectiveCard name="Masterful" score={3} type="Objective" text={(
-    <>
-      During your turn, collect all bonuses for a <Contract /> you complete worth 4 or more <VictoryPoints />.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Cosmopolitan" score={3} type="Objective" text={(
     <>
       Have a <Facility /> that is adjacent to non-neutral <Facility /> of all three shapes (circle, droplet, and square).
@@ -22,15 +16,9 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Dedicated" score={5} type="Objective" text={(
+  (<ObjectiveCard name="Dedicated" score={3} type="Objective" text={(
     <>
       Draw the last card in a deck. <i>Drawing from the <Contract /> deck to restock the public <Contracts /> counts.</i>
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Networked" score={5} type="Objective" text={(
-    <>
-      Have 4 or more <Comet  /> between your <Facility />.
     </>
   )}/>),
 
@@ -82,22 +70,41 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Xenophilic" score={3} type="Objective" text={(
-    <>
-      Have a <Facility /> adjacent to a neutral <Facility /> on 4 or more different <Asteroid />.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Bombardier" score={3} type="Objective" text={(
-    <>
-      Have 4 or more <Rocket /> in your hand.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Well Rounded" score={4} type="Objective" text={(
     <>
       Have scored at least 3<FactionCardIcon />, 3<Rocket />, and 3<Contract />.
     </>
   )}/>),
 
+  (<ObjectiveCard name="Strategic" score={4} type="Objective" text={(
+    <>
+      Play 4 or more <FactionCardIcon /> and/or <Rocket /> in 1 turn.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Efficient" score={4} type="Objective" text={(
+    <>
+      Have more scored <Contract /> than you have <Facility />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Pitiable" score={4} type="Objective" text={(
+    <>
+      In 1 turn, gain no bonuses for 2<Contract /> you complete using routes with <Comet />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Reserved" score={4} type="Objective" text={(
+    <>
+      Be the only player who has 3 or less <Circle />, 3 or less <Square />, and 3 or less <Droplet />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Self-Sufficient" score={4} type="Objective" text={(
+    <>
+      Have 4 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
+    </>
+  )}/>),
+
 ].map((objective) => [React.cloneElement(objective, { key: objective.props.name })]).flat();
+//In 1 turn, complete 2<Contract /> using routes with <Comet /> without gaining any bonuses.

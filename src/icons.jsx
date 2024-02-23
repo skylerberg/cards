@@ -4,13 +4,40 @@ import allyCardImage from './assets/general/ally-card.svg';
 import rocketCardImage from './assets/general/rocket-card.svg';
 import factionCardImage from './assets/general/faction-card.svg';
 import asteroidImage from './assets/general/asteroid.png';
+import droplet from './assets/images/icons/droplet.svg';
+import circle from './assets/images/icons/circle.svg';
+import square from './assets/images/icons/square.svg';
 
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
 }
 
+export function Droplet({ color }) {
+  let className = 'specific-facility-icon';
+  if (color === 'blue') {
+    className += ' filter-blue';
+  }
+  return <img src={droplet} className={className} />;
+}
+
+export function Circle({ color }) {
+  let className = 'specific-facility-icon';
+  if (color === 'blue') {
+    className += ' filter-blue';
+  }
+  return <img src={circle} className={className} />;
+}
+
+export function Square({ color }) {
+  let className = 'specific-facility-icon';
+  if (color === 'blue') {
+    className += ' filter-blue';
+  }
+  return <img src={square} className={className} />;
+}
+
 export function Contract() {
-  return <img src={contractCardImage} className="card-icon-image icon-margins" />;
+  return <img src={contractCardImage} className="card-icon-image" />;
 }
 
 export function FactionCardIcon() {
