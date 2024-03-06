@@ -85,7 +85,7 @@ function Newspaper({ name, text }) {
 }
 
 export function FactionCard({name, score, ability}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
+  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}.png`;
   const imageUrl = factionCardImages[`./assets/images/faction-cards/${pngName}`]?.default;
   return (
     <div className="card" style={

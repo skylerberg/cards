@@ -1,11 +1,23 @@
 import React from 'react';
-import { Rotate, Asteroid, Destroy, Action, Facility } from './icons.jsx';
+import { Rotate, Asteroid, Destroy, Action, Facility, Rocket, Contracts } from './icons.jsx';
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
   (<RocketCard name="Precision Rocket" score={0} type="Rocket" ability={(
     <>
       <Rotate /> an <Asteroid /> to any position. Take another <Action />.
+    </>
+  )}/>),
+
+  (<RocketCard name="Commercial Rockets" score={1} type="Rocket" ability={(
+    <>
+      <Rotate /> up to 2 different <Asteroid /> 1 space each. Complete <Contracts />.
+    </>
+  )}/>),
+
+  (<RocketCard name="Volley" score={1} type="Rocket" ability={(
+    <>
+      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Draw 1<Rocket />.
     </>
   )}/>),
 

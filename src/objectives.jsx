@@ -3,22 +3,27 @@ import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Action, Comet
 import { ObjectiveCard } from './cardTemplates.jsx';
 
 export const objectives = [
-  (<ObjectiveCard name="Cosmopolitan" score={3} type="Objective" text={(
+  (<ObjectiveCard name="Fabulous" score={3} type="Objective" text={(
     <>
-      Have a <Facility /> that is adjacent to non-neutral <Facility /> of all three shapes (circle, droplet, and square).
+      Have a <Facility /> that is adjacent to 3 non-neutral <Square />.
+    </>
+  )}/>),
 
+  (<ObjectiveCard name="Defiant" score={4} type="Objective" text={(
+    <>
+      Every player has a <Rocket /> as the top card in their scored cards pile.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Versatile" score={3} type="Objective" text={(
+    <>
+      Have at least 1 <Circle />, 1 <Square />, and 1 <Droplet /> on the board, at least 1 <Ally />, and at least 1<Contract />, 1<Rocket />, and 1<FactionCardIcon /> in your hand.
     </>
   )}/>),
 
   (<ObjectiveCard name="Contiguous" score={4} type="Objective" text={(
     <>
       Have a route of 9 or more connected <Facility /> (without using neutral <Facility />).
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Dedicated" score={3} type="Objective" text={(
-    <>
-      Draw the last card in a deck. <i>Drawing from the <Contract /> deck to restock the public <Contracts /> counts.</i>
     </>
   )}/>),
 
@@ -46,19 +51,13 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Generous" score={3} type="Objective" text={(
-    <>
-      Start a turn with both you and another player having a route to complete a public <Contract />. End your turn without scoring that <Contract />.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Meddlesome" score={3} type="Objective" text={(
     <>
       Have a single <Facility /> adjacent to 3 <Facility /> belonging to other player(s).
     </>
   )}/>),
 
-  (<ObjectiveCard name="Charismatic" score={4} type="Objective" text={(
+  (<ObjectiveCard name="Charismatic" score={3} type="Objective" text={(
     <>
       Have 3 or more <Ally />.
     </>
@@ -88,21 +87,45 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Pitiable" score={4} type="Objective" text={(
-    <>
-      In 1 turn, gain no bonuses for 2<Contract /> you complete using routes with <Comet />.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Reserved" score={4} type="Objective" text={(
-    <>
-      Be the only player who has 3 or less <Circle />, 3 or less <Square />, and 3 or less <Droplet />.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Self-Sufficient" score={4} type="Objective" text={(
     <>
       Have 4 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Trail Blazer" score={3} type="Objective" text={(
+    <>
+      If only 1 <Asteroid /> has no <Facility /> on it, build a <Facility /> on that <Asteroid />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Ice Cold" score={4} type="Objective" text={(
+    <>
+      There is at least 1 <Facility /> adjacent to every <Comet />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Collaborative" score={3} type="Objective" text={(
+    <>
+      Complete a <Contract /> worth 5 <VictoryPoints /> using a route with 2 neutral <Facility />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Selective" score={5} type="Objective" text={(
+    <>
+      Finish your last turn in the game without any <Contract /> worth 2 <VictoryPoints /> in your scored cards pile.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Knowledgeable" score={4} type="Objective" text={(
+    <>
+      Have 8 or more cards in your hand.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Ambitious" score={3} type="Objective" text={(
+    <>
+      Have at least 3 scored <Contract /> and half or more of them are worth 5 <VictoryPoints />.
     </>
   )}/>),
 

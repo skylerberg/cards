@@ -18,12 +18,6 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Architect" score={0} type="Ally" ability={(
-    <>
-      <Action /> Build a <Facility />. You may replace each adjacent <Facility /> you own with a <Facility /> of any shape.
-    </>
-  )}/>),
-
   (<AllyCard name="Negotiator" score={-1} type="Ally" ability={(
     <>
       <Action /> Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
@@ -36,22 +30,15 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Publicist" score={0} type="Ally" ability={(
-    <>
-      <Action /> Complete <Contracts />. Restock public <Contracts /> by taking random <Contract /> cards from your opponents’ hands or drawing from the deck.
-
-    </>
-  )}/>),
-
   (<AllyCard name="Insider" score={0} type="Ally" ability={(
     <>
       <Action /> Put a public <Contract /> on the bottom of the <Contract /> deck. Draw 1<Contract />.
     </>
   )}/>),
 
-  (<AllyCard name="Warlord" score={-1} type="Ally" ability={(
+  (<AllyCard name="Warlord" score={0} type="Ally" ability={(
     <>
-      <Action /> If you have a <Rocket /> in your hand, <Destroy /> a <Facility />. Play 1<Rocket />.
+      <Action /> <Destroy /> a <Facility /> you own. <Destroy /> a <Facility /> an opponent owns.  Draw 1<Rocket />.
     </>
   )}/>),
 
@@ -81,19 +68,67 @@ export let allies = [
 
   (<AllyCard name="Cybernetic Surgeon" score={0} type="Ally" ability={(
     <>
-      <Action /> Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />. Draw 1<Contract/>.
+      <Action /> Build a <Facility />. Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />.
     </>
   )}/>),
 
-  (<AllyCard name="Liason" score={0} type="Ally" ability={(
+  (<AllyCard name="Liaison" score={0} type="Ally" ability={(
     <>
-      <Action /> Give an opponent a card from your hand to build 2 <Facility /> that are adjacent at least 1 of opponent's <Facility />.
+      <Action /> Give an opponent 1<Ally /> you own or a card from your hand to build 2 <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Spy" score={0} type="Ally" ability={(
+  (<AllyCard name="Spy" score={1} type="Ally" ability={(
     <>
-      <Action /> Take a <FactionCardIcon /> from another player's hand into your hand.
+      <Action /> Take 1<FactionCardIcon /> or 1<Rocket /> from another player's hand into your hand.
+    </>
+  )}/>),
+
+  (<AllyCard name="Architect" score={0} type="Ally" ability={(
+    <>
+      <Action /> Build a <Facility />. Put a card from your hand on the bottom of its deck and draw from that deck.
+    </>
+  )}/>),
+
+  (<AllyCard name="Miner" score={0} type="Ally" ability={(
+    <>
+      <Action /> Build 2 <Circle />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
+    <>
+      <Action /> Build a <Droplet />. Play 1<Rocket />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Industrial Engineer" score={0} type="Ally" ability={(
+    <>
+      <Action /> Build a <Square />. Draw 1<Contract />. If you have 2 or more <Contract /> in your hand, put 1 on the bottom of the deck.
+    </>
+  )}/>),
+
+  (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
+    <>
+      <Action /> Play 1<FactionCardIcon />. Draw 1<FactionCardIcon />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Rocket Scientist" score={0} type="Ally" ability={(
+    <>
+      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Traditionalist" score={0} type="Ally" ability={(
+    <>
+      <Action /> Play a <FactionCardIcon /> from your scored card pile. Put it on the bottom of your <FactionCardIcon /> deck.
+    </>
+  )}/>),
+
+  (<AllyCard name="Boss" score={0} type="Ally" ability={(
+    <>
+      <Action /> Draw 1<Ally /> or choose 1<Ally /> you own and use its <Action /> twice.
     </>
   )}/>),
 
