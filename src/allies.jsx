@@ -120,15 +120,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Traditionalist" score={0} type="Ally" ability={(
-    <>
-      <Action /> Play a <FactionCardIcon /> from your scored card pile. Put it on the bottom of your <FactionCardIcon /> deck.
-    </>
-  )}/>),
-
   (<AllyCard name="Boss" score={0} type="Ally" ability={(
     <>
-      <Action /> Draw 1<Ally /> or choose 1<Ally /> you own and use its <Action /> twice.
+      <Action /> Draw 1<Ally /> or choose 1<Ally /> you own and use its <Action /> twice then put it on the bottom of the <Ally /> deck.
     </>
   )}/>),
 

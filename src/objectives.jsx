@@ -9,12 +9,6 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Defiant" score={4} type="Objective" text={(
-    <>
-      Every player has a <Rocket /> as the top card in their scored cards pile.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Versatile" score={3} type="Objective" text={(
     <>
       Have at least 1 <Circle />, 1 <Square />, and 1 <Droplet /> on the board, at least 1 <Ally />, and at least 1<Contract />, 1<Rocket />, and 1<FactionCardIcon /> in your hand.
@@ -99,12 +93,6 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Ice Cold" score={4} type="Objective" text={(
-    <>
-      There is at least 1 <Facility /> adjacent to every <Comet />.
-    </>
-  )}/>),
-
   (<ObjectiveCard name="Collaborative" score={3} type="Objective" text={(
     <>
       Complete a <Contract /> worth 5 <VictoryPoints /> using a route with 2 neutral <Facility />.
@@ -125,7 +113,7 @@ export const objectives = [
 
   (<ObjectiveCard name="Ambitious" score={3} type="Objective" text={(
     <>
-      Have at least 3 scored <Contract /> and half or more of them are worth 5 <VictoryPoints />.
+      Have at least 3 scored <Contract /> and half or more of your scored <Contract /> are worth 5 <VictoryPoints />.
     </>
   )}/>),
 
