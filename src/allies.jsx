@@ -30,17 +30,21 @@ export let allies = [
     </>
   )}/>),
 
+  /*
   (<AllyCard name="Insider" score={0} type="Ally" ability={(
     <>
       <Action /> Put a public <Contract /> on the bottom of the <Contract /> deck. Draw 1<Contract />.
     </>
   )}/>),
+  */
 
+  /*
   (<AllyCard name="Warlord" score={0} type="Ally" ability={(
     <>
-      <Action /> <Destroy /> a <Facility /> you own. <Destroy /> a <Facility /> an opponent owns.  Draw 1<Rocket />.
+      <Action /> Build a <Facility />. <Destroy /> a <Facility />. The player whose facility you <Destroy /> draws 1<Contract />.
     </>
   )}/>),
+  */
 
   (<AllyCard name="Streamliner" score={0} type="Ally" ability={(
     <>
@@ -66,7 +70,7 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Cybernetic Surgeon" score={0} type="Ally" ability={(
+  (<AllyCard name="Cybernetic Surgeon" score={1} type="Ally" ability={(
     <>
       <Action /> Build a <Facility />. Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />.
     </>
@@ -78,13 +82,13 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Spy" score={1} type="Ally" ability={(
+  (<AllyCard name="Spy" score={0} type="Ally" ability={(
     <>
-      <Action /> Take 1<FactionCardIcon /> or 1<Rocket /> from another player's hand into your hand.
+      <Action /> Take 1<FactionCardIcon /> from each opponent's hand into your hand.
     </>
   )}/>),
 
-  (<AllyCard name="Architect" score={0} type="Ally" ability={(
+  (<AllyCard name="Architect" score={1} type="Ally" ability={(
     <>
       <Action /> Build a <Facility />. Put a card from your hand on the bottom of its deck and draw from that deck.
     </>
@@ -110,7 +114,7 @@ export let allies = [
 
   (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. Draw 1<FactionCardIcon />.
+      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<FactionCardIcon />.
     </>
   )}/>),
 
@@ -122,7 +126,50 @@ export let allies = [
 
   (<AllyCard name="Boss" score={0} type="Ally" ability={(
     <>
-      <Action /> Draw 1<Ally /> or choose 1<Ally /> you own and use its <Action /> twice then put it on the bottom of the <Ally /> deck.
+      <Action /> Draw 1<Ally />.
+
+      <div style={
+        {
+          width: '100%',
+          textAlign: 'center',
+        }
+      }>
+        <hr style={
+          {
+            display: 'inline-block',
+            width: '40px',
+            marginRight: '10px',
+          }
+        }/>
+        OR
+        <hr style={
+          {
+            display: 'inline-block',
+            width: '40px',
+            marginLeft: '10px',
+          }
+        }/>
+      </div>
+
+      <Action /> Use 1 other <Ally /> you own twice and put that <Ally /> on the bottom of the deck.
+    </>
+  )}/>),
+
+  (<AllyCard name="Pioneer" score={0} type="Ally" ability={(
+    <>
+      <Action /> Build 2 <Facility /> that are not adjacent to each other or any other non-neutral <Facility />.
+    </>
+  )}/>),
+
+  (<AllyCard name="???" score={0} type="Ally" ability={(
+    <>
+      <Action /> Draw 2 <Contract />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Industrial Engineer 2.0" score={-1} type="Ally" ability={(
+    <>
+      <Action /> Build a <Square />. Draw 1<Contract />.
     </>
   )}/>),
 

@@ -14,40 +14,14 @@ import { FactionMats } from './factionMats.jsx';
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
 
-//const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives);
-const cards = [
-  objectives[0],
-  objectives[1],
-  objectives[2],
-  objectives[16],
-  objectives[17],
-  objectives[18],
-  objectives[19],
-  objectives[20],
-  allies[11],
-  allies[12],
-  allies[13],
-  allies[14],
-  allies[18],
-  allies[19],
-  allies[20],
-  cyborgUnionCards[1],
-  cyborgUnionCards[2],
-  cyborgUnionCards[6],
-  cyborgUnionCards[4],
-  explorerSocietyCards.slice(0, 6),
-  explorerSocietyCards[7],
-  unearthIncCards[4],
-  unearthIncCards[6],
-  theScavengersCards[1],
-  theScavengersCards[5],
-  rockets[1],
-  rockets[1],
-  rockets[1],
-  rockets[2],
-  rockets[2],
-  rockets[2],
-].flat();
+const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives);
+//const cards = [
+//  contracts.slice(30, 33),
+//  contracts.slice(33, 36),
+//  objectives[15],
+//  allies[8],
+//  allies[11],
+//].flat();
 
 reactRoot.render(
   <React.StrictMode>

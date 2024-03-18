@@ -93,21 +93,9 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Collaborative" score={3} type="Objective" text={(
-    <>
-      Complete a <Contract /> worth 5 <VictoryPoints /> using a route with 2 neutral <Facility />.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Selective" score={5} type="Objective" text={(
+  (<ObjectiveCard name="Selective" score={3} type="Objective" text={(
     <>
       Finish your last turn in the game without any <Contract /> worth 2 <VictoryPoints /> in your scored cards pile.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Knowledgeable" score={4} type="Objective" text={(
-    <>
-      Have 8 or more cards in your hand.
     </>
   )}/>),
 
