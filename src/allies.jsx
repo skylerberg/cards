@@ -70,11 +70,13 @@ export let allies = [
     </>
   )}/>),
 
+  /*
   (<AllyCard name="Cybernetic Surgeon" score={1} type="Ally" ability={(
     <>
       <Action /> Build a <Facility />. Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />.
     </>
   )}/>),
+  */
 
   (<AllyCard name="Liaison" score={0} type="Ally" ability={(
     <>
@@ -84,7 +86,7 @@ export let allies = [
 
   (<AllyCard name="Spy" score={0} type="Ally" ability={(
     <>
-      <Action /> Take 1<FactionCardIcon /> from each opponent's hand into your hand.
+      <Action /> Take 1 <FactionCardIcon /> from each opponent's hand. <i>You do not get to look their hands.</i>
     </>
   )}/>),
 
@@ -106,13 +108,13 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Industrial Engineer" score={0} type="Ally" ability={(
+  (<AllyCard name="Industrial Engineer" score={-1} type="Ally" ability={(
     <>
-      <Action /> Build a <Square />. Draw 1<Contract />. If you have 2 or more <Contract /> in your hand, put 1 on the bottom of the deck.
+      <Action /> Build a <Square />. Draw 1<Contract />.
     </>
   )}/>),
 
-  (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
+  (<AllyCard name="Fanatic" score={-1} type="Ally" ability={(
     <>
       <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<FactionCardIcon />.
     </>
@@ -124,52 +126,23 @@ export let allies = [
     </>
   )}/>),
 
+  /*
   (<AllyCard name="Boss" score={0} type="Ally" ability={(
     <>
-      <Action /> Draw 1<Ally />.
+      <Action /> Choose other 1<Ally /> you own and use its <Action /> twice then put it on the bottom of the <Ally /> deck.
+    </>
+  )}/>),
+  */
 
-      <div style={
-        {
-          width: '100%',
-          textAlign: 'center',
-        }
-      }>
-        <hr style={
-          {
-            display: 'inline-block',
-            width: '40px',
-            marginRight: '10px',
-          }
-        }/>
-        OR
-        <hr style={
-          {
-            display: 'inline-block',
-            width: '40px',
-            marginLeft: '10px',
-          }
-        }/>
-      </div>
-
-      <Action /> Use 1 other <Ally /> you own twice and put that <Ally /> on the bottom of the deck.
+  (<AllyCard name="Mastermind" score={0} type="Ally" ability={(
+    <>
+      <Action /> Put 1 of your scored <Contract /> on the bottom of the <Contract /> deck. Take 2 <Action />. You may not use Mastermind again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Pioneer" score={0} type="Ally" ability={(
     <>
       <Action /> Build 2 <Facility /> that are not adjacent to each other or any other non-neutral <Facility />.
-    </>
-  )}/>),
-
-  (<AllyCard name="???" score={0} type="Ally" ability={(
-    <>
-      <Action /> Draw 2 <Contract />.
-    </>
-  )}/>),
-
-  (<AllyCard name="Industrial Engineer 2.0" score={-1} type="Ally" ability={(
-    <>
-      <Action /> Build a <Square />. Draw 1<Contract />.
     </>
   )}/>),
 

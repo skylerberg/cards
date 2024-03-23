@@ -3,39 +3,33 @@ import { Contracts, Comet, Droplet, Circle, Square, Ally, Action, Facility, Aste
 import { FactionCard } from './cardTemplates.jsx';
 
 export const theScavengersCards = [
-  (<FactionCard name="Close Enough" score={-1} type="The Scavengers" ability={(
+  (<FactionCard name="Close Enough" score={1} type="The Scavengers" ability={(
     <>
       Complete 1<Contract /> treating 1 <Facility /> you own as though it is a different shape.
     </>
   )}/>),
 
-  (<FactionCard name="Frozen Assets" score={0} type="The Scavengers" ability={(
+  (<FactionCard name="Frozen Assets" score={1} type="The Scavengers" ability={(
     <>
-      Complete 1<Contract /> treating a <Comet /> between 2 of your <Facility /> used as though it were a <Facility /> of any shape in addition to being a <Comet />.
+      Complete 1<Contract /> treating a <Comet /> between 2 <Facility /> used as a <Facility /> of any shape in addition to being a <Comet />.
     </>
   )}/>),
 
-  (<FactionCard name="Rejigger" score={-1} type="The Scavengers" ability={(
+  (<FactionCard name="Unstructured Work" score={1} type="The Scavengers" ability={(
     <>
-      Complete 1<Contract /> treating all <Facility /> listed on the <Contract /> as though they were in any order of your choice.
+      Complete 1<Contract /> treating 1 empty space between 2 <Facility /> you own as though it has a <Facility /> of any shape.
     </>
   )}/>),
 
-  (<FactionCard name="Misuse" score={-1} type="The Scavengers" ability={(
+  (<FactionCard name="Misuse" score={1} type="The Scavengers" ability={(
     <>
       Complete 1<Contract /> treating each neutral <Facility /> used as any shape of your choice.
     </>
   )}/>),
 
-  (<FactionCard name="Unstable Wormhole" score={-1} type="The Scavengers" ability={(
+  (<FactionCard name="Unstable Wormhole" score={0} type="The Scavengers" ability={(
     <>
       Choose 2 <Facility /> you own. Complete 1<Contract /> treating the chosen <Facility/> as adjacent.
-    </>
-  )}/>),
-
-  (<FactionCard name='"Borrow"' score={-1} type="The Scavengers" ability={(
-    <>
-      Complete 1<Contract />. You may use other players’ <Facility /> for the <Contract />. You must own at least 1 <Facility /> used in the route.
     </>
   )}/>),
 
@@ -45,22 +39,22 @@ export const theScavengersCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Overload" score={0} type="The Scavengers" ability={(
+  (<FactionCard name="Overload" score={1} type="The Scavengers" ability={(
     <>
-      Choose 1 <Facility /> and complete 1<Contract /> treating that <Facility /> as though it were any number of <Facility /> of the same shape.
+      Complete 1<Contract /> treating 1 <Facility /> used as any number of <Facility /> of the same shape as that <Facility />.
     </>
   )}/>),
 
-  (<FactionCard name="Quick and Dirty" score={0} type="The Scavengers" ability={(
+  (<FactionCard name="Quick and Dirty" score={-1} type="The Scavengers" ability={(
     <>
-      Build a <Facility />. Complete 1<Contract />. <Destroy /> the <Facility /> you built.
+      Build 2 <Facility />. Complete 1<Contract />. <Destroy /> both <Facility /> you built.
     </>
   )}/>),
 
 ];
 
 export const hydrusGangCards = [
-  (<FactionCard name="Load Up" score={1} type="Hydrus Gang" ability={(
+  (<FactionCard name="Load Up" score={0} type="Hydrus Gang" ability={(
     <>
       Draw 3<Rocket />.
     </>
@@ -74,11 +68,19 @@ export const hydrusGangCards = [
     </>
   )}/>),
 
+  /*
   (<FactionCard name="Wake of Destruction" score={1} type="Hydrus Gang" ability={(
     <>
       Choose an <Asteroid /> no player has more <Facility /> on than you. <Destroy /> each <Facility /> on that <Asteroid />.
 
       Take another <Action />.
+    </>
+  )}/>),
+  */
+
+  (<FactionCard name="Takeover" score={0} type="Hydrus Gang" ability={(
+    <>
+      Choose an <Asteroid />. <Destroy /> a <Facility /> owned by each opponent on that <Asteroid />. Build a <Facility /> on that <Asteroid />.
     </>
   )}/>),
 
@@ -90,15 +92,15 @@ export const hydrusGangCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Shock and Awe" score={0} type="Hydrus Gang" ability={(
+  (<FactionCard name="Launch Point" score={0} type="Hydrus Gang" ability={(
     <>
-      Play 1<Rocket />. At the end of this turn, draw 1<Ally /> for every <Rocket /> you played.
+      Build a <Facility />. Play a <Rocket />.
     </>
   )}/>),
 
-  (<FactionCard name="Demand Tribute" score={1} type="Hydrus Gang" ability={(
+  (<FactionCard name="Flank" score={1} type="Hydrus Gang" ability={(
     <>
-      For each opponent, you may put 1 random <Rocket /> from their hand on the bottom of the deck or <Destroy /> a <Facility /> they own. Draw 1 <Rocket />.
+      Build a <Facility />. <Destroy /> a <Facility /> adjacent to 2 or more of your <Facility />.
     </>
   )}/>),
 
@@ -110,7 +112,7 @@ export const hydrusGangCards = [
 
   (<FactionCard name="Phoenix Initiative" score={1} type="Hydrus Gang" ability={(
     <>
-      You may <Destroy /> a facility belonging to each player. Each player whose facility you <Destroy /> draws 1<Contract />.
+      You may <Destroy /> a <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />.
 
       Take another <Action />.
     </>
@@ -141,7 +143,7 @@ export const unearthIncCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Settle IP Dispute" score={1} type="Unearth Inc." ability={(
+  (<FactionCard name="Settle IP Dispute" score={2} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to draw 1<Contract />.
 
@@ -157,7 +159,7 @@ export const unearthIncCards = [
 
   (<FactionCard name="Headquarters" score={1} type="Unearth Inc." ability={(
     <>
-      Build 2 <Facility /> on the center asteroid or draw 2<FactionCardIcon />.
+      Build 2 <Facility /> on the center <Asteroid /> or draw 2<FactionCardIcon />.
     </>
   )}/>),
 
@@ -176,9 +178,9 @@ export const unearthIncCards = [
 
 export const cyborgUnionCards = [
 
-  (<FactionCard name="Augment" score={1} type="Cyborg Union" ability={(
+  (<FactionCard name="Severance" score={1} type="Cyborg Union" ability={(
     <>
-      Complete <Contracts /> gaining each bonus you collect an additional time.
+      Put any number of <Contract /> from your hand on the bottom of the <Contract /> deck. Collect all bonuses shown on those <Contract />.
     </>
   )}/>),
 
@@ -196,19 +198,19 @@ export const cyborgUnionCards = [
 
   (<FactionCard name="Unsolicited Help" type="Cyborg Union" score={0} ability={(
     <>
-      Build 2 <Facility />. Choose an opponent and build a <Facility /> from their supply.
+      Build 2 <Facility />. Build a <Facility /> from an opponent's supply.
     </>
   )}/>),
 
-  (<FactionCard name="Workplace Upgrades" type="Cyborg Union" score={-1} ability={(
+  (<FactionCard name="Extended Contract" type="Cyborg Union" score={-1} ability={(
     <>
-      Complete <Contracts />. For each <Comet /> in routes used, build a <Facility /> before collecting bonuses.
+      Draw 3 <Contract /> from the bottom of the <Contract /> deck.
     </>
   )}/>),
 
-  (<FactionCard name="Well Organized" type="Cyborg Union" score={1} ability={(
+  (<FactionCard name="Well Organized" type="Cyborg Union" score={0} ability={(
     <>
-      Build a <Facility /> adjacent to a <Comet />. Complete <Contracts /> or play 1<FactionCardIcon />.
+      Build a <Facility />. Complete <Contracts />.
     </>
   )}/>),
 
@@ -228,65 +230,71 @@ export const cyborgUnionCards = [
 export const explorerSocietyCards = [
   (<FactionCard name="Fab Breakthrough" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 of your <Square color="blue" /> with <Facility /> of any shape.
+      Replace up to 2 of your <Square color="blue" /> with <Facility /> of any shape(s).
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Oil Treatments" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 <Droplet color="blue" /> you own with <Facility /> of any shape.
+      Replace up to 2 <Droplet color="blue" /> you own with <Facility /> of any shape(s).
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Advanced Drilling" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 <Circle color="blue" /> you own with <Facility /> of any shape.
+      Replace up to 2 <Circle color="blue" /> you own with <Facility /> of any shape(s).
 
-
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Relocate Refineries" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Droplet color="blue" /> to any empty spaces.
+      Move up to 2 of your <Droplet color="blue" />.
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Fling Fabricators" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Square color="blue" /> to any empty spaces.
+      Move up to 2 of your <Square color="blue" />.
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Extract Extractors" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Circle color="blue" /> to any empty spaces.
+      Move up to 2 of your <Circle color="blue" />.
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
 
   (<FactionCard name="Study Comet" type="Explorer Society" score={0} ability={(
     <>
-      Choose a <Comet />. You may move up to 2 of your <Facility /> to the spaces on either side of the <Comet />.
+      Move up to 2 <Facility /> you own to spaces on either side of 1<Comet />.
 
       Take another <Action />.
     </>
   )}/>),
 
-  (<FactionCard name="Venture" type="Explorer Society" score={0} ability={(
+  (<FactionCard name="Venture" type="Explorer Society" score={1} ability={(
     <>
-      Move 1 <Facility /> you own to any empty space.
+      Move 1 <Facility /> you own.
 
+      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -294,7 +302,7 @@ export const explorerSocietyCards = [
 ];
 
 export const cruxCabalCards = [
-  (<FactionCard name="Dual Interview" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Dual Interview" type="Crux Cabal" score={0} ability={(
     <>
       Draw 1<Ally />. You may give that <Ally /> to an opponent to draw 1<Ally /> and 1<FactionCardIcon />.
     </>
@@ -302,47 +310,48 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Deduce Strategy" type="Crux Cabal" score={0} ability={(
     <>
-      Look at another player’s hand and take a card from that hand into your hand.
+      Look at an opponent’s hand and take a card.
 
       Draw 1<FactionCardIcon />.
     </>
   )}/>),
 
-  (<FactionCard name="Induct" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Induct" type="Crux Cabal" score={1} ability={(
     <>
       Look at the top 2 cards of the <Ally /> deck. Play 1 and put the other back.
-
-      Draw 1<FactionCardIcon />.
     </>
   )}/>),
 
-  (<FactionCard name="Call in Favors" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Call in Favors" type="Crux Cabal" score={0} ability={(
     <>
-      Choose an <Ally /> belonging to any player. Use its <Action /> twice.
+      Choose an <Ally /> belonging to any player. Use that <Ally /> twice.
     </>
   )}/>),
 
   (<FactionCard name="Graveyard Shift" type="Crux Cabal" score={0} ability={(
     <>
-      Take 2 addtional <Action />.
+      Build a <Facility />. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
-  (<FactionCard name="Scheme" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Suppress" type="Crux Cabal" score={1} ability={(
     <>
-      Draw 3 cards from any combination of the <Contract /> deck, <Rocket /> deck, and your <FactionCardIcon /> deck.
+      Put 1 random <Rocket /> from each opponent's hand on the bottom of the <Rocket /> deck.
+      <br />
+      Draw 1 <Rocket />.
     </>
   )}/>),
 
+    //Without looking at their hand, take up to 2 cards from an opponent. They draw 1<Ally />.
   (<FactionCard name="Infiltrate" type="Crux Cabal" score={1} ability={(
     <>
-      Choose an opponent. They draw 1<Ally />. Take up to 2 cards from their hand without looking at their fronts.
+      Take up to 2 cards from an opponent's hand. They draw 1<Ally />. <i>You do not get to look at their hand.</i>
     </>
   )}/>),
 
-  (<FactionCard name="Blackmail" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Blackmail" type="Crux Cabal" score={0} ability={(
     <>
-      Choose up to 2<Ally /> belonging to any player(s). Perform the actions on each <Ally />.
+      Use up to 2<Ally /> belonging to any player(s).
     </>
   )}/>),
 ];

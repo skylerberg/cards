@@ -51,6 +51,7 @@ body {
   border-color: 4px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .card-type {
@@ -63,6 +64,14 @@ body {
   grid-template-columns: 22% 50% 28%;
   margin: 10px;
   border-radius: 10px;
+}
+
+.type-icon {
+  width: 50px;
+  height: 100px;
+  margin-top: 11px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .banner-plate-box {
@@ -131,8 +140,15 @@ body {
           drop-shadow(5px 5px 5px #ffffffcc);
 }
 
+.white-shadow-main-text {
+  filter: drop-shadow(-7px -7px 7px #ffffffdd)
+          drop-shadow(-7px 7px 7px #ffffffdd)
+          drop-shadow(7px -7px 7px #ffffffdd)
+          drop-shadow(7px 7px 7px #ffffffdd);
+}
+
 .card-text-box {
-  padding: 15px;
+  padding: 10px;
   margin-top: auto;
 }
 
@@ -250,6 +266,21 @@ body {
   width: 1.67in;
   text-align: center;
   height: 60px;
+}
+
+.faction-card-title {
+  font-size: 18pt !important;
+  position: absolute;
+  margin: 10px;
+  width: 1.67in;
+  height: 60px;
+  padding: 0px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0px;
 }
 
 .bonus-box {

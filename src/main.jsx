@@ -10,18 +10,23 @@ import { objectives } from './objectives.jsx';
 import { contracts } from './contracts.jsx';
 import { turnOrderCards } from './turnOrderCards.jsx';
 import { FactionMats } from './factionMats.jsx';
+import { EndGameCard } from './cardTemplates.jsx';
 
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
 
-const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives);
-//const cards = [
-//  contracts.slice(30, 33),
-//  contracts.slice(33, 36),
-//  objectives[15],
-//  allies[8],
-//  allies[11],
-//].flat();
+//const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
+const cards = [
+  objectives[17],
+  explorerSocietyCards[0],
+  explorerSocietyCards[1],
+  explorerSocietyCards[2],
+  explorerSocietyCards[6],
+  cruxCabalCards[1],
+  cruxCabalCards[6],
+  allies[9],
+  theScavengersCards[1],
+].flat();
 
 reactRoot.render(
   <React.StrictMode>

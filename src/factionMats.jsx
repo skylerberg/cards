@@ -31,8 +31,6 @@ function FactionMat({ name }) {
   const svgName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   const backgroundImageUrl = factionImages[`./assets/images/mats/${jpgName}`]?.default;
   const factionIconImage = iconImages[`./assets/images/icons/${svgName}`]?.default;
-  console.log(svgName);
-  console.log(iconImages);
 
   return (
     <div className='faction-mat' style={{

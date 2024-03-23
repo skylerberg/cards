@@ -27,34 +27,53 @@ const backImages = import.meta.glob('./assets/images/backs/*.png', { eager: true
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
 
 function Banner({score, typeImage}) {
-  return (
-    <div className="banner-plate-box">
-      <img src={plateImage} style={
-        {
-          position: 'absolute',
-          marginTop: '-5px',
-          height: '105px',
-          width: '50px',
-        }
-      } />
-
-      <div className="victory-points">
-        <img src={victoryPointsImage} style={
-          {
-            marginBottom: '-4px',
-            opacity: '80%',
-          }
-        }/>
-        <span style={
+  let cardType = <></>;
+  if (typeImage) {
+    cardType = (
+        <div style={
           {
             position: 'absolute',
-            margin: 'auto',
           }
         }>
-          {score}
-        </span>
-      </div>
+          <div className="type-icon">
+            <div className="victory-points">
+              <img class="white-shadow-intense" src={typeImage} style={
+                {
+                  marginBottom: '-4px',
+                  width: '40px',
+                }
+              }/>
+            </div>
+          </div>
+        </div>
+    );
+  }
+  return (
+    <>
+      {cardType}
+      <div className="banner-plate-box">
 
+        <div className="victory-points">
+          <img class="white-shadow-intense" src={victoryPointsImage} style={
+            {
+              marginBottom: '-4px',
+            }
+          }/>
+          <span class="white-shadow" style={
+            {
+              position: 'absolute',
+              margin: 'auto',
+            }
+          }>
+            {score}
+          </span>
+        </div>
+
+      </div>
+    </>
+  );
+}
+  /*
       <div className="card-type">
         <img src={typeImage} style={
           {
@@ -66,9 +85,7 @@ function Banner({score, typeImage}) {
           }
         }/>
       </div>
-    </div>
-  );
-}
+      */
 
 function Newspaper({ name, text }) {
   return (
@@ -85,20 +102,54 @@ function Newspaper({ name, text }) {
   );
 }
 
-export function FactionCard({name, score, ability}) {
+export function FactionCard({name, score, ability, type}) {
   const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}.png`;
   const imageUrl = factionCardImages[`./assets/images/faction-cards/${pngName}`]?.default;
+  const factionSvgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
+  const iconUrl = iconImages[`./assets/images/icons/${factionSvgName}`]?.default;
+
   return (
     <div className="card" style={
       {
-        backgroundSize: '2.5in',
-        backgroundImage: imageUrl ? `url(${imageUrl})` : undefined,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
+        backgroundColor: 'black',
       }
     }>
-      <Banner score={score} typeImage={factionIconImage} />
-      <Newspaper name={name} text={ability} />
+      <img src={imageUrl ? imageUrl : undefined} style={
+        {
+          position: 'absolute',
+          marginTop: '0.25in',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '2.45in',
+          height: '2.45in',
+          clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
+        }
+      }/>
+      <Banner score={score} typeImage={iconUrl} />
+      <div className="card-text-box white-shadow-main-text">
+        <h1 className="card-title">{name}</h1>
+        <hr style={
+          {
+            'marginLeft': '20px',
+            'marginRight': '20px',
+          }
+        }/>
+        <div style={
+          {
+            'textAlign': 'center',
+          }
+        }>
+          <p style={
+            {
+              'display': 'inline-block',
+              'margin': '0px',
+              'textAlign': 'left',
+            }
+          }>
+            {ability}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -115,7 +166,7 @@ export function AllyCard({name, score, ability}) {
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={score} typeImage={allyIconImage} />
+      <Banner score={score} />
       <Newspaper name={name} text={ability} />
     </div>
   );
@@ -155,14 +206,44 @@ export function RocketCard({name, score, ability}) {
   return (
     <div className="card" style={
       {
-        backgroundSize: '2.5in',
-        backgroundImage: imageUrl ? `url(${imageUrl})` : undefined,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
+        backgroundColor: 'black',
       }
     }>
+      <img src={imageUrl ? imageUrl : undefined} style={
+        {
+          position: 'absolute',
+          marginTop: '0.25in',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '2.45in',
+          height: '2.45in',
+          borderRadius: '20.5in',
+        }
+      }/>
       <Banner score={score} typeImage={rocketIconImage} />
-      <Newspaper name={name} text={ability} />
+      <div className="card-text-box white-shadow-main-text">
+        <h1 className="card-title">{name}</h1>
+        <hr style={
+          {
+            'marginLeft': '20px',
+            'marginRight': '20px',
+          }
+        }/>
+        <div style={
+          {
+            'textAlign': 'center',
+          }
+        }>
+          <p style={
+            {
+              'display': 'inline-block',
+              'margin': '0px',
+            }
+          }>
+            {ability}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -177,7 +258,7 @@ export function ObjectiveCard({name, score, text}) {
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={score} typeImage={objectiveIcon} />
+      <Banner score={score} />
       <Newspaper name={name} text={text} />
     </div>
   );
@@ -283,7 +364,7 @@ export function ContractCard({name, route, bonuses}) {
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={route.length} typeImage={contractIcon} />
+      <Banner score={route.length} />
       <h1 className="card-title contract-title white-shadow-intense">{name}</h1>
       <div className="contract-boxes">
         <div className="route-box overlay-box">
@@ -360,7 +441,10 @@ export function FactionCardBack({faction}) {
 }
 
 export function CardBack({type}) {
-  if (type === 'Ally' || type === 'Rocket' || type === 'Contract') {
+  if (!type) {
+    return EndGameCard();
+  }
+  else if (type === 'Ally' || type === 'Rocket' || type === 'Contract') {
     return GenericCardBack({type});
   }
   else {
@@ -371,5 +455,36 @@ export function CardBack({type}) {
 export function EmptyCard() {
   return (
     <div className="card"></div>
+  );
+}
+
+export function EndGameCard() {
+  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
+  const imageUrl = rocketImages[`./assets/images/rockets/${pngName}`]?.default;
+
+  return (
+    <div className="card" style={
+      {
+        backgroundColor: 'white',
+      }
+    }>
+      <Banner score={-1} />
+      <div className="card-text-box white-shadow-main-text">
+        <h1 className="card-title">End Game</h1>
+        <hr style={
+          {
+            'marginLeft': '20px',
+            'marginRight': '20px',
+          }
+        }/>
+        <p style={
+          {
+            'textAlign': 'center',
+          }
+        }>
+          When this card is revealed, score it immediately. This is your last turn. Each other player gets one more turn.
+        </p>
+      </div>
+    </div>
   );
 }

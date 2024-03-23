@@ -196,21 +196,21 @@ export const contracts = [
     name="Carbon Reclaimer"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Gold', 'Red', ]}
+    bonuses={[ 'Red', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Thrusters"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Droplet', 'Square', ]}
-    bonuses={[ 'Gold', 'Blue', ]}
+    bonuses={[ 'Blue', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Control Console"
     type="Contract"
     route={[ 'Square', 'Circle', 'Square', 'Circle', ]}
-    bonuses={[ 'Gold', 'Green', ]}
+    bonuses={[ 'Green', 'Gold', ]}
   />),
 
   (<ContractCard

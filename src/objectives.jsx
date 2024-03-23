@@ -3,7 +3,7 @@ import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Action, Comet
 import { ObjectiveCard } from './cardTemplates.jsx';
 
 export const objectives = [
-  (<ObjectiveCard name="Fabulous" score={3} type="Objective" text={(
+  (<ObjectiveCard name="Fabulous" score={4} type="Objective" text={(
     <>
       Have a <Facility /> that is adjacent to 3 non-neutral <Square />.
     </>
@@ -17,7 +17,7 @@ export const objectives = [
 
   (<ObjectiveCard name="Contiguous" score={4} type="Objective" text={(
     <>
-      Have a route of 9 or more connected <Facility /> (without using neutral <Facility />).
+      Have a route of 9 or more connected <Facility /> you own.
     </>
   )}/>),
 
@@ -63,15 +63,15 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Well Rounded" score={4} type="Objective" text={(
+  (<ObjectiveCard name="Well Rounded" score={3} type="Objective" text={(
     <>
       Have scored at least 3<FactionCardIcon />, 3<Rocket />, and 3<Contract />.
     </>
   )}/>),
 
-  (<ObjectiveCard name="Strategic" score={4} type="Objective" text={(
+  (<ObjectiveCard name="Independent" score={3} type="Objective" text={(
     <>
-      Play 4 or more <FactionCardIcon /> and/or <Rocket /> in 1 turn.
+      Complete 2 or more <Contract /> on your turn and use no neutral <Facility /> and have no <Comet /> in any routes used.
     </>
   )}/>),
 
@@ -81,7 +81,7 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Self-Sufficient" score={4} type="Objective" text={(
+  (<ObjectiveCard name="Centered" score={3} type="Objective" text={(
     <>
       Have 4 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
     </>
@@ -93,15 +93,21 @@ export const objectives = [
     </>
   )}/>),
 
-  (<ObjectiveCard name="Selective" score={3} type="Objective" text={(
+  (<ObjectiveCard name="Five by Five" score={5} type="Objective" text={(
     <>
-      Finish your last turn in the game without any <Contract /> worth 2 <VictoryPoints /> in your scored cards pile.
+      Have exactly 5 scored <Contract /> and exactly 5 scored <FactionCardIcon />.
     </>
   )}/>),
 
   (<ObjectiveCard name="Ambitious" score={3} type="Objective" text={(
     <>
       Have at least 3 scored <Contract /> and half or more of your scored <Contract /> are worth 5 <VictoryPoints />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Martial" score={3} type="Objective" text={(
+    <>
+      Have more scored <Rocket /> then there are cards left in your <FactionCardIcon /> deck.
     </>
   )}/>),
 
