@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, FactionCardIcon, Ally, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
+import { Contracts, FactionCardIcon, Ally, Objective, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -26,25 +26,9 @@ export let allies = [
 
   (<AllyCard name="Generalist" score={0} type="Ally" ability={(
     <>
-      <Action /> Draw 1 of each type of card you do not have any of in your hand from the <Contract /> deck, <Rocket /> deck, and your <FactionCardIcon /> deck.
+      <Action /> Choose 2: draw 1<Rocket />, draw 1<Contract />, or draw 1<FactionCardIcon />.
     </>
   )}/>),
-
-  /*
-  (<AllyCard name="Insider" score={0} type="Ally" ability={(
-    <>
-      <Action /> Put a public <Contract /> on the bottom of the <Contract /> deck. Draw 1<Contract />.
-    </>
-  )}/>),
-  */
-
-  /*
-  (<AllyCard name="Warlord" score={0} type="Ally" ability={(
-    <>
-      <Action /> Build a <Facility />. <Destroy /> a <Facility />. The player whose facility you <Destroy /> draws 1<Contract />.
-    </>
-  )}/>),
-  */
 
   (<AllyCard name="Streamliner" score={0} type="Ally" ability={(
     <>
@@ -70,29 +54,15 @@ export let allies = [
     </>
   )}/>),
 
-  /*
-  (<AllyCard name="Cybernetic Surgeon" score={1} type="Ally" ability={(
+  (<AllyCard name="Consultant" score={-1} type="Ally" ability={(
     <>
-      <Action /> Build a <Facility />. Choose a player. Move 1 of their <Ally /> to the bottom of the <Ally /> deck. They draw 1<Ally />.
-    </>
-  )}/>),
-  */
-
-  (<AllyCard name="Liaison" score={0} type="Ally" ability={(
-    <>
-      <Action /> Give an opponent 1<Ally /> you own or a card from your hand to build 2 <Facility />.
+      <Action /> Replace a <Facility /> you own with a <Facility /> of a different shape. Use another <Ally /> you own or play a <FactionCardIcon />.
     </>
   )}/>),
 
-  (<AllyCard name="Spy" score={0} type="Ally" ability={(
+  (<AllyCard name="Extremist" score={1} type="Ally" ability={(
     <>
-      <Action /> Take 1 <FactionCardIcon /> from each opponent's hand. <i>You do not get to look their hands.</i>
-    </>
-  )}/>),
-
-  (<AllyCard name="Architect" score={1} type="Ally" ability={(
-    <>
-      <Action /> Build a <Facility />. Put a card from your hand on the bottom of its deck and draw from that deck.
+      <Action /> Complete <Contracts />. If you completed at least 1 <Contract /> worth 2<VictoryPoints /> or 5<VictoryPoints />, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
@@ -102,7 +72,7 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
+  (<AllyCard name="Fuel Supplier" score={-1} type="Ally" ability={(
     <>
       <Action /> Build a <Droplet />. Play 1<Rocket />.
     </>
@@ -116,7 +86,7 @@ export let allies = [
 
   (<AllyCard name="Fanatic" score={-1} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<FactionCardIcon />.
+      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />.
     </>
   )}/>),
 
@@ -126,23 +96,21 @@ export let allies = [
     </>
   )}/>),
 
-  /*
-  (<AllyCard name="Boss" score={0} type="Ally" ability={(
+  (<AllyCard name="Jury Rigger" score={-1} type="Ally" ability={(
     <>
-      <Action /> Choose other 1<Ally /> you own and use its <Action /> twice then put it on the bottom of the <Ally /> deck.
-    </>
-  )}/>),
-  */
-
-  (<AllyCard name="Mastermind" score={0} type="Ally" ability={(
-    <>
-      <Action /> Put 1 of your scored <Contract /> on the bottom of the <Contract /> deck. Take 2 <Action />. You may not use Mastermind again this turn.
+      <Action /> Score a <Contract /> worth 3 <VictoryPoints /> that you do not have a route to complete.
     </>
   )}/>),
 
-  (<AllyCard name="Pioneer" score={0} type="Ally" ability={(
+  (<AllyCard name="Challenger" score={0} type="Ally" ability={(
     <>
-      <Action /> Build 2 <Facility /> that are not adjacent to each other or any other non-neutral <Facility />.
+      <Action /> If you have fewer <Facility /> than another player, build 2 <Facility />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Visionary" score={1} type="Ally" ability={(
+    <>
+      <Action /> Look at 2 <Objective /> cards, add 1 to the game and put the other on the bottom of the <Objective /> deck. Draw 1<Rocket />.
     </>
   )}/>),
 
