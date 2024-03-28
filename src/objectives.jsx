@@ -41,7 +41,7 @@ export const objectives = [
 
   (<ObjectiveCard name="Disparate" score={5} type="Objective" text={(
     <>
-      Have at least 3 routes of length 3 or longer that are not connected to each other. Do not include neutral <Facility />.
+      Have at least 3 routes of 3 or more <Facility /> you own that are not connected to each other.
     </>
   )}/>),
 
@@ -71,7 +71,7 @@ export const objectives = [
 
   (<ObjectiveCard name="Independent" score={3} type="Objective" text={(
     <>
-      Complete 2 or more <Contract /> on your turn and use no neutral <Facility /> and have no <Comet /> in any routes used.
+      Complete 2 or more <Contract /> on your turn with no neutral <Facility /> and no <Comet /> in any routes used.
     </>
   )}/>),
 
@@ -108,6 +108,18 @@ export const objectives = [
   (<ObjectiveCard name="Martial" score={3} type="Objective" text={(
     <>
       Have more scored <Rocket /> then there are cards left in your <FactionCardIcon /> deck.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Extractive" score={4} type="Objective" text={(
+    <>
+      Have 4 or more <Circle /> you own adjacent to neutral <Facility />.
+    </>
+  )}/>),
+
+  (<ObjectiveCard name="Refined" score={5} type="Objective" text={(
+    <>
+      Have 5 or more <Droplet /> you own that are not adjacent to each other.
     </>
   )}/>),
 

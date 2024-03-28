@@ -17,13 +17,19 @@ const reactRoot = ReactDOM.createRoot(rootDiv);
 
 const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
 //const cards = [
-//  allies[3],
-//  allies[4],
+//  contracts.slice(30),
 //  allies[8],
-//  allies[9],
-//  allies[13],
-//  allies[15],
 //  allies[17],
+//  objectives[18],
+//  objectives[19],
+//  cruxCabalCards[3],
+//  cruxCabalCards[7],
+//  rockets[1],
+//  rockets[1],
+//  rockets[1],
+//  rockets[3],
+//  rockets[3],
+//  rockets[3],
 //].flat();
 
 reactRoot.render(

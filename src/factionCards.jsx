@@ -21,9 +21,9 @@ export const theScavengersCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Misuse" score={1} type="The Scavengers" ability={(
+  (<FactionCard name="Misuse" score={0} type="The Scavengers" ability={(
     <>
-      Complete 1<Contract /> treating each neutral <Facility /> used as any shape of your choice.
+      Complete 1<Contract /> treating each neutral <Facility /> used as any shape of your choice. Draw 1<FactionCardIcon />.
     </>
   )}/>),
 
@@ -33,9 +33,9 @@ export const theScavengersCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Fly-By Job" score={0} type="The Scavengers" ability={(
+  (<FactionCard name="Fly-By Job" score={-1} type="The Scavengers" ability={(
     <>
-      Choose 2 neutral <Facility />. Complete 1<Contract /> treating the chosen <Facility /> as adjacent.
+      Complete 1<Contract /> treating any 2 neutral <Facility /> as adjacent. Draw 1<FactionCardIcon />.
     </>
   )}/>),
 
@@ -45,7 +45,7 @@ export const theScavengersCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Quick and Dirty" score={-1} type="The Scavengers" ability={(
+  (<FactionCard name="Quick & Dirty" score={-1} type="The Scavengers" ability={(
     <>
       Build 2 <Facility />. Complete 1<Contract />. <Destroy /> both <Facility /> you built.
     </>
@@ -78,7 +78,7 @@ export const hydrusGangCards = [
   )}/>),
   */
 
-  (<FactionCard name="Takeover" score={0} type="Hydrus Gang" ability={(
+  (<FactionCard name="Show Up & Blow Up" score={0} type="Hydrus Gang" ability={(
     <>
       Choose an <Asteroid />. <Destroy /> a <Facility /> owned by each opponent on that <Asteroid />. Build a <Facility /> on that <Asteroid />.
     </>
@@ -302,7 +302,7 @@ export const explorerSocietyCards = [
 ];
 
 export const cruxCabalCards = [
-  (<FactionCard name="Dual Interview" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Duel" type="Crux Cabal" score={0} ability={(
     <>
       Draw 1<Ally />. You may give that <Ally /> to an opponent to draw 1<Ally /> and 1<FactionCardIcon />.
     </>
@@ -322,23 +322,21 @@ export const cruxCabalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Call in Favors" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Call in Favors" type="Crux Cabal" score={1} ability={(
     <>
-      Choose an <Ally /> belonging to any player. Use that <Ally /> twice.
+      Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
-  (<FactionCard name="Graveyard Shift" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Seat of Power" type="Crux Cabal" score={0} ability={(
     <>
       Build a <Facility />. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
-  (<FactionCard name="Suppress" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Secret Society" type="Crux Cabal" score={1} ability={(
     <>
-      Put 1 random <Rocket /> from each opponent's hand on the bottom of the <Rocket /> deck.
-      <br />
-      Draw 1 <Rocket />.
+      Draw 1<Ally /> and draw 1<FactionCardIcon />. Each opponent who owns no <Ally /> draws 1<Ally />.
     </>
   )}/>),
 
@@ -349,9 +347,9 @@ export const cruxCabalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Blackmail" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Blackmail" type="Crux Cabal" score={1} ability={(
     <>
-      Use up to 2<Ally /> belonging to any player(s).
+      Draw 1<Contract />. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 ];

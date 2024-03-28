@@ -56,7 +56,7 @@ export let allies = [
 
   (<AllyCard name="Consultant" score={-1} type="Ally" ability={(
     <>
-      <Action /> Replace a <Facility /> you own with a <Facility /> of a different shape. Use another <Ally /> you own or play a <FactionCardIcon />.
+      <Action /> Replace a <Facility /> you own with a <Facility /> of any shape. Use another <Ally /> you own or play 1<FactionCardIcon />.
     </>
   )}/>),
 
@@ -110,7 +110,7 @@ export let allies = [
 
   (<AllyCard name="Visionary" score={1} type="Ally" ability={(
     <>
-      <Action /> Look at 2 <Objective /> cards, add 1 to the game and put the other on the bottom of the <Objective /> deck. Draw 1<Rocket />.
+      <Action /> Look at 2 <Objective /> cards, put 1 in your hand and put the other on the bottom of the <Objective /> deck. Draw 1<Rocket />.
     </>
   )}/>),
 
