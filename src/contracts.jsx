@@ -217,42 +217,42 @@ export const contracts = [
     name="Luxury Timepiece"
     type="Contract"
     route={[ 'Circle', 'Circle', 'Droplet', 'Square', 'Square']}
-    bonuses={[ 'Red', 'Green', 'Gold', ]}
+    bonuses={[ 'Red', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Space Yacht"
     type="Contract"
     route={[ 'Droplet', 'Droplet', 'Square', 'Circle', 'Circle']}
-    bonuses={[ 'Green', 'Blue', 'Gold', ]}
+    bonuses={[ 'Green', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Pristine Biodome"
     type="Contract"
     route={[ 'Square', 'Square', 'Circle', 'Droplet', 'Droplet']}
-    bonuses={[ 'Blue', 'Red', 'Gold', ]}
+    bonuses={[ 'Blue', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Robot Hive"
     type="Contract"
     route={[ 'Square', 'Droplet', 'Circle', 'Droplet', 'Square']}
-    bonuses={[ 'Blue', 'Green', 'Gold', ]}
+    bonuses={[ 'Blue', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Warp Drive"
     type="Contract"
     route={[ 'Circle', 'Square', 'Droplet', 'Square', 'Circle']}
-    bonuses={[ 'Red', 'Blue', 'Gold', ]}
+    bonuses={[ 'Red', 'Gold', ]}
   />),
 
   (<ContractCard
     name="Synthetic Lifeform"
     type="Contract"
     route={[ 'Droplet', 'Circle', 'Square', 'Circle', 'Droplet']}
-    bonuses={[ 'Green', 'Red', 'Gold', ]}
+    bonuses={[ 'Green', 'Gold', ]}
   />),
 
   /*

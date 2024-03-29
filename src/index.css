@@ -259,11 +259,12 @@ body {
 }
 
 .contract-title {
-  font-size: 18pt !important;
+  font-size: 16pt !important;
   position: absolute;
   margin: 10px;
+  margin-left: 50px;
   margin-top: 5px;
-  width: 1.67in;
+  width: 1.27in;
   text-align: center;
   height: 60px;
 }

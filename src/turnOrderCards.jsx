@@ -9,19 +9,19 @@ export const turnOrderCards = [
     </>
   )}/>),
 
-  (<TurnOrderCard name="2nd Player" score={1} type="Turn Order" text={(
-    <>
-      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Rocket />.
-    </>
-  )}/>),
-
-  (<TurnOrderCard name="3rd Player" score={0} type="Turn Order" text={(
+  (<TurnOrderCard name="2nd Player" score={0} type="Turn Order" text={(
     <>
       Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
     </>
   )}/>),
 
-  (<TurnOrderCard name="4th Player" score={1} type="Turn Order" text={(
+  (<TurnOrderCard name="3rd Player" score={1} type="Turn Order" text={(
+    <>
+      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+    </>
+  )}/>),
+
+  (<TurnOrderCard name="4th Player" score={2} type="Turn Order" text={(
     <>
       Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
     </>

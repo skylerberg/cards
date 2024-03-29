@@ -7,6 +7,7 @@ import asteroidImage from './assets/general/asteroid.png';
 import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
+import objective from './assets/images/icons/objective.svg';
 
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
@@ -84,6 +85,10 @@ export function Move() {
 
 export function Comet() {
   return <img src={cometIcon} className="icon-image" />;
+}
+
+export function Objective() {
+  return <img src={objective} className="icon-image" />;
 }
 
 export function VictoryPoints() {

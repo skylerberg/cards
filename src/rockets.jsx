@@ -39,7 +39,7 @@ export const rockets = [
     </>
   )}/>),
 
-  (<RocketCard name="Friendly Rocket" score={1} type="Rocket" ability={(
+  (<RocketCard name="Friendly Rocket" score={0} type="Rocket" ability={(
     <>
       <Rotate /> an <Asteroid /> 1 space.
 

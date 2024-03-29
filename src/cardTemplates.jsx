@@ -41,6 +41,7 @@ function Banner({score, typeImage}) {
                 {
                   marginBottom: '-4px',
                   width: '40px',
+                  maxHeight: '40px',
                 }
               }/>
             </div>
@@ -102,30 +103,8 @@ function Newspaper({ name, text }) {
   );
 }
 
-export function FactionCard({name, score, ability, type}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}.png`;
-  const imageUrl = factionCardImages[`./assets/images/faction-cards/${pngName}`]?.default;
-  const factionSvgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
-  const iconUrl = iconImages[`./assets/images/icons/${factionSvgName}`]?.default;
-
+function Cloud({ name, ability }) {
   return (
-    <div className="card" style={
-      {
-        backgroundColor: 'black',
-      }
-    }>
-      <img src={imageUrl ? imageUrl : undefined} style={
-        {
-          position: 'absolute',
-          marginTop: '0.25in',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          width: '2.45in',
-          height: '2.45in',
-          clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
-        }
-      }/>
-      <Banner score={score} typeImage={iconUrl} />
       <div className="card-text-box white-shadow-main-text">
         <h1 className="card-title">{name}</h1>
         <hr style={
@@ -150,6 +129,34 @@ export function FactionCard({name, score, ability, type}) {
           </p>
         </div>
       </div>
+  );
+}
+
+export function FactionCard({name, score, ability, type}) {
+  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}.png`;
+  const imageUrl = factionCardImages[`./assets/images/faction-cards/${pngName}`]?.default;
+  const factionSvgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
+  const iconUrl = iconImages[`./assets/images/icons/${factionSvgName}`]?.default;
+
+  return (
+    <div className="card" style={
+      {
+        backgroundColor: 'black',
+      }
+    }>
+      <img src={imageUrl ? imageUrl : undefined} style={
+        {
+          position: 'absolute',
+          marginTop: '0.25in',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '2.45in',
+          height: '2.45in',
+          clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
+        }
+      }/>
+      <Banner score={score} typeImage={iconUrl} />
+      <Cloud name={name} ability={ability} />
     </div>
   );
 }
@@ -161,13 +168,14 @@ export function AllyCard({name, score, ability}) {
     <div className="card" style={
       {
         backgroundImage: `url(${imageUrl})`,
+        backgroundColor: 'black',
         backgroundSize: '2.5in',
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={score} />
-      <Newspaper name={name} text={ability} />
+      <Banner score={score} typeImage={allyIconImage} />
+      <Cloud name={name} ability={ability} />
     </div>
   );
 }
@@ -221,29 +229,7 @@ export function RocketCard({name, score, ability}) {
         }
       }/>
       <Banner score={score} typeImage={rocketIconImage} />
-      <div className="card-text-box white-shadow-main-text">
-        <h1 className="card-title">{name}</h1>
-        <hr style={
-          {
-            'marginLeft': '20px',
-            'marginRight': '20px',
-          }
-        }/>
-        <div style={
-          {
-            'textAlign': 'center',
-          }
-        }>
-          <p style={
-            {
-              'display': 'inline-block',
-              'margin': '0px',
-            }
-          }>
-            {ability}
-          </p>
-        </div>
-      </div>
+      <Cloud name={name} ability={ability} />
     </div>
   );
 }
@@ -258,7 +244,7 @@ export function ObjectiveCard({name, score, text}) {
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={score} />
+      <Banner score={score} typeImage={objectiveIcon} />
       <Newspaper name={name} text={text} />
     </div>
   );
@@ -364,7 +350,7 @@ export function ContractCard({name, route, bonuses}) {
         backgroundPositionY: 'top',
       }
     }>
-      <Banner score={route.length} />
+      <Banner score={route.length} typeImage={contractIcon}/>
       <h1 className="card-title contract-title white-shadow-intense">{name}</h1>
       <div className="contract-boxes">
         <div className="route-box overlay-box">
