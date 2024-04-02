@@ -17,19 +17,9 @@ const reactRoot = ReactDOM.createRoot(rootDiv);
 
 //const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
 const cards = [
-  contracts.slice(30),
-  allies,
-  //cruxCabalCards[0],
-  cruxCabalCards[2],
-  cruxCabalCards[5],
-  theScavengersCards[5],
-  theScavengersCards[3],
-  cyborgUnionCards[1],
-  unearthIncCards[1],
-  rockets[6],
-  rockets[6],
-  rockets[6],
-  turnOrderCards.slice(1),
+  objectives[12],
+  objectives[17],
+
 ].flat();
 
 reactRoot.render(

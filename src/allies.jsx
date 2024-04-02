@@ -56,11 +56,11 @@ export let allies = [
 
   (<AllyCard name="Consultant" score={0} type="Ally" ability={(
     <>
-      <Action /> Replace a <Facility /> you own. Use another <Ally /> you own or play 1<FactionCardIcon />.
+      <Action /> Replace a <Facility /> you own. Use another <Ally /> you own or draw an <Ally />.
     </>
   )}/>),
 
-  (<AllyCard name="Extremist" score={2} type="Ally" ability={(
+  (<AllyCard name="Extremist" score={1} type="Ally" ability={(
     <>
       <Action /> Complete <Contracts />. If you completed at least 1 <Contract /> worth 2<VictoryPoints /> or 5<VictoryPoints />, <Destroy /> any 1 <Facility />.
     </>
@@ -96,21 +96,21 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Jury Rigger" score={0} type="Ally" ability={(
+  (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
     <>
       <Action /> Score a <Contract /> worth 3 <VictoryPoints /> that you do not have a route to complete.
+    </>
+  )}/>),
+
+  (<AllyCard name="Innovator" score={1} type="Ally" ability={(
+    <>
+      <Action /> Draw the bottom 2 <Contract /> from the <Contract /> deck.
     </>
   )}/>),
 
   (<AllyCard name="Challenger" score={0} type="Ally" ability={(
     <>
       <Action /> If you have fewer <Facility /> than another player, build 2 <Facility />.
-    </>
-  )}/>),
-
-  (<AllyCard name="Visionary" score={2} type="Ally" ability={(
-    <>
-      <Action /> Look at 2 <Objective /> cards, put 1 in your hand and put the other on the bottom of the <Objective /> deck. Draw 1<Rocket />.
     </>
   )}/>),
 

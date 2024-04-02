@@ -83,31 +83,19 @@ export const objectives = [
 
   (<ObjectiveCard name="Centered" score={3} type="Objective" text={(
     <>
-      Have 4 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
+      Have 5 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
     </>
   )}/>),
 
   (<ObjectiveCard name="Trail Blazer" score={3} type="Objective" text={(
     <>
-      If only 1 <Asteroid /> has no <Facility /> on it, build a <Facility /> on that <Asteroid />.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Five by Five" score={5} type="Objective" text={(
-    <>
-      Have exactly 5 scored <Contract /> and exactly 5 scored <FactionCardIcon />.
+      All <Asteroid /> have at least 1 <Facility />.
     </>
   )}/>),
 
   (<ObjectiveCard name="Ambitious" score={3} type="Objective" text={(
     <>
       Have at least 3 scored <Contract /> and half or more of your scored <Contract /> are worth 5 <VictoryPoints />.
-    </>
-  )}/>),
-
-  (<ObjectiveCard name="Martial" score={3} type="Objective" text={(
-    <>
-      Have more scored <Rocket /> then there are cards left in your <FactionCardIcon /> deck.
     </>
   )}/>),
 

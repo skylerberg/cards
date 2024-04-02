@@ -454,7 +454,7 @@ export function EndGameCard() {
         backgroundColor: 'white',
       }
     }>
-      <Banner score={-1} />
+      <Banner score={0} />
       <div className="card-text-box white-shadow-main-text">
         <h1 className="card-title">End Game</h1>
         <hr style={
