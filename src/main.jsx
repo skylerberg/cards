@@ -15,12 +15,12 @@ import { EndGameCard } from './cardTemplates.jsx';
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
 
-//const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
-const cards = [
-  objectives[12],
-  objectives[17],
-
-].flat();
+const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
+//const cards = [
+//  unearthIncCards[0],
+//  objectives[17],
+//  allies[14],
+//].flat();
 
 reactRoot.render(
   <React.StrictMode>

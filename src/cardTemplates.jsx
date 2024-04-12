@@ -19,10 +19,11 @@ import rocketCardImage from './assets/general/rocket-card.svg';
 import factionCardImage from './assets/general/faction-card.svg';
 import { Contracts, FactionCardIcon, Action, Facility, Rocket, Contract } from './icons.jsx';
 
-const allyImages = import.meta.glob('./assets/images/allies/*.png', { eager: true });
+const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
+const allyJpgs = import.meta.glob('./assets/images/allies/*.jpg', { eager: true });
 const leaderImages = import.meta.glob('./assets/images/leaders/*.png', { eager: true });
 const factionCardImages = import.meta.glob('./assets/images/faction-cards/*.png', { eager: true });
-const rocketImages = import.meta.glob('./assets/images/rockets/*.png', { eager: true });
+const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true });
 const backImages = import.meta.glob('./assets/images/backs/*.png', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
 
@@ -162,8 +163,9 @@ export function FactionCard({name, score, ability, type}) {
 }
 
 export function AllyCard({name, score, ability}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-')}.png`;
-  const imageUrl = allyImages[`./assets/images/allies/${pngName}`]?.default;
+  const imageName = `${name.toLowerCase().replaceAll(' ', '-')}`;
+  const imageUrl = allyPngs[`./assets/images/allies/${imageName}.png`]?.default ||
+    allyJpgs[`./assets/images/allies/${imageName}.jpg`]?.default;
   return (
     <div className="card" style={
       {
@@ -208,8 +210,9 @@ export function LeaderCard({name}) {
 }
 
 export function RocketCard({name, score, ability}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
-  const imageUrl = rocketImages[`./assets/images/rockets/${pngName}`]?.default;
+  const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
+  const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
+    rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
 
   return (
     <div className="card" style={

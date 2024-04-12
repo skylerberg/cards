@@ -56,7 +56,7 @@ export let allies = [
 
   (<AllyCard name="Consultant" score={0} type="Ally" ability={(
     <>
-      <Action /> Replace a <Facility /> you own. Use another <Ally /> you own or draw an <Ally />.
+      <Action /> Replace a <Facility /> you own. Use an <Ally /> you own or draw 1<Ally />. You may not use Consultant again this turn.
     </>
   )}/>),
 
@@ -86,13 +86,13 @@ export let allies = [
 
   (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />.
+      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />. You may not use Fanatic again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />.
+      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />. You may not use Rocket Scientist again this turn.
     </>
   )}/>),
 

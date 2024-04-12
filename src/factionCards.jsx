@@ -114,7 +114,7 @@ export const hydrusGangCards = [
 ];
 
 export const unearthIncCards = [
-  (<FactionCard name="Restructure" score={1} type="Unearth Inc." ability={(
+  (<FactionCard name="Restructure" score={0} type="Unearth Inc." ability={(
     <>
       <Destroy /> a <Facility /> you own to build a <Facility />.
 
@@ -197,13 +197,13 @@ export const cyborgUnionCards = [
   // Maybe make this look at the bottom if we get rid of severance
   (<FactionCard name="Extended Contract" type="Cyborg Union" score={1} ability={(
     <>
-      Look at the top 3 <Contract /> in the <Contract /> deck. Put 2 in your hand and the other back.
+      Look at the top 3 <Contract /> in the <Contract /> deck. Put up to 2 in your hand and the rest back in any order.
     </>
   )}/>),
 
   (<FactionCard name="Severance" score={0} type="Cyborg Union" ability={(
     <>
-      Put any number of <Contract /> from your hand on the bottom of the <Contract /> deck. Collect all bonuses shown on those <Contract />.
+      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the <Contract /> on bottom of the <Contract /> deck.
     </>
   )}/>),
 
@@ -296,12 +296,6 @@ export const explorerSocietyCards = [
 ];
 
 export const cruxCabalCards = [
-  (<FactionCard name="Duel" type="Crux Cabal" score={0} ability={(
-    <>
-      Draw 1<Ally />. You may give that <Ally /> to an opponent to draw 1<Ally /> and 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck.
-    </>
-  )}/>),
-
   (<FactionCard name="Deduce Strategy" type="Crux Cabal" score={0} ability={(
     <>
       Look at an opponent’s hand and take a card.
@@ -310,21 +304,27 @@ export const cruxCabalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Seat of Power" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Seat of Power" type="Crux Cabal" score={-1} ability={(
     <>
       Build a <Facility />. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
-  (<FactionCard name="Call in Favors" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Coerce" type="Crux Cabal" score={0} ability={(
+    <>
+      Draw 1<Ally /> or use an <Ally /> <br />belonging to any player.
+    </>
+  )}/>),
+
+  (<FactionCard name="Call in Favors" type="Crux Cabal" score={0} ability={(
     <>
       Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
-  (<FactionCard name="Set in Motion" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Duel" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Rocket />. Use an <Ally /> belonging to any player.
+      Draw 1<Ally />. You may give that <Ally /> to an opponent to draw 1<Ally /> and 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck.
     </>
   )}/>),
 
@@ -341,7 +341,7 @@ export const cruxCabalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Blackmail" type="Crux Cabal" score={1} ability={(
+  (<FactionCard name="Blackmail" type="Crux Cabal" score={0} ability={(
     <>
       Draw 1<Contract />. Use an <Ally /> belonging to any player.
     </>
