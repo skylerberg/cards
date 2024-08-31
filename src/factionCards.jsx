@@ -203,7 +203,7 @@ export const cyborgUnionCards = [
 
   (<FactionCard name="Severance" score={0} type="Cyborg Union" ability={(
     <>
-      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the <Contract /> on bottom of the <Contract /> deck.
+      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the <Contract /> on the bottom of the <Contract /> deck.
     </>
   )}/>),
 
@@ -306,7 +306,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Seat of Power" type="Crux Cabal" score={-1} ability={(
     <>
-      Build a <Facility />. Use an <Ally /> belonging to any player.
+      Build a <Facility />. Use an <Ally /> <br /> belonging to any player.
     </>
   )}/>),
 

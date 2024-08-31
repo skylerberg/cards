@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?96a51c893866904b02b5e52c52214606#iefix") format("embedded-opentype"),
-url("./icons.woff?96a51c893866904b02b5e52c52214606") format("woff"),
-url("./icons.woff2?96a51c893866904b02b5e52c52214606") format("woff2");
+    src: url("./icons.eot?b2881092e3d3ffa6359b574e61a19323#iefix") format("embedded-opentype"),
+url("./icons.woff?b2881092e3d3ffa6359b574e61a19323") format("woff"),
+url("./icons.woff2?b2881092e3d3ffa6359b574e61a19323") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -19,30 +19,45 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .icon-action:before {
     content: "\f101";
 }
-.icon-asteroid:before {
+.icon-ally:before {
     content: "\f102";
 }
-.icon-contract:before {
+.icon-asteroid-old:before {
     content: "\f103";
 }
-.icon-destroy:before {
+.icon-asteroid:before {
     content: "\f104";
 }
-.icon-empty-space:before {
+.icon-comet:before {
     content: "\f105";
 }
-.icon-facility:before {
+.icon-contract:before {
     content: "\f106";
 }
-.icon-file-invoice:before {
+.icon-destroy:before {
     content: "\f107";
 }
-.icon-move:before {
+.icon-empty-space:before {
     content: "\f108";
 }
-.icon-rocket:before {
+.icon-facility:before {
     content: "\f109";
 }
-.icon-rotate-clockwise:before {
+.icon-file-invoice:before {
     content: "\f10a";
+}
+.icon-move:before {
+    content: "\f10b";
+}
+.icon-rocket:before {
+    content: "\f10c";
+}
+.icon-rotate-clockwise:before {
+    content: "\f10d";
+}
+.icon-rotate:before {
+    content: "\f10e";
+}
+.icon-victory-points:before {
+    content: "\f10f";
 }

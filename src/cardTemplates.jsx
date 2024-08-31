@@ -1,9 +1,8 @@
-import plateImage from './assets/general/plate.png';
 import victoryPointsImage from './assets/general/victory-points.svg';
 import allyIconImage from './assets/general/ally.svg';
 import factionIconImage from './assets/images/icons/faction.svg';
 import rocketIconImage from './assets/general/rocket.svg';
-import defaultObjectiveImage from './assets/images/objectives/default.png';
+import defaultObjectiveImage from './assets/images/objectives/default.jpg';
 import defaultTurnOrderImage from './assets/images/turn-order/default.png';
 import defaultContractImage from './assets/images/contracts/default.png';
 import objectiveIcon from './assets/images/icons/objective.svg';
@@ -18,11 +17,13 @@ import allyCardImage from './assets/general/ally-card.svg';
 import rocketCardImage from './assets/general/rocket-card.svg';
 import factionCardImage from './assets/general/faction-card.svg';
 import { Contracts, FactionCardIcon, Action, Facility, Rocket, Contract } from './icons.jsx';
+import starscapeImage from './assets/images/starscape.jpg';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
 const allyJpgs = import.meta.glob('./assets/images/allies/*.jpg', { eager: true });
 const leaderImages = import.meta.glob('./assets/images/leaders/*.png', { eager: true });
 const factionCardImages = import.meta.glob('./assets/images/faction-cards/*.png', { eager: true });
+const factionCardJpgs = import.meta.glob('./assets/images/faction-cards/*.jpg', { eager: true });
 const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true });
 const backImages = import.meta.glob('./assets/images/backs/*.png', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -104,7 +105,7 @@ function Newspaper({ name, text }) {
   );
 }
 
-function Cloud({ name, ability }) {
+function Cloud({ name, ability, largeText }) {
   return (
       <div className="card-text-box white-shadow-main-text">
         <h1 className="card-title">{name}</h1>
@@ -119,13 +120,7 @@ function Cloud({ name, ability }) {
             'textAlign': 'center',
           }
         }>
-          <p style={
-            {
-              'display': 'inline-block',
-              'margin': '0px',
-              'textAlign': 'left',
-            }
-          }>
+          <p className={'cloud-text' + (largeText ? ' cloud-text-large' : '')}>
             {ability}
           </p>
         </div>
@@ -134,8 +129,9 @@ function Cloud({ name, ability }) {
 }
 
 export function FactionCard({name, score, ability, type}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}.png`;
-  const imageUrl = factionCardImages[`./assets/images/faction-cards/${pngName}`]?.default;
+  const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}`;
+  const imageUrl = factionCardImages[`./assets/images/faction-cards/${imageName}.png`]?.default ||
+    factionCardJpgs[`./assets/images/faction-cards/${imageName}.jpg`]?.default || console.log(imageName);
   const factionSvgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   const iconUrl = iconImages[`./assets/images/icons/${factionSvgName}`]?.default;
 
@@ -245,10 +241,11 @@ export function ObjectiveCard({name, score, text}) {
         backgroundImage: `url(${defaultObjectiveImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
+        backgroundColor: 'black',
       }
     }>
       <Banner score={score} typeImage={objectiveIcon} />
-      <Newspaper name={name} text={text} />
+      <Cloud name={name} ability={text} largeText={true} />
     </div>
   );
 }
@@ -448,13 +445,13 @@ export function EmptyCard() {
 }
 
 export function EndGameCard() {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
-  const imageUrl = rocketImages[`./assets/images/rockets/${pngName}`]?.default;
-
   return (
     <div className="card" style={
       {
-        backgroundColor: 'white',
+        backgroundSize: 'cover',
+        backgroundImage: `url(${starscapeImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPositionY: 'top',
       }
     }>
       <Banner score={0} />

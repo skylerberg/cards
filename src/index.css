@@ -459,3 +459,13 @@ body {
   margin-bottom: -4px;
   height: .18in;
 }
+
+.cloud-text {
+  display: inline-block;
+  margin: 0px;
+  text-align: left;
+}
+
+.cloud-text-large {
+  font-size: 18px;
+}
