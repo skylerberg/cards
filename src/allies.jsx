@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, FactionCardIcon, Ally, Objective, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
+import { Contracts, FactionCardIcon, Ally, Achievement, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [

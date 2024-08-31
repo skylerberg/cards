@@ -6,7 +6,7 @@ import { CardPages } from './pages.jsx';
 import { allies } from './allies.jsx';
 import { rockets } from './rockets.jsx';
 import { factionCards, theScavengersCards, cruxCabalCards, unearthIncCards, hydrusGangCards, explorerSocietyCards, cyborgUnionCards } from './factionCards.jsx';
-import { objectives } from './objectives.jsx';
+import { achievements } from './achievements.jsx';
 import { contracts } from './contracts.jsx';
 import { turnOrderCards } from './turnOrderCards.jsx';
 import { FactionMats } from './factionMats.jsx';
@@ -15,10 +15,10 @@ import { EndGameCard } from './cardTemplates.jsx';
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
 
-const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(objectives).concat([<EndGameCard />]);
+const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />]);
 //const cards = [
 //  unearthIncCards[0],
-//  objectives[17],
+//  achievements[17],
 //  allies[14],
 //].flat();
 

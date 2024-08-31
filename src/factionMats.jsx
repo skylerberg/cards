@@ -1,5 +1,5 @@
 import { FactionMatPage } from './pages.jsx';
-import objectiveIcon from './assets/images/icons/objective.svg';
+import achievementIcon from './assets/images/icons/achievement.svg';
 import { Facility, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
@@ -85,7 +85,7 @@ function FactionMat({ name }) {
               <br />
               &nbsp;&nbsp;Restock public contracts (<Contracts />)
               <br />
-              &nbsp;&nbsp;Complete objectives (<img src={objectiveIcon} className="objective-symbol" />)
+              &nbsp;&nbsp;Complete achievements (<img src={achievementIcon} className="achievement-symbol" />)
             </div>
           </div>
 

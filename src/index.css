@@ -1,6 +1,8 @@
 * {
  font-size: 100%;
- font-family: 'Roboto', sans-serif;
+ /*font-family: 'Roboto', sans-serif;*/
+ font-family: "Roboto Serif", serif;
+ line-height: 120%;
 }
 
 html, body, .main, .tabs, .tabbed-content { float: none; }
@@ -327,8 +329,8 @@ body {
 }
 
 .bonus-colon {
-  font-size: 38px;
-  margin-top: -10px;
+  font-size: 26px;
+  margin-top: -2px;
   margin-right: 7px;
   margin-left: 7px;
 }
@@ -342,10 +344,19 @@ body {
 .bonus-seperator {
   border: 0;
   height: 2px;
-  background-color: black;
   margin: 0px;
   margin-bottom: 10px;
   margin-top: 5px;
+  background: linear-gradient(to right, black, black 40%, transparent 40%, transparent 60%, black 60%, black 100%);
+}
+
+.bonus-seperator::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -30%);
+    color: black;
+    font-size: 26px;
 }
 
 .overlay-box {
@@ -464,8 +475,9 @@ body {
   display: inline-block;
   margin: 0px;
   text-align: left;
+  font-size: 11pt;
 }
 
 .cloud-text-large {
-  font-size: 18px;
+  font-size: 13pt;
 }

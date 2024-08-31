@@ -1,11 +1,10 @@
 import victoryPointsImage from './assets/general/victory-points.svg';
 import allyIconImage from './assets/general/ally.svg';
-import factionIconImage from './assets/images/icons/faction.svg';
 import rocketIconImage from './assets/general/rocket.svg';
-import defaultObjectiveImage from './assets/images/objectives/default.jpg';
+import defaultAchievementImage from './assets/images/achievements/default.jpg';
 import defaultTurnOrderImage from './assets/images/turn-order/default.png';
 import defaultContractImage from './assets/images/contracts/default.png';
-import objectiveIcon from './assets/images/icons/objective.svg';
+import achievementIcon from './assets/images/icons/achievement.svg';
 import turnOrderIcon from './assets/images/icons/turn-order.svg';
 import contractIcon from './assets/images/icons/contract.svg';
 import droplet from './assets/images/icons/droplet.svg';
@@ -233,18 +232,18 @@ export function RocketCard({name, score, ability}) {
   );
 }
 
-export function ObjectiveCard({name, score, text}) {
+export function AchievementCard({name, score, text}) {
   return (
     <div className="card" style={
       {
         backgroundSize: '2.5in',
-        backgroundImage: `url(${defaultObjectiveImage})`,
+        backgroundImage: `url(${defaultAchievementImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
         backgroundColor: 'black',
       }
     }>
-      <Banner score={score} typeImage={objectiveIcon} />
+      <Banner score={score} typeImage={achievementIcon} />
       <Cloud name={name} ability={text} largeText={true} />
     </div>
   );
@@ -267,8 +266,12 @@ export function TurnOrderCard({name, score, text}) {
 }
 
 
-export function FacilityShape({image}) {
-    return <img src={image} className='facility' />;
+export function FacilityShape({image, scale}) {
+  return <img
+    src={image}
+    className='facility'
+    style={{'scale': scale || '100%'}}
+  />;
 }
 
 function BonusCardImage({color}) {
@@ -312,10 +315,10 @@ export function Bonus({small, doubleComets, colors}) {
 export function ContractCard({name, route, bonuses}) {
   const routeImages = route.map((name) => {
     if (name === 'Square') {
-      return <FacilityShape image={square} />;
+      return <FacilityShape image={square} scale="90%"/>;
     }
     if (name === 'Circle') {
-      return <FacilityShape image={circle} />;
+      return <FacilityShape image={circle} scale="" />;
     }
     if (name === 'Droplet') {
       return <FacilityShape image={droplet} />;
