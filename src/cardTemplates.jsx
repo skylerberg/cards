@@ -24,7 +24,7 @@ const leaderImages = import.meta.glob('./assets/images/leaders/*.png', { eager: 
 const factionCardImages = import.meta.glob('./assets/images/faction-cards/*.png', { eager: true });
 const factionCardJpgs = import.meta.glob('./assets/images/faction-cards/*.jpg', { eager: true });
 const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true });
-const backImages = import.meta.glob('./assets/images/backs/*.png', { eager: true });
+const backImages = import.meta.glob('./assets/images/backs/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
 
 function Banner({score, typeImage}) {
@@ -133,13 +133,24 @@ export function FactionCard({name, score, ability, type}) {
     factionCardJpgs[`./assets/images/faction-cards/${imageName}.jpg`]?.default || console.log(imageName);
   const factionSvgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   const iconUrl = iconImages[`./assets/images/icons/${factionSvgName}`]?.default;
+  let backgroundImage = backImages[`./assets/images/backs/faction.jpg`]?.default;
+  const filter = 'brightness(0.5) grayscale() invert()';
 
   return (
     <div className="card" style={
       {
-        backgroundColor: 'black',
       }
     }>
+      <img src={backgroundImage} style={
+        {
+          position: 'absolute',
+          width: '2.5in',
+          height: '3.5in',
+          filter: filter,
+          zIndex: '-1',
+        }
+      }>
+      </img>
       <img src={imageUrl ? imageUrl : undefined} style={
         {
           position: 'absolute',
@@ -208,13 +219,25 @@ export function RocketCard({name, score, ability}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
   const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
     rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
+  let backgroundImage = backImages[`./assets/images/backs/rocket.jpg`]?.default;
+  const filter = 'hue-rotate(150deg) brightness(0.6) contrast(1.3)';
 
   return (
     <div className="card" style={
       {
-        backgroundColor: 'black',
+        //backgroundColor: 'black',
       }
     }>
+      <img src={backgroundImage} style={
+        {
+          position: 'absolute',
+          width: '2.5in',
+          height: '3.5in',
+          filter: filter,
+          zIndex: '-1',
+        }
+      }>
+      </img>
       <img src={imageUrl ? imageUrl : undefined} style={
         {
           position: 'absolute',
@@ -373,24 +396,49 @@ export function ContractCard({name, route, bonuses}) {
 
 
 export function GenericCardBack({type}) {
-  const pngName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
+  const jpgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.jpg`;
   const svgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
-  const imageUrl = backImages[`./assets/images/backs/${pngName}`]?.default;
+  let imageUrl = backImages[`./assets/images/backs/${jpgName}`]?.default;
   const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default;
+
+  let filter = '';
+  if (type === 'Contract') {
+    filter = 'brightness(1.0)';
+  }
+  else if (type === 'Ally') {
+    filter = 'hue-rotate(180deg) brightness(2.0)';
+  }
+  else if (type === 'Rocket') {
+    filter = 'hue-rotate(150deg) brightness(1.0) contrast(1.3)';
+  }
+  else if (type === 'Achievement') {
+    filter = 'grayscale() brightness(0.5)';
+  }
+  else if (type === 'Turn Order') {
+    filter = 'hue-rotate(250deg) brightness(1.4)';
+  }
+  else {
+    imageUrl = backImages[`./assets/images/backs/faction.jpg`]?.default;
+    filter = 'brightness(0.5) grayscale() invert()';
+  }
+
+  // 120deg hue-rotate == red
   return (
-    <div className="card" style={
-      {
-        backgroundSize: '2.5in',
-        backgroundImage: imageUrl ? `url(${imageUrl})` : undefined,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
-      }
-    }>
-      <h1 className="card-back-title">{type}</h1>
+    <div className="card">
+      <img src={imageUrl} style={
+        {
+          position: 'absolute',
+          width: '2.5in',
+          height: '3.5in',
+          filter: filter,
+          zIndex: '-1',
+        }
+      }>
+      </img>
       <img src={iconUrl} className="white-shadow" style={
         {
           width: '2in',
-          maxHeight: '2in',
+          maxHeight: '1.75in',
           marginLeft: 'auto',
           marginRight: 'auto',
           marginTop: 'auto',
@@ -406,19 +454,21 @@ export function FactionCardBack({faction}) {
   const backgroundUrl = backImages[`./assets/images/backs/faction.png`]?.default;
   const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default;
   return (
-    <div className="card" style={
-      {
-        backgroundSize: '2.5in',
-        backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : undefined,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
-      }
-    }>
-      <h1 className="card-back-title faction-card-back-title">{faction}</h1>
+    <div className="card">
+        <img src={starscapeImage} style={
+          {
+            position: 'absolute',
+            width: '2.5in',
+            height: '3.5in',
+            filter: 'grayscale() brightness(2.0)',
+            zIndex: '-1',
+          }
+        }>
+        </img>
       <img src={iconUrl} className="white-shadow" style={
         {
           width: '2in',
-          maxHeight: '2in',
+          maxHeight: '1.75in',
           marginLeft: 'auto',
           marginRight: 'auto',
           marginTop: 'auto',
@@ -433,12 +483,12 @@ export function CardBack({type}) {
   if (!type) {
     return EndGameCard();
   }
-  else if (type === 'Ally' || type === 'Rocket' || type === 'Contract') {
+  //else if (type === 'Ally' || type === 'Rocket' || type === 'Contract') {
     return GenericCardBack({type});
-  }
-  else {
-    return FactionCardBack({faction: type});
-  }
+  //}
+  //else {
+  //return FactionCardBack({faction: type});
+  //}
 }
 
 export function EmptyCard() {
