@@ -42,7 +42,7 @@ export const theScavengersCards = [
   (<FactionCard name="Fly-By Job" score={0} type="The Scavengers" ability={(
     <>
       Complete 1<Contract /> treating any 2 neutral <Facility /> as adjacent.
-      <br />
+
       Draw 1<FactionCardIcon />.
     </>
   )}/>),
@@ -226,7 +226,6 @@ export const explorerSocietyCards = [
     <>
       Move 1 <Facility /> you own.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -235,7 +234,6 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Droplet color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -244,7 +242,6 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Square color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -253,7 +250,6 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Circle color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -262,7 +258,6 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Square color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -271,7 +266,6 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Droplet color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -280,7 +274,6 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Circle color="blue" />.
 
-      <br />
       Take another <Action />.
     </>
   )}/>),
@@ -306,13 +299,13 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Seat of Power" type="Crux Cabal" score={-1} ability={(
     <>
-      Build a <Facility />. Use an <Ally /> <br /> belonging to any player.
+      Build a <Facility />. Use an <Ally /> belonging to any player.
     </>
   )}/>),
 
   (<FactionCard name="Coerce" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Ally /> or use an <Ally /> <br />belonging to any player.
+      Draw 1<Ally /> or use an <Ally /> belonging to any player.
     </>
   )}/>),
 

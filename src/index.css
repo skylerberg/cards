@@ -101,7 +101,7 @@ body {
 }
 
 .card-title {
-  font-size: 16pt;
+  font-size: 12pt;
   display: flex;
   align-items: center;
   text-align: center;
@@ -109,6 +109,40 @@ body {
   font-weight: bold;
   margin: 0px;
 }
+
+.title-box {
+  border: black solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background: #000;
+  margin-bottom: 6px;
+  margin-top: -11px;
+  margin-left: -14px;
+  margin-right: -14px;
+  color: white
+}
+
+.text-box {
+  border: black solid;
+  border-width: 1px;
+  border-radius: 8px;
+  background: #dddd;
+  margin-bottom: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+  /*
+.text-box {
+  border: black solid;
+  border-width: 1px;
+  border-radius: 8px;
+  background: #dddd;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+*/
 
 .card-back-title {
   font-size: 38pt;

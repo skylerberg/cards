@@ -38,7 +38,7 @@ function Banner({score, typeImage}) {
         }>
           <div className="type-icon">
             <div className="victory-points">
-              <img class="white-shadow-intense" src={typeImage} style={
+              <img class="" src={typeImage} style={
                 {
                   marginBottom: '-4px',
                   width: '40px',
@@ -56,7 +56,7 @@ function Banner({score, typeImage}) {
       <div className="banner-plate-box">
 
         <div className="victory-points">
-          <img class="white-shadow-intense" src={victoryPointsImage} style={
+          <img class="" src={victoryPointsImage} style={
             {
               marginBottom: '-4px',
             }
@@ -105,15 +105,21 @@ function Newspaper({ name, text }) {
 }
 
 function Cloud({ name, ability, largeText }) {
-  return (
-      <div className="card-text-box white-shadow-main-text">
-        <h1 className="card-title">{name}</h1>
+  /*
         <hr style={
           {
+            'marginTop': '3px',
+            'marginBottom': '5px',
             'marginLeft': '20px',
             'marginRight': '20px',
           }
         }/>
+        */
+  return (
+      <div className="card-text-box text-box">
+        <div className="title-box">
+          <h1 className="card-title">{name}</h1>
+        </div>
         <div style={
           {
             'textAlign': 'center',
@@ -147,21 +153,36 @@ export function FactionCard({name, score, ability, type}) {
           width: '2.5in',
           height: '3.5in',
           filter: filter,
-          zIndex: '-1',
+          zIndex: '-2',
         }
       }>
       </img>
-      <img src={imageUrl ? imageUrl : undefined} style={
+      <div style={
         {
           position: 'absolute',
           marginTop: '0.25in',
-          marginLeft: 'auto',
+          marginLeft: '0.075in',
           marginRight: 'auto',
-          width: '2.45in',
-          height: '2.45in',
+          width: '2.30in',
+          height: '2.30in',
           clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
+          background: 'black',
+          zIndex: '-1',
         }
-      }/>
+      }>
+      </div>
+        <img src={imageUrl ? imageUrl : undefined} style={
+          {
+            position: 'absolute',
+            marginTop: '0.30in',
+            marginLeft: '0.125in',
+            marginRight: 'auto',
+            width: '2.20in',
+            height: '2.20in',
+            clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
+            zIndex: '-1',
+          }
+        }/>
       <Banner score={score} typeImage={iconUrl} />
       <Cloud name={name} ability={ability} />
     </div>
