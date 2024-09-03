@@ -1,8 +1,18 @@
 * {
+ /*
  font-size: 100%;
- /*font-family: 'Roboto', sans-serif;*/
+ font-family: 'Roboto', sans-serif;
  font-family: "Roboto Serif", serif;
  line-height: 120%;
+ font-variation-settings: "wdth" 150;
+  */
+  font-family: "Roboto Serif", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 90,
+    "GRAD" 0;
 }
 
 html, body, .main, .tabs, .tabbed-content { float: none; }
@@ -82,7 +92,8 @@ body {
   height: 100px;
   margin-top: 5px;
   margin-right: 5px;
-  margin-left: auto;
+  margin-left: 5px;
+  z-index: -3;
 }
 
 .victory-points {
@@ -107,7 +118,8 @@ body {
   text-align: center;
   justify-content: center;
   font-weight: bold;
-  margin: 0px;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .title-box {
@@ -117,19 +129,21 @@ body {
   background: #000;
   margin-bottom: 6px;
   margin-top: -11px;
-  margin-left: -14px;
-  margin-right: -14px;
-  color: white
+  margin-left: -9px;
+  margin-right: -9px;
+  color: white;
 }
 
 .text-box {
   border: black solid;
   border-width: 1px;
   border-radius: 8px;
-  background: #dddd;
+  background: #ddd;
   margin-bottom: 6px;
   margin-left: 8px;
   margin-right: 8px;
+  filter: drop-shadow(0px 2px 3px);
+
 }
 
   /*
@@ -185,7 +199,7 @@ body {
 }
 
 .card-text-box {
-  padding: 10px;
+  padding: 5px;
   margin-top: auto;
 }
 
@@ -226,7 +240,8 @@ body {
 }
 
 .icon-image {
-  height: .15in;
+  margin-bottom: -1px;
+  height: .14in;
   display: inline-block;
 }
 
@@ -236,13 +251,13 @@ body {
 }
 
 .asteroid {
-  margin-bottom: -2px;
-  height: .18in;
+  margin-bottom: -1px;
+  height: .14in;
 }
 
 .specific-facility-icon {
-  margin-bottom: -2px;
-  height: .18in;
+  margin-bottom: -1px;
+  height: .14in;
 }
 
 .filter-blue {
@@ -251,8 +266,8 @@ body {
 
 .card-icon-image {
   filter: drop-shadow(0 1px 1px #000);
-  margin-bottom: -3px;
-  height: .18in;
+  margin-bottom: -2px;
+  height: .14in;
   transform: rotate(-5deg);
   display: inline-block;
 }
@@ -263,6 +278,7 @@ body {
   flex-direction: column;
   text-align: center;
   margin: auto;
+  margin-left: 5px;
   padding: 5px;
 }
 
@@ -299,9 +315,9 @@ body {
   font-size: 16pt !important;
   position: absolute;
   margin: 10px;
-  margin-left: 50px;
+  margin-left: 70px;
   margin-top: 5px;
-  width: 1.27in;
+  width: 1.6in;
   text-align: center;
   height: 60px;
 }
@@ -330,7 +346,7 @@ body {
   margin-left: auto;
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 17px;
+  margin-right: auto;
   padding: 5px;
 }
 
@@ -511,6 +527,7 @@ body {
   margin: 0px;
   text-align: left;
   font-size: 11pt;
+  filter: unset;
 }
 
 .cloud-text-large {

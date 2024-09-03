@@ -50,12 +50,13 @@ function Banner({score, typeImage}) {
         </div>
     );
   }
+  cardType = <></>;
   return (
     <>
       {cardType}
       <div className="banner-plate-box">
 
-        <div className="victory-points">
+        <div className="victory-points white-shadow-intense">
           <img class="" src={victoryPointsImage} style={
             {
               marginBottom: '-4px',
@@ -153,7 +154,7 @@ export function FactionCard({name, score, ability, type}) {
           width: '2.5in',
           height: '3.5in',
           filter: filter,
-          zIndex: '-2',
+          zIndex: '-4',
         }
       }>
       </img>
@@ -201,6 +202,7 @@ export function AllyCard({name, score, ability}) {
         backgroundSize: '2.5in',
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
+        zIndex: '-4',
       }
     }>
       <Banner score={score} typeImage={allyIconImage} />
@@ -255,19 +257,35 @@ export function RocketCard({name, score, ability}) {
           width: '2.5in',
           height: '3.5in',
           filter: filter,
-          zIndex: '-1',
+          zIndex: '-4',
         }
       }>
       </img>
-      <img src={imageUrl ? imageUrl : undefined} style={
+      <div style={
         {
           position: 'absolute',
           marginTop: '0.25in',
-          marginLeft: 'auto',
+          marginLeft: '0.075in',
           marginRight: 'auto',
-          width: '2.45in',
-          height: '2.45in',
+          width: '2.30in',
+          height: '2.30in',
           borderRadius: '20.5in',
+          background: 'black',
+          zIndex: '-1',
+          filter: 'drop-shadow(0px 3px 3px)',
+        }
+      }>
+      </div>
+      <img src={imageUrl ? imageUrl : undefined} style={
+        {
+          position: 'absolute',
+          marginTop: '0.30in',
+          marginLeft: '0.125in',
+          marginRight: 'auto',
+          width: '2.20in',
+          height: '2.20in',
+          borderRadius: '20.5in',
+          zIndex: '-1',
         }
       }/>
       <Banner score={score} typeImage={rocketIconImage} />
@@ -285,6 +303,7 @@ export function AchievementCard({name, score, text}) {
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
         backgroundColor: 'black',
+        zIndex: '-4',
       }
     }>
       <Banner score={score} typeImage={achievementIcon} />
@@ -301,6 +320,7 @@ export function TurnOrderCard({name, score, text}) {
         backgroundImage: `url(${defaultTurnOrderImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
+        zIndex: '-4',
       }
     }>
       <Banner score={score} typeImage={turnOrderIcon} />
@@ -388,13 +408,17 @@ export function ContractCard({name, route, bonuses}) {
     bonusLines.splice(i, 0, <hr className="bonus-seperator" />);
   }
 
+  let backgroundImage = backImages[`./assets/images/backs/contract.jpg`]?.default;
+  const filter = 'hue-rotate(150deg) brightness(0.6) contrast(1.3)';
+
   return (
     <div className="card" style={
       {
         backgroundSize: '2.5in',
-        backgroundImage: `url(${defaultContractImage})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
+        zIndex: '-4',
       }
     }>
       <Banner score={route.length} typeImage={contractIcon}/>
@@ -452,7 +476,7 @@ export function GenericCardBack({type}) {
           width: '2.5in',
           height: '3.5in',
           filter: filter,
-          zIndex: '-1',
+          zIndex: '-4',
         }
       }>
       </img>
@@ -482,7 +506,7 @@ export function FactionCardBack({faction}) {
             width: '2.5in',
             height: '3.5in',
             filter: 'grayscale() brightness(2.0)',
-            zIndex: '-1',
+            zIndex: '-4',
           }
         }>
         </img>
@@ -526,6 +550,7 @@ export function EndGameCard() {
         backgroundImage: `url(${starscapeImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
+        zIndex: '-4',
       }
     }>
       <Banner score={0} />

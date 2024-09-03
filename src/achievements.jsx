@@ -111,5 +111,11 @@ export const achievements = [
     </>
   )}/>),
 
+  (<AchievementCard name="Patient" score={3} type="Achievement" text={(
+    <>
+      Be the only player with no scored <Contract />.
+    </>
+  )}/>),
+
 ].map((achievement) => [React.cloneElement(achievement, { key: achievement.props.name })]).flat();
 //In 1 turn, complete 2<Contract /> using routes with <Comet /> without gaining any bonuses.
