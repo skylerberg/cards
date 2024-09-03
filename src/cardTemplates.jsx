@@ -148,13 +148,9 @@ export function FactionCard({name, score, ability, type}) {
       {
       }
     }>
-      <img src={backgroundImage} style={
+      <img className="card-background-image" src={backgroundImage} style={
         {
-          position: 'absolute',
-          width: '2.5in',
-          height: '3.5in',
           filter: filter,
-          zIndex: '-4',
         }
       }>
       </img>
@@ -162,28 +158,26 @@ export function FactionCard({name, score, ability, type}) {
         {
           position: 'absolute',
           marginTop: '0.25in',
-          marginLeft: '0.075in',
-          marginRight: 'auto',
           width: '2.30in',
           height: '2.30in',
+          alignSelf: 'center',
           clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
           background: 'black',
           zIndex: '-1',
         }
       }>
       </div>
-        <img src={imageUrl ? imageUrl : undefined} style={
-          {
-            position: 'absolute',
-            marginTop: '0.30in',
-            marginLeft: '0.125in',
-            marginRight: 'auto',
-            width: '2.20in',
-            height: '2.20in',
-            clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
-            zIndex: '-1',
-          }
-        }/>
+      <img src={imageUrl ? imageUrl : undefined} style={
+        {
+          position: 'absolute',
+          marginTop: '0.30in',
+          width: '2.20in',
+          height: '2.20in',
+          alignSelf: 'center',
+          clipPath: 'polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)',
+          zIndex: '-1',
+        }
+      }/>
       <Banner score={score} typeImage={iconUrl} />
       <Cloud name={name} ability={ability} />
     </div>
@@ -211,33 +205,6 @@ export function AllyCard({name, score, ability}) {
   );
 }
 
-export function LeaderCard({name}) {
-  const pngName = `${name.toLowerCase().replaceAll(' ', '-')}.png`;
-  const imageUrl = leaderImages[`./assets/images/leaders/${pngName}`]?.default;
-  const actions =
-    (<>
-      <Action /> Build a <Facility />
-      <br />
-      <Action /> Complete <Contracts />
-      <br />
-      <Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract />
-      <br />
-      <Action /> Play <FactionCardIcon /> or <Rocket />
-    </>);
-  return (
-    <div className="card" style={
-      {
-        backgroundImage: `url(${imageUrl})`,
-        backgroundSize: '2.5in',
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
-      }
-    }>
-      <Newspaper name={name} text={actions} />
-    </div>
-  );
-}
-
 export function RocketCard({name, score, ability}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
   const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
@@ -251,13 +218,9 @@ export function RocketCard({name, score, ability}) {
         //backgroundColor: 'black',
       }
     }>
-      <img src={backgroundImage} style={
+      <img className="card-background-image" src={backgroundImage} style={
         {
-          position: 'absolute',
-          width: '2.5in',
-          height: '3.5in',
           filter: filter,
-          zIndex: '-4',
         }
       }>
       </img>
@@ -265,8 +228,7 @@ export function RocketCard({name, score, ability}) {
         {
           position: 'absolute',
           marginTop: '0.25in',
-          marginLeft: '0.075in',
-          marginRight: 'auto',
+          alignSelf: 'center',
           width: '2.30in',
           height: '2.30in',
           borderRadius: '20.5in',
@@ -280,8 +242,7 @@ export function RocketCard({name, score, ability}) {
         {
           position: 'absolute',
           marginTop: '0.30in',
-          marginLeft: '0.125in',
-          marginRight: 'auto',
+          alignSelf: 'center',
           width: '2.20in',
           height: '2.20in',
           borderRadius: '20.5in',
@@ -467,49 +428,14 @@ export function GenericCardBack({type}) {
     filter = 'brightness(0.5) grayscale() invert()';
   }
 
-  // 120deg hue-rotate == red
   return (
     <div className="card">
-      <img src={imageUrl} style={
+      <img className="card-background-image" src={imageUrl} style={
         {
-          position: 'absolute',
-          width: '2.5in',
-          height: '3.5in',
           filter: filter,
-          zIndex: '-4',
         }
       }>
       </img>
-      <img src={iconUrl} className="white-shadow" style={
-        {
-          width: '2in',
-          maxHeight: '1.75in',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginTop: 'auto',
-          marginBottom: 'auto',
-        }
-      }/>
-    </div>
-  );
-}
-
-export function FactionCardBack({faction}) {
-  const svgName = `${faction.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
-  const backgroundUrl = backImages[`./assets/images/backs/faction.png`]?.default;
-  const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default;
-  return (
-    <div className="card">
-        <img src={starscapeImage} style={
-          {
-            position: 'absolute',
-            width: '2.5in',
-            height: '3.5in',
-            filter: 'grayscale() brightness(2.0)',
-            zIndex: '-4',
-          }
-        }>
-        </img>
       <img src={iconUrl} className="white-shadow" style={
         {
           width: '2in',
@@ -528,12 +454,7 @@ export function CardBack({type}) {
   if (!type) {
     return EndGameCard();
   }
-  //else if (type === 'Ally' || type === 'Rocket' || type === 'Contract') {
-    return GenericCardBack({type});
-  //}
-  //else {
-  //return FactionCardBack({faction: type});
-  //}
+  return GenericCardBack({type});
 }
 
 export function EmptyCard() {
