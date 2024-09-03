@@ -47,7 +47,7 @@ export const achievements = [
 
   (<AchievementCard name="Meddlesome" score={3} type="Achievement" text={(
     <>
-      Have a single <Facility /> adjacent to 3 <Facility /> belonging to other player(s).
+      Have a single <Facility /> adjacent to 3 <Facility /> owned by other player(s).
     </>
   )}/>),
 

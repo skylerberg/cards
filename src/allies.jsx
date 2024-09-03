@@ -44,7 +44,7 @@ export let allies = [
 
   (<AllyCard name="Opportunist" score={1} type="Ally" ability={(
     <>
-      <Action /> Complete <Contracts />. Restock public <Contracts /> immediately. Complete <Contracts />.
+      <Action /> Complete <Contracts />. Restock public <Contracts />. Complete <Contracts />.
     </>
   )}/>),
 
@@ -56,7 +56,7 @@ export let allies = [
 
   (<AllyCard name="Consultant" score={0} type="Ally" ability={(
     <>
-      <Action /> Replace a <Facility /> you own. Use an <Ally /> you own or draw 1<Ally />. You may not use Consultant again this turn.
+      <Action /> Replace a <Facility /> you own. Use an <Ally /> you own or draw 1<Ally />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
@@ -74,7 +74,7 @@ export let allies = [
 
   (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
     <>
-      <Action /> Build a <Droplet />. Play 1<Rocket />. You may not use Fuel Supplier again this turn.
+      <Action /> Build a <Droplet />. Play 1<Rocket />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
@@ -86,19 +86,19 @@ export let allies = [
 
   (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />. You may not use Fanatic again this turn.
+      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />. You may not use Rocket Scientist again this turn.
+      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
     <>
-      <Action /> Score a <Contract /> worth 3 <VictoryPoints /> that you do not have a route to complete.
+      <Action /> Score a <Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 

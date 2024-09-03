@@ -197,7 +197,7 @@ export const cyborgUnionCards = [
   // Maybe make this look at the bottom if we get rid of severance
   (<FactionCard name="Extended Contract" type="Cyborg Union" score={1} ability={(
     <>
-      Look at the top 3 <Contract /> in the <Contract /> deck. Put up to 2 in your hand and the rest back in any order.
+      Draw 3 <Contract />. Put 1 <Contract /> from your hand on top of the <Contract /> deck.
     </>
   )}/>),
 
@@ -299,19 +299,19 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Seat of Power" type="Crux Cabal" score={-1} ability={(
     <>
-      Build a <Facility />. Use an <Ally /> belonging to any player.
+      Build a <Facility />. Use an <Ally /> owned by any player.
     </>
   )}/>),
 
   (<FactionCard name="Coerce" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Ally /> or use an <Ally /> belonging to any player.
+      Draw 1<Ally /> or use an <Ally /> owned by any player.
     </>
   )}/>),
 
   (<FactionCard name="Call in Favors" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use an <Ally /> belonging to any player.
+      Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use an <Ally /> owned by any player.
     </>
   )}/>),
 
@@ -323,6 +323,8 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Induct" type="Crux Cabal" score={0} ability={(
     <>
+      Draw 2 <Ally />. Put 1 <Ally /> you own on top of the <Ally /> deck.
+      <br />
       Look at the top 2 cards of the <Ally /> deck. Play 1 and put the other back.
     </>
   )}/>),
@@ -336,7 +338,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Blackmail" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Contract />. Use an <Ally /> belonging to any player.
+      Draw 1<Contract />. Use an <Ally /> owned by any player.
     </>
   )}/>),
 ];
