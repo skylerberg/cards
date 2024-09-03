@@ -1,4 +1,4 @@
-import victoryPointsImage from './assets/general/victory-points.svg';
+import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import allyIconImage from './assets/general/ally.svg';
 import rocketIconImage from './assets/general/rocket.svg';
 import defaultAchievementImage from './assets/images/achievements/default.jpg';
@@ -59,13 +59,12 @@ function Banner({score, typeImage}) {
         <div className="victory-points white-shadow-intense">
           <img class="" src={victoryPointsImage} style={
             {
-              marginBottom: '-4px',
+              width: '50px',
             }
           }/>
-          <span class="white-shadow" style={
+          <span class="white-shadow victory-point-text" style={
             {
               position: 'absolute',
-              margin: 'auto',
             }
           }>
             {score}
@@ -157,7 +156,7 @@ export function FactionCard({name, score, ability, type}) {
       <div style={
         {
           position: 'absolute',
-          marginTop: '0.25in',
+          marginTop: '0.15in',
           width: '2.30in',
           height: '2.30in',
           alignSelf: 'center',
@@ -170,7 +169,7 @@ export function FactionCard({name, score, ability, type}) {
       <img src={imageUrl ? imageUrl : undefined} style={
         {
           position: 'absolute',
-          marginTop: '0.30in',
+          marginTop: '0.20in',
           width: '2.20in',
           height: '2.20in',
           alignSelf: 'center',
@@ -227,7 +226,7 @@ export function RocketCard({name, score, ability}) {
       <div style={
         {
           position: 'absolute',
-          marginTop: '0.25in',
+          marginTop: '0.15in',
           alignSelf: 'center',
           width: '2.30in',
           height: '2.30in',
@@ -241,7 +240,7 @@ export function RocketCard({name, score, ability}) {
       <img src={imageUrl ? imageUrl : undefined} style={
         {
           position: 'absolute',
-          marginTop: '0.30in',
+          marginTop: '0.20in',
           alignSelf: 'center',
           width: '2.20in',
           height: '2.20in',
