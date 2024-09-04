@@ -31,6 +31,19 @@ function FactionMat({ name }) {
   const svgName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   const backgroundImageUrl = factionImages[`./assets/images/mats/${jpgName}`]?.default;
   const factionIconImage = iconImages[`./assets/images/icons/${svgName}`]?.default;
+  /*
+          <div className="turn-order">
+            <div className="overlay-box turn-order-box-inner">
+              <b>On your turn</b>
+              <br />
+              &nbsp;&nbsp;Take 1 action (<Action />)
+              <br />
+              &nbsp;&nbsp;Restock public contracts (<Contracts />)
+              <br />
+              &nbsp;&nbsp;Claim achievements (<img src={achievementIcon} className="achievement-symbol" />)
+            </div>
+          </div>
+          */
 
   return (
     <div className='faction-mat' style={{
@@ -61,7 +74,7 @@ function FactionMat({ name }) {
           marginTop: 'auto',
           marginBottom: 'auto',
         }}>
-          ↑ Whenever you draw <Ally />, place it face-up here ↑
+          ↑ Whenever you draw <Ally />, play it here ↑
         </span>
       </div>
 
@@ -69,28 +82,14 @@ function FactionMat({ name }) {
 
         <div className="faction-icon-and-title">
           <img src={factionIconImage} className="faction-mat-faction-icon" />
-          <div>
-            <div className="overlay-box faction-title-box">
-              <h1 className="faction-title">{name}</h1>
-            </div>
+          <div className="overlay-box faction-title-box">
+            <h1 className="faction-title">{name}</h1>
           </div>
         </div>
 
         <div className="faction-info-boxes">
-          <div className="turn-order">
-            <div className="overlay-box turn-order-box-inner">
-              <b>On your turn</b>
-              <br />
-              &nbsp;&nbsp;Take 1 action (<Action />)
-              <br />
-              &nbsp;&nbsp;Restock public contracts (<Contracts />)
-              <br />
-              &nbsp;&nbsp;Complete achievements (<img src={achievementIcon} className="achievement-symbol" />)
-            </div>
-          </div>
-
           <div className="overlay-box action-box">
-            <b>Available Actions</b>
+            <b>On your turn, do 1 <Action /></b>
             <br />
             &nbsp;&nbsp;<Action /> Build a <Facility />
             <br />

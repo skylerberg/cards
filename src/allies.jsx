@@ -62,7 +62,7 @@ export let allies = [
 
   (<AllyCard name="Extremist" score={1} type="Ally" ability={(
     <>
-      <Action /> Complete <Contracts />. If you completed at least 1 <Contract /> worth 2<VictoryPoints /> or 5<VictoryPoints />, <Destroy /> any 1 <Facility />.
+      <Action /> Complete <Contracts />. If you completed at least 1<Contract /> worth 2<VictoryPoints /> or 5<VictoryPoints />, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
@@ -104,7 +104,7 @@ export let allies = [
 
   (<AllyCard name="Innovator" score={1} type="Ally" ability={(
     <>
-      <Action /> Draw the bottom 2 <Contract /> from the <Contract /> deck.
+      <Action /> Draw the bottom 2<Contract /> from the <Contract /> deck.
     </>
   )}/>),
 

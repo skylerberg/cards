@@ -410,24 +410,30 @@ body {
 }
 
 .faction-mat-faction-icon {
+  /*
   width: 1.2in;
   height: 1.2in;
+  */
   margin: 10px;
+  width: 0.7in;
+  height: 0.7in;
 }
 
 .faction-title-box {
   margin: 10px;
+  margin-left: 0px;
 }
 
 .faction-title {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 38pt;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 6px;
+  margin-bottom: 5px;
 }
 
 .turn-order {
+  display: none;
   padding: 10px;
 }
 
@@ -448,7 +454,6 @@ body {
 .faction-icon-and-title {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .faction-info-boxes {
@@ -471,8 +476,6 @@ body {
 }
 
 .faction-mat-interior {
-  display: flex;
-  flex-direction: column;
   padding: 30px;
 }
 
@@ -511,7 +514,7 @@ body {
   clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
 }
 
-.objective-symbol {
+.achievement-symbol {
   margin-bottom: -4px;
   height: .18in;
 }
