@@ -1,23 +1,23 @@
 import React from 'react';
-import { Rotate, Asteroid, Destroy, Ally, Action, Facility, Rocket, Contracts, FactionCardIcon } from './icons.jsx';
+import { Rotate, Asteroid, Destroy, Ally, Action, Facility, Rocket, Contracts, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
   (<RocketCard name="Precision Rocket" score={0} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> to any position. Take another <Action />.
+      <Rotate /> an <Asteroid /> to any position. <TakeAnotherAction />
     </>
   )}/>),
 
   (<RocketCard name="Divergent Rockets" score={0} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> up to 2 spaces. <Rotate /> a different <Asteroid /> up to 1 space. Take another <Action />.
+      <Rotate /> an <Asteroid /> up to 2 spaces. <Rotate /> a different <Asteroid /> up to 1 space. <TakeAnotherAction />
     </>
   )}/>),
 
   (<RocketCard name="Barrage" score={0} type="Rocket" ability={(
     <>
-      <Rotate /> up to 3 different <Asteroid /> 1 space each. Take another <Action />.
+      <Rotate /> up to 3 different <Asteroid /> 1 space each. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -49,7 +49,7 @@ export const rockets = [
 
   (<RocketCard name="Twin Rockets" score={1} type="Rocket" ability={(
     <>
-      <Rotate /> up to 2 different <Asteroid /> 1 space each. Take another <Action />.
+      <Rotate /> up to 2 different <Asteroid /> 1 space each. <TakeAnotherAction />
     </>
   )}/>),
 

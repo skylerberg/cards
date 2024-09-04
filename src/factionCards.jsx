@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, Comet, Droplet, Circle, Square, Ally, Action, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, VictoryPoints } from './icons.jsx';
+import { Contracts, Comet, Droplet, Circle, Square, Ally, Action, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { FactionCard } from './cardTemplates.jsx';
 
 export const theScavengersCards = [
@@ -66,7 +66,7 @@ export const hydrusGangCards = [
     <>
       <Destroy /> a <Facility /> adjacent to a <Facility /> you own.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -78,7 +78,7 @@ export const hydrusGangCards = [
 
   (<FactionCard name="Rearm" score={0} type="Hydrus Gang" ability={(
     <>
-      Take 1<Rocket /> from your scored cards pile into your hand. Take another <Action />.
+      Take 1<Rocket /> from your scored cards pile into your hand. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -98,7 +98,7 @@ export const hydrusGangCards = [
     <>
       <Destroy /> a <Facility /> adjacent to a neutral <Facility />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -107,7 +107,7 @@ export const hydrusGangCards = [
     <>
       You may <Destroy /> a <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -118,7 +118,7 @@ export const unearthIncCards = [
     <>
       <Destroy /> a <Facility /> you own to build a <Facility />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -126,7 +126,7 @@ export const unearthIncCards = [
     <>
       <Destroy /> a <Facility /> you own to draw 1<Contract />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -203,7 +203,7 @@ export const cyborgUnionCards = [
 
   (<FactionCard name="Severance" score={0} type="Cyborg Union" ability={(
     <>
-      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the <Contract /> on the bottom of the <Contract /> deck.
+      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the revealed <Contract /> on the bottom of the <Contract /> deck.
     </>
   )}/>),
 
@@ -226,7 +226,7 @@ export const explorerSocietyCards = [
     <>
       Move 1 <Facility /> you own.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -234,7 +234,7 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Droplet color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -242,7 +242,7 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Square color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -250,7 +250,7 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 of your <Circle color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -258,7 +258,7 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Square color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -266,7 +266,7 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Droplet color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -274,7 +274,7 @@ export const explorerSocietyCards = [
     <>
       Replace up to 2 of your <Circle color="blue" />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -282,7 +282,7 @@ export const explorerSocietyCards = [
     <>
       Move up to 2 <Facility /> you own to spaces on either side of 1<Comet />.
 
-      Take another <Action />.
+      <TakeAnotherAction />
     </>
   )}/>),
 
@@ -299,19 +299,19 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Seat of Power" type="Crux Cabal" score={-1} ability={(
     <>
-      Build a <Facility />. Use an <Ally /> owned by any player.
+      Build a <Facility />. Use any <Ally /> in play.
     </>
   )}/>),
 
   (<FactionCard name="Coerce" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Ally /> or use an <Ally /> owned by any player.
+      Draw 1<Ally /> or use any <Ally /> in play.
     </>
   )}/>),
 
   (<FactionCard name="Call in Favors" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use an <Ally /> owned by any player.
+      Draw 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck. Use any <Ally /> in play.
     </>
   )}/>),
 
@@ -323,13 +323,10 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Induct" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 2 <Ally />. Put 1 <Ally /> you own on top of the <Ally /> deck.
-      <br />
       Look at the top 2 cards of the <Ally /> deck. Play 1 and put the other back.
     </>
   )}/>),
 
-    //Without looking at their hand, take up to 2 cards from an opponent. They draw 1<Ally />.
   (<FactionCard name="Infiltrate" type="Crux Cabal" score={1} ability={(
     <>
       Take up to 2 cards from an opponent's hand. They draw 1<Ally />. <i>You do not get to look at their hand.</i>
@@ -338,7 +335,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Blackmail" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Contract />. Use an <Ally /> owned by any player.
+      Draw 1<Contract />. Use any <Ally /> in play.
     </>
   )}/>),
 ];

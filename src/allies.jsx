@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, FactionCardIcon, Ally, Achievement, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints } from './icons.jsx';
+import { Contracts, FactionCardIcon, Ally, Achievement, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints, TakeAnotherAction } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -92,7 +92,7 @@ export let allies = [
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If the <Rocket /> does not give you another <Action />, take another <Action />. You may not use this <Ally /> again this turn.
+      <Action /> Play 1<Rocket />. If the <Rocket /> does not end with <TakeAnotherAction />, then <TakeAnotherAction />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 

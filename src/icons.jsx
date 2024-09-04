@@ -8,6 +8,7 @@ import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
 import achievement from './assets/images/icons/achievement.svg';
+import takeAnotherActionImage from './assets/images/icons/take-another-action.svg';
 
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
@@ -78,14 +79,20 @@ export function Action() {
   return <Icon name="action" />;
 }
 
-export function Move() {
-  return <span>Move</span>;
-  //return <Icon name="move" />;
-}
+export function TakeAnotherAction() {
+  return <>
+     &nbsp;<img src={takeAnotherActionImage} className="icon-image" />
+  </>
+  }
 
-export function Comet() {
-  return <img src={cometIcon} className="icon-image" />;
-}
+  export function Move() {
+    return <span>Move</span>;
+    //return <Icon name="move" />;
+  }
+
+  export function Comet() {
+    return <img src={cometIcon} className="icon-image" />;
+  }
 
 export function Achievement() {
   return <img src={achievement} className="icon-image" />;

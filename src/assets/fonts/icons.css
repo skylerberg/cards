@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?b2881092e3d3ffa6359b574e61a19323#iefix") format("embedded-opentype"),
-url("./icons.woff?b2881092e3d3ffa6359b574e61a19323") format("woff"),
-url("./icons.woff2?b2881092e3d3ffa6359b574e61a19323") format("woff2");
+    src: url("./icons.eot?a94ba53bba780c5586a26f7dec272fd1#iefix") format("embedded-opentype"),
+url("./icons.woff?a94ba53bba780c5586a26f7dec272fd1") format("woff"),
+url("./icons.woff2?a94ba53bba780c5586a26f7dec272fd1") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -58,6 +58,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .icon-rotate:before {
     content: "\f10e";
 }
-.icon-victory-points:before {
+.icon-take-another-action:before {
     content: "\f10f";
+}
+.icon-victory-points:before {
+    content: "\f110";
 }
