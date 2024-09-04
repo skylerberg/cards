@@ -210,6 +210,7 @@ body {
 
 .first-contract {
   /*transform: translateY(-1px);*/
+  transform: rotate(-5deg);
   display: inline-block;
   z-index: 3;
   position: relative;
@@ -264,8 +265,7 @@ body {
 .card-icon-image {
   filter: drop-shadow(0 1px 1px #000);
   margin-bottom: -2px;
-  height: .14in;
-  transform: rotate(-5deg);
+  height: 15px;
   display: inline-block;
 }
 
@@ -382,9 +382,8 @@ body {
 }
 
 .bonus-line-card {
-  transform: rotate(-5deg);
   filter: drop-shadow(0 1px 1px #000);
-  margin-left: 5px;
+  margin-left: 5px;  /* TODO should we get rid of this? */
 }
 
 .bonus-seperator {

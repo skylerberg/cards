@@ -11,10 +11,10 @@ import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
 import cometIcon from './assets/images/icons/comet.svg';
-import contractCardImage from './assets/general/contract.svg';
-import allyCardImage from './assets/general/ally-card.svg';
-import rocketCardImage from './assets/general/rocket-card.svg';
-import factionCardImage from './assets/general/faction-card.svg';
+import contractCardImage from './assets/images/icons/contract-card.svg';
+import allyCardImage from './assets/images/icons/ally-card.svg';
+import rocketCardImage from './assets/images/icons/rocket-card.svg';
+import factionCardImage from './assets/images/icons/faction-card.svg';
 import { Contracts, FactionCardIcon, Action, Facility, Rocket, Contract } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 

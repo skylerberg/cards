@@ -11,7 +11,7 @@ export const achievements = [
 
   (<AchievementCard name="Versatile" score={3} type="Achievement" text={(
     <>
-      Have at least 1 <Circle />, 1 <Square />, and 1 <Droplet /> on the board, at least 1 <Ally />, and at least 1<Contract />, 1<Rocket />, and 1<FactionCardIcon /> in your hand.
+      Have at least 1<Circle />, 1<Square />, and 1<Droplet /> on the board, at least 1<Ally />, and at least 1<Contract />, 1<Rocket />, and 1<FactionCardIcon /> in your hand.
     </>
   )}/>),
 

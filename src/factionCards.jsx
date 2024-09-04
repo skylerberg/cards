@@ -197,7 +197,7 @@ export const cyborgUnionCards = [
   // Maybe make this look at the bottom if we get rid of severance
   (<FactionCard name="Extended Contract" type="Cyborg Union" score={1} ability={(
     <>
-      Draw 3 <Contract />. Put 1 <Contract /> from your hand on top of the <Contract /> deck.
+      Draw 3 <Contract />. Put 1<Contract /> from your hand on top of the <Contract /> deck.
     </>
   )}/>),
 
