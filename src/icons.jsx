@@ -39,7 +39,8 @@ export function Square({ color }) {
 }
 
 export function Contract() {
-  return <img src={contractCardImage} className="card-icon-image" />;
+  let className = 'card-icon-image';
+  return <img src={contractCardImage} className={className} />;
 }
 
 export function FactionCardIcon() {

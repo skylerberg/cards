@@ -31,6 +31,25 @@ function FactionMat({ name }) {
   const svgName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   const backgroundImageUrl = factionImages[`./assets/images/mats/${jpgName}`]?.default;
   const factionIconImage = iconImages[`./assets/images/icons/${svgName}`]?.default;
+  let edgeColor = '';
+  if (name === 'Hydrus Gang') {
+    edgeColor = 'rgba(210, 0, 0, 80%)';
+  }
+  else if (name === 'Explorer Society') {
+    edgeColor = 'rgba(83, 166, 238, 80%)';
+  }
+  else if (name === 'The Scavengers') {
+    edgeColor = 'rgba(250, 142, 0, 80%)';
+  }
+  else if (name === 'Cyborg Union') {
+    edgeColor = 'rgba(240, 240, 11, 80%)';
+  }
+  else if (name === 'Crux Cabal') {
+    edgeColor = 'rgba(198, 0, 252, 80%)';
+  }
+  else if (name === 'Unearth Inc.') {
+    edgeColor = 'rgba(59, 198, 59, 80%)';
+  }
   /*
           <div className="turn-order">
             <div className="overlay-box turn-order-box-inner">
@@ -51,7 +70,9 @@ function FactionMat({ name }) {
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
     }}>
-      <div className="faction-deck-arrow">
+      <div className="faction-deck-arrow" style={{
+          background: edgeColor,
+      }}>
         <span style={{
           marginTop: 'auto',
           marginBottom: 'auto',
@@ -60,16 +81,20 @@ function FactionMat({ name }) {
         </span>
       </div>
 
-      <div className="scored-cards-arrow">
+      <div className="scored-cards-arrow" style={{
+        background: edgeColor,
+      }}>
         <span style={{
           marginTop: 'auto',
           marginBottom: 'auto',
         }}>
-          ↑ Scored Cards ↑
+          ↑ Scored cards ↑
         </span>
       </div>
 
-      <div className="allies-arrow">
+      <div className="allies-arrow" style={{
+          background: edgeColor,
+      }}>
         <span style={{
           marginTop: 'auto',
           marginBottom: 'auto',
@@ -82,20 +107,20 @@ function FactionMat({ name }) {
 
         <div className="faction-icon-and-title">
           <img src={factionIconImage} className="faction-mat-faction-icon" />
-          <div className="overlay-box faction-title-box">
-            <h1 className="faction-title">{name}</h1>
+          <div className="faction-title-box">
+            <h1 className="faction-title">&nbsp; &nbsp; {name}</h1>
           </div>
         </div>
 
         <div className="faction-info-boxes">
           <div className="overlay-box action-box">
-            <b>On your turn, do 1 <Action /></b>
+            <span class="action-box-title">Actions</span> <i>(1 per turn)</i>
             <br />
             &nbsp;&nbsp;<Action /> Build a <Facility />
             <br />
             &nbsp;&nbsp;<Action /> Complete <Contracts />
             <br />
-            &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract />
+            &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
             <br />
             &nbsp;&nbsp;<Action /> Play <FactionCardIcon /> or <Rocket />
             <br />

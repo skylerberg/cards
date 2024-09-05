@@ -74,13 +74,6 @@ body {
   font-weight: normal;
 }
 
-.ally-top-line {
-  display: grid;
-  grid-template-columns: 22% 50% 28%;
-  margin: 10px;
-  border-radius: 10px;
-}
-
 .type-icon {
   width: 50px;
   height: 100px;
@@ -410,26 +403,40 @@ body {
 }
 
 .faction-mat-faction-icon {
-  /*
-  width: 1.2in;
-  height: 1.2in;
-  */
   margin: 10px;
-  width: 0.7in;
-  height: 0.7in;
+  width: 0.8in;
+  height: 0.8in;
+  z-index: 2;
+}
+
+.faction-mat-faction-icon-black {
+  margin: 10px;
+  width: 0.8in;
+  height: 0.8in;
+  z-index: 0;
+  filter: brightness(0%);
+  opacity: 92%;
 }
 
 .faction-title-box {
   margin: 10px;
-  margin-left: 0px;
+  margin-left: -48px;
+  margin-right: -48px;
+  background-color: #000000e0;
+  color: white;
+  z-index: 1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .faction-title {
   padding-left: 10px;
-  padding-right: 10px;
-  font-size: 38pt;
-  margin-top: 6px;
-  margin-bottom: 5px;
+  padding-right: 0px;
+  font-size: 28pt;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 0px;
+  margin-right: 10px
 }
 
 .turn-order {
@@ -437,9 +444,15 @@ body {
   padding: 10px;
 }
 
+.action-box-title {
+  font-weight: bolder;
+}
+
 .action-box {
   padding: 10px;
   margin: 10px;
+  background: #ffffffd8;
+  font-size: 11pt;
 }
 
 .turn-order-box-inner {
@@ -479,6 +492,10 @@ body {
   padding: 30px;
 }
 
+faction-mat-edge {
+  background: #ff4444d8;
+}
+
 .faction-deck-arrow {
   position: absolute;
   display: flex;
@@ -486,7 +503,6 @@ body {
   transform: translateX(-50%) translateX(15px) translateY(1.6in) rotate(-90deg);
   width: 3.5in;
   height: 30px;
-  background: #ffffffaa;
   text-align: center;
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
@@ -498,7 +514,6 @@ body {
   transform: translateX(-50%) translateX(-15px) translateX(7.5in) translateY(1.6in) rotate(90deg);
   width: 3.5in;
   height: 30px;
-  background: #ffffffaa;
   text-align: center;
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
@@ -509,7 +524,6 @@ body {
   flex-direction: column;
   width: 7.5in;
   height: 30px;
-  background: #ffffffaa;
   text-align: center;
   clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
 }
