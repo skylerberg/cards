@@ -2,7 +2,8 @@ import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import allyIconImage from './assets/general/ally.svg';
 import rocketIconImage from './assets/general/rocket.svg';
 import defaultAchievementImage from './assets/images/achievements/default.jpg';
-import defaultTurnOrderImage from './assets/images/turn-order/default.png';
+import turnOrderDiagram from './assets/images/turn-order/diagram.svg';
+import turnOrderDiagramFirstPlayer from './assets/images/turn-order/diagram-first-player.svg';
 import defaultContractImage from './assets/images/contracts/default.png';
 import achievementIcon from './assets/images/icons/achievement.svg';
 import turnOrderIcon from './assets/images/icons/turn-order.svg';
@@ -10,7 +11,7 @@ import contractIcon from './assets/images/icons/contract.svg';
 import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
-import cometIcon from './assets/images/icons/comet.svg';
+import cometIcon from './assets/images/icons/comet.png';
 import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
@@ -273,18 +274,52 @@ export function AchievementCard({name, score, text}) {
 }
 
 export function TurnOrderCard({name, score, text}) {
+  const backgroundImage = backImages[`./assets/images/backs/turn-order.jpg`]?.default;
+  const diagram = name === '1st Player' ? turnOrderDiagramFirstPlayer : turnOrderDiagram;
+  const filter = 'grayscale() brightness(1.4)';
+  const rocket = <>
+      <img src={rocketCardImage} className="card-icon-image" style={{
+        height: '40px',
+        marginLeft: '5px',
+        marginRight: '10px',
+      }} />
+    </>;
   return (
-    <div className="card" style={
-      {
-        backgroundSize: '2.5in',
-        backgroundImage: `url(${defaultTurnOrderImage})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
-        zIndex: '-4',
-      }
-    }>
+    <div className="card">
+      <img className="card-background-image" src={backgroundImage} style={
+        {
+          filter: filter,
+        }
+      }>
+      </img>
       <Banner score={score} typeImage={turnOrderIcon} />
-      <Newspaper name={name} text={text} />
+      <h1 className="turn-order-title card-title contract-title white-shadow-intense">{name}</h1>
+
+      <p className="turn-order-score-text white-shadow-intense">Score this card</p>
+      <span className="scored-cards-text">Scored <br /> cards</span>
+      <img className="turn-order-diagram white-shadow-intense" src={diagram}></img>
+      <div className="turn-order-draw">
+        <h4 className="turn-order-draw-text white-shadow-intense">Draw</h4>
+        <div style={{
+        }}>
+          <img src={factionCardImage} className="card-icon-image white-shadow-" style={{
+            height: '40px',
+            marginLeft: '5px',
+            marginRight: '5px',
+          }} />
+          <img src={factionCardImage} className="card-icon-image" style={{
+            height: '40px',
+            marginLeft: '5px',
+            marginRight: '5px',
+          }} />
+          <img src={contractCardImage} className="card-icon-image" style={{
+            height: '40px',
+            marginLeft: '5px',
+            marginRight: '5px',
+          }} />
+          {name !== '1st Player' ? rocket : ''}
+        </div>
+      </div>
     </div>
   );
 }
@@ -321,14 +356,14 @@ function BonusCardImage({color}) {
 export function Bonus({small, doubleComets, colors}) {
   const cards = colors.map(color => BonusCardImage({color}));
   const secondComet = doubleComets ? 
-      <img src={cometIcon} className='bonus-line-item bonus-comet' />
+      <img src={cometIcon} className='bonus-line-item comet' />
     : <></>;
 
   const additionalClass = small ? 'bonus-line-small' : '';
 
   return (
     <div class={`bonus-line ${additionalClass}`}>
-      <img src={cometIcon} className='bonus-line-item bonus-comet' />
+      <img src={cometIcon} className='bonus-line-item comet' />
       {secondComet}
       <h1 className="bonus-line-item bonus-colon">: </h1>
       {cards}
@@ -420,7 +455,8 @@ export function GenericCardBack({type}) {
     filter = 'grayscale() brightness(0.5)';
   }
   else if (type === 'Turn Order') {
-    filter = 'hue-rotate(250deg) brightness(1.4)';
+    //filter = 'hue-rotate(250deg) brightness(1.4)';
+    filter = 'grayscale() brightness(1.4)';
   }
   else {
     imageUrl = backImages[`./assets/images/backs/faction.jpg`]?.default;

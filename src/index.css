@@ -171,14 +171,14 @@ body {
   filter: drop-shadow(-5px -5px 5px #ffffff88)
           drop-shadow(-5px 5px 5px #ffffff88)
           drop-shadow(5px -5px 5px #ffffff88)
-          drop-shadow(5px 5px 5px #ffffff88);
+          drop-shadow(5px 5px 5px #ffffff88) !important;
 }
 
 .white-shadow-intense {
   filter: drop-shadow(-5px -5px 5px #ffffffcc)
           drop-shadow(-5px 5px 5px #ffffffcc)
           drop-shadow(5px -5px 5px #ffffffcc)
-          drop-shadow(5px 5px 5px #ffffffcc);
+          drop-shadow(5px 5px 5px #ffffffcc) !important;
 }
 
 .white-shadow-main-text {
@@ -364,7 +364,8 @@ body {
   height: 30px;
 }
 
-.bonus-comet {
+.comet {
+  transform: scaleX(-1) translate(-0%, -10%);
 }
 
 .bonus-colon {
@@ -439,11 +440,6 @@ body {
   margin-right: 10px
 }
 
-.turn-order {
-  display: none;
-  padding: 10px;
-}
-
 .action-box-title {
   font-weight: bolder;
 }
@@ -453,10 +449,7 @@ body {
   margin: 10px;
   background: #ffffffd8;
   font-size: 11pt;
-}
-
-.turn-order-box-inner {
-  padding: 10px;
+  line-height: 130%;
 }
 
 .faction-mat-grid {
@@ -552,4 +545,44 @@ faction-mat-edge {
   width: 2.5in;
   height: 3.5in;
   z-index: -4;
+}
+
+.turn-order-score-text {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 40px;
+  font-size: 14pt;
+}
+
+.scored-cards-text {
+  position: absolute;
+  font-size: 6pt;
+  margin-left: 168px;
+  margin-top: 128px;
+  z-index: 1;
+}
+
+.turn-order-diagram {
+  position: absolute;
+  width: 2in;
+  margin-top: 90px;
+  margin-left: 20px;
+}
+
+.turn-order-draw {
+  margin-top: 1.57in;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  font-size: 14pt;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10px;
+  z-index: 2;
+  backdrop-filter: brightness(85%);
+}
+
+.turn-order-draw-text {
+  margin-top: 10px;
+  margin-bottom: 25px;
 }

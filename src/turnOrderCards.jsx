@@ -5,25 +5,25 @@ import { TurnOrderCard } from './cardTemplates.jsx';
 export const turnOrderCards = [
   (<TurnOrderCard name="1st Player" score={0} type="Turn Order" text={(
     <>
-      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Rocket />.
+      Draw <FactionCardIcon /> <FactionCardIcon /> <Rocket />.
     </>
   )}/>),
 
   (<TurnOrderCard name="2nd Player" score={0} type="Turn Order" text={(
     <>
-      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+      Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
     </>
   )}/>),
 
   (<TurnOrderCard name="3rd Player" score={1} type="Turn Order" text={(
     <>
-      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+      Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
     </>
   )}/>),
 
   (<TurnOrderCard name="4th Player" score={2} type="Turn Order" text={(
     <>
-      Score this card immediately. Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
+      Draw <FactionCardIcon /> <FactionCardIcon /> <Contract /> <Rocket />.
     </>
   )}/>),
 ].map((turnOrderCard) => [React.cloneElement(turnOrderCard, { key: turnOrderCard.props.name })]).flat();

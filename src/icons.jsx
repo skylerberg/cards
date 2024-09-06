@@ -1,4 +1,4 @@
-import cometIcon from './assets/general/comet.svg';
+import cometIcon from './assets/images/icons/comet.png';
 import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
@@ -8,6 +8,7 @@ import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
 import achievement from './assets/images/icons/achievement.svg';
+import actionImage from './assets/images/icons/action.svg';
 import takeAnotherActionImage from './assets/images/icons/take-another-action.svg';
 
 export function Icon({name}) {
@@ -77,7 +78,7 @@ export function Facility() {
 }
 
 export function Action() {
-  return <Icon name="action" />;
+  return <img src={actionImage} className="icon-image" />
 }
 
 export function TakeAnotherAction() {
@@ -92,7 +93,7 @@ export function TakeAnotherAction() {
   }
 
   export function Comet() {
-    return <img src={cometIcon} className="icon-image" />;
+    return <img src={cometIcon} className="icon-image comet" />;
   }
 
 export function Achievement() {

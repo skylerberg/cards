@@ -114,7 +114,7 @@ function FactionMat({ name }) {
 
         <div className="faction-info-boxes">
           <div className="overlay-box action-box">
-            <span class="action-box-title">Actions</span> <i>(1 per turn)</i>
+            <span class="action-box-title">Actions</span> <i>(1 <Action/> per turn)</i>
             <br />
             &nbsp;&nbsp;<Action /> Build a <Facility />
             <br />
