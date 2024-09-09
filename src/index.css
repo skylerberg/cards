@@ -236,6 +236,11 @@ body {
   display: inline-block;
 }
 
+.icon-image-large {
+  margin-bottom: -3px !important;
+  height: .18in !important;
+}
+
 .icon-margins {
   margin-left: 2px;
   margin-right: 2px;
@@ -246,9 +251,19 @@ body {
   height: .14in;
 }
 
+.asteroid-large {
+  margin-bottom: -2px;
+  height: .18in !important;
+}
+
 .specific-facility-icon {
   margin-bottom: -1px;
   height: .14in;
+}
+
+.shape-large {
+  margin-bottom: -3px;
+  height: .18in;
 }
 
 .filter-blue {
@@ -260,6 +275,11 @@ body {
   margin-bottom: -2px;
   height: 15px;
   display: inline-block;
+}
+
+.card-icon-image-large {
+  margin-bottom: -3px !important;
+  height: 18px !important;
 }
 
 .route-box {
@@ -536,6 +556,7 @@ faction-mat-edge {
 
 .cloud-text-large {
   font-size: 13pt;
+  font-variation-settings: "wdth" 73;
 }
 
 .card-background-image {

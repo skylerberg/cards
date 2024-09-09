@@ -15,12 +15,18 @@ import { EndGameCard } from './cardTemplates.jsx';
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
 
-const cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />]);
-//const cards = [
-//  unearthIncCards[0],
-//  achievements[17],
-//  allies[14],
-//].flat();
+let duplicateFactionCards = [];
+for (let i = 0; i < factionCards.length; i += 8) {
+  for (let j = 0; j < 4; j++) {
+    duplicateFactionCards.push(factionCards[i +j]);
+  }
+}
+
+let cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
+
+cards = [
+  contracts,
+].flat();
 
 reactRoot.render(
   <React.StrictMode>

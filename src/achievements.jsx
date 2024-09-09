@@ -1,17 +1,17 @@
 import React from 'react';
-import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Action, Comet, Contract, Rocket, Contracts, Facility, VictoryPoints } from './icons.jsx';
+import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Comet, Contract, Rocket, Facility, VictoryPoints } from './icons.jsx';
 import { AchievementCard } from './cardTemplates.jsx';
 
 export const achievements = [
   (<AchievementCard name="Fabulous" score={4} type="Achievement" text={(
     <>
-      Have a <Facility /> that is adjacent to 3 non-neutral <Square />.
+      Have a <Facility /> that is adjacent to 3 non-neutral <Square large="true" />.
     </>
   )}/>),
 
   (<AchievementCard name="Versatile" score={3} type="Achievement" text={(
     <>
-      Have at least 1<Circle />, 1<Square />, and 1<Droplet /> on the board, at least 1<Ally />, and at least 1<Contract />, 1<Rocket />, and 1<FactionCardIcon /> in your hand.
+      Have at least 1<Circle large="true" />, 1<Square large="true" />, and 1<Droplet large="true" /> on the board, at least 1<Ally large="true" />, and at least 1<Contract large="true" />, 1<Rocket large="true" />, and 1<FactionCardIcon large="true" /> in your hand.
     </>
   )}/>),
 
@@ -35,7 +35,7 @@ export const achievements = [
 
   (<AchievementCard name="Neighborly" score={4} type="Achievement" text={(
     <>
-      Have 5 or more <Facility /> adjacent to other player’s <Facility />.
+      Have 5 or more <Facility /> adjacent to opponents' <Facility />.
     </>
   )}/>),
 
@@ -53,7 +53,7 @@ export const achievements = [
 
   (<AchievementCard name="Charismatic" score={3} type="Achievement" text={(
     <>
-      Have 3 or more <Ally />.
+      Have 3 or more <Ally large="true" />.
     </>
   )}/>),
 
@@ -65,19 +65,19 @@ export const achievements = [
 
   (<AchievementCard name="Well Rounded" score={3} type="Achievement" text={(
     <>
-      Have scored at least 3<FactionCardIcon />, 3<Rocket />, and 3<Contract />.
+      Have scored at least 3<FactionCardIcon large="true" />, 3<Rocket large="true" />, and 3<Contract large="true" />.
     </>
   )}/>),
 
   (<AchievementCard name="Independent" score={3} type="Achievement" text={(
     <>
-      Complete 2 or more <Contract /> on your turn with no neutral <Facility /> and no <Comet /> in any routes used.
+      Complete 2 or more <Contract large="true" /> on your turn with no neutral <Facility /> and no <Comet large="true" /> in any routes used.
     </>
   )}/>),
 
   (<AchievementCard name="Efficient" score={4} type="Achievement" text={(
     <>
-      Have more scored <Contract /> than you have <Facility />.
+      Have more scored <Contract large="true" /> than you have <Facility />.
     </>
   )}/>),
 
@@ -89,31 +89,31 @@ export const achievements = [
 
   (<AchievementCard name="Trail Blazer" score={3} type="Achievement" text={(
     <>
-      All <Asteroid /> have at least 1 <Facility />.
+      All <Asteroid large="true" /> have at least 1 <Facility />.
     </>
   )}/>),
 
   (<AchievementCard name="Ambitious" score={3} type="Achievement" text={(
     <>
-      Have at least 3 scored <Contract /> and half or more of your scored <Contract /> are worth 5 <VictoryPoints />.
+      Have at least 3 scored <Contract large="true" /> and half or more of your scored <Contract large="true" /> are worth 5 <VictoryPoints />.
     </>
   )}/>),
 
   (<AchievementCard name="Extractive" score={4} type="Achievement" text={(
     <>
-      Have 4 or more <Circle /> you own adjacent to neutral <Facility />.
+      Have 4 or more <Circle large="true" /> you own adjacent to neutral <Facility />.
     </>
   )}/>),
 
   (<AchievementCard name="Refined" score={5} type="Achievement" text={(
     <>
-      Have 5 or more <Droplet /> you own that are not adjacent to each other.
+      Have 5 or more <Droplet large="true" /> you own that are not adjacent to each other.
     </>
   )}/>),
 
   (<AchievementCard name="Patient" score={3} type="Achievement" text={(
     <>
-      Be the only player with no scored <Contract />.
+      Be the only player with no scored <Contract large="true" />.
     </>
   )}/>),
 

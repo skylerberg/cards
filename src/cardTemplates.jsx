@@ -210,7 +210,7 @@ export function RocketCard({name, score, ability}) {
   const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
     rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
   let backgroundImage = backImages[`./assets/images/backs/rocket.jpg`]?.default;
-  const filter = 'hue-rotate(150deg) brightness(0.6) contrast(1.3)';
+  const filter = 'hue-rotate(160deg) brightness(0.6) contrast(1.3)';
 
   return (
     <div className="card" style={
@@ -404,7 +404,6 @@ export function ContractCard({name, route, bonuses}) {
   }
 
   let backgroundImage = backImages[`./assets/images/backs/contract.jpg`]?.default;
-  const filter = 'hue-rotate(150deg) brightness(0.6) contrast(1.3)';
 
   return (
     <div className="card" style={
@@ -446,13 +445,13 @@ export function GenericCardBack({type}) {
     filter = 'brightness(1.0)';
   }
   else if (type === 'Ally') {
-    filter = 'hue-rotate(180deg) brightness(2.0)';
+    filter = 'hue-rotate(200deg) brightness(2.0)';
   }
   else if (type === 'Rocket') {
-    filter = 'hue-rotate(150deg) brightness(1.0) contrast(1.3)';
+    filter = 'hue-rotate(160deg) brightness(1.0) contrast(1.3)';
   }
   else if (type === 'Achievement') {
-    filter = 'grayscale() brightness(0.5)';
+    filter = 'grayscale() brightness(0.2)';
   }
   else if (type === 'Turn Order') {
     //filter = 'hue-rotate(250deg) brightness(1.4)';

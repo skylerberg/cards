@@ -203,7 +203,7 @@ export const cyborgUnionCards = [
 
   (<FactionCard name="Severance" score={0} type="Cyborg Union" ability={(
     <>
-      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract /> , then put the revealed <Contract /> on the bottom of the <Contract /> deck.
+      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract />, then put the revealed <Contract /> on the bottom of the <Contract /> deck.
     </>
   )}/>),
 

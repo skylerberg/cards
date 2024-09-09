@@ -15,45 +15,85 @@ export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
 }
 
-export function Droplet({ color }) {
+export function Droplet({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
+  }
+  if (large) {
+    className += ' shape-large';
   }
   return <img src={droplet} className={className} />;
 }
 
-export function Circle({ color }) {
+export function Circle({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
+  }
+  if (large) {
+    className += ' shape-large';
   }
   return <img src={circle} className={className} />;
 }
 
-export function Square({ color }) {
+export function Square({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
   }
+  if (large) {
+    className += ' shape-large';
+  }
   return <img src={square} className={className} />;
 }
 
-export function Contract() {
-  let className = 'card-icon-image';
-  return <img src={contractCardImage} className={className} />;
+export function Contract({large}) {
+  let className = 'card-icon-image icon-margins';
+  if (large) {
+    className += ' card-icon-image-large';
+  }
+  return <>
+    <nobr>
+      <img src={contractCardImage} className={className} />
+    </nobr>
+  </>
 }
 
-export function FactionCardIcon() {
-  return <img src={factionCardImage} className="card-icon-image icon-margins" />;
+export function FactionCardIcon({large}) {
+  let className = 'card-icon-image icon-margins';
+  if (large) {
+    className += ' card-icon-image-large';
+  }
+  return <>
+    <nobr>
+      <img src={factionCardImage} className={className} />
+    </nobr>
+  </>
 }
 
-export function Rocket() {
-  return <img src={rocketCardImage} className="card-icon-image icon-margins" />;
+export function Rocket({large}) {
+  let className = 'card-icon-image icon-margins';
+  if (large) {
+    className += ' card-icon-image-large';
+  }
+  return <>
+    <nobr>
+      <img src={rocketCardImage} className={className} />
+    </nobr>
+  </>
 }
 
-export function Ally() {
-  return <img src={allyCardImage} className="card-icon-image icon-margins" />;
+export function Ally({large}) {
+  let className = 'card-icon-image icon-margins';
+  if (large) {
+    className += ' card-icon-image-large';
+  }
+  return <>
+    <nobr>
+      <img src={allyCardImage} className={className} />
+    </nobr>
+  </>
 }
 
 export function Rotate() {
@@ -61,8 +101,12 @@ export function Rotate() {
   //return <Icon name="rotate" />;
 }
 
-export function Asteroid() {
-  return <img src={asteroidImage} className="asteroid" />;
+export function Asteroid({large}) {
+  let className = 'asteroid';
+  if (large) {
+    className += ' asteroid-large';
+  }
+  return <img src={asteroidImage} className={className} />;
 }
 
 export function RotateClockwise() {
@@ -87,14 +131,18 @@ export function TakeAnotherAction() {
   </>
   }
 
-  export function Move() {
-    return <span>Move</span>;
-    //return <Icon name="move" />;
-  }
+export function Move() {
+  return <span>Move</span>;
+  //return <Icon name="move" />;
+}
 
-  export function Comet() {
-    return <img src={cometIcon} className="icon-image comet" />;
+export function Comet({large}) {
+  let className = 'icon-image comet';
+  if (large) {
+    className += ' icon-image-large';
   }
+  return <img src={cometIcon} className={className} />;
+}
 
 export function Achievement() {
   return <img src={achievement} className="icon-image" />;
