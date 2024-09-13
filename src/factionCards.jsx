@@ -11,7 +11,7 @@ export const theScavengersCards = [
 
   (<FactionCard name="Frozen Assets" score={1} type="The Scavengers" ability={(
     <>
-      Complete 1<Contract /> treating a <Comet /> between 2 <Facility /> used as a <Facility /> of any shape in addition to being a <Comet />.
+      Complete 1<Contract /> treating a <Comet /> between 2 <Facility /> in the route as a <Facility /> of any shape in addition to being a <Comet />.
     </>
   )}/>),
 
@@ -64,9 +64,7 @@ export const hydrusGangCards = [
 
   (<FactionCard name="Armed Facility" score={0} type="Hydrus Gang" ability={(
     <>
-      <Destroy /> a <Facility /> adjacent to a <Facility /> you own.
-
-      <TakeAnotherAction />
+      <Destroy /> a <Facility /> adjacent to a <Facility /> you own. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -96,18 +94,14 @@ export const hydrusGangCards = [
 
   (<FactionCard name="Cut 'em Off" score={0} type="Hydrus Gang" ability={(
     <>
-      <Destroy /> a <Facility /> adjacent to a neutral <Facility />.
-
-      <TakeAnotherAction />
+      <Destroy /> a <Facility /> adjacent to a neutral <Facility />. <TakeAnotherAction />
     </>
   )}/>),
 
 
   (<FactionCard name="Phoenix Initiative" score={1} type="Hydrus Gang" ability={(
     <>
-      You may <Destroy /> a <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />.
-
-      <TakeAnotherAction />
+      You may <Destroy /> a <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -116,17 +110,13 @@ export const hydrusGangCards = [
 export const unearthIncCards = [
   (<FactionCard name="Restructure" score={0} type="Unearth Inc." ability={(
     <>
-      <Destroy /> a <Facility /> you own to build a <Facility />.
-
-      <TakeAnotherAction />
+      <Destroy /> a <Facility /> you own to build a <Facility />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Patent Dispute" score={2} type="Unearth Inc." ability={(
     <>
-      <Destroy /> a <Facility /> you own to draw 1<Contract />.
-
-      <TakeAnotherAction />
+      <Destroy /> a <Facility /> you own to draw 1<Contract />. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -138,7 +128,7 @@ export const unearthIncCards = [
 
   (<FactionCard name="Expand" score={1} type="Unearth Inc." ability={(
     <>
-      Build a <Facility /> on up to 2 <Asteroid />.
+      Build a <Facility />. You may build a <Facility /> on a different <Asteroid />.
     </>
   )}/>),
 
@@ -224,65 +214,49 @@ export const cyborgUnionCards = [
 export const explorerSocietyCards = [
   (<FactionCard name="Venture" type="Explorer Society" score={1} ability={(
     <>
-      Move 1 <Facility /> you own.
-
-      <TakeAnotherAction />
+      Move 1 <Facility /> you own. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Relocate Refineries" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Droplet color="blue" />.
-
-      <TakeAnotherAction />
+      Move up to 2 of your <Droplet color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Fling Fabricators" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Square color="blue" />.
-
-      <TakeAnotherAction />
+      Move up to 2 of your <Square color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Extract Extractors" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 of your <Circle color="blue" />.
-
-      <TakeAnotherAction />
+      Move up to 2 of your <Circle color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Fab Breakthrough" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 of your <Square color="blue" />.
-
-      <TakeAnotherAction />
+      Replace up to 2 of your <Square color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Oil Treatments" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 of your <Droplet color="blue" />.
-
-      <TakeAnotherAction />
+      Replace up to 2 of your <Droplet color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Advanced Drilling" type="Explorer Society" score={0} ability={(
     <>
-      Replace up to 2 of your <Circle color="blue" />.
-
-      <TakeAnotherAction />
+      Replace up to 2 of your <Circle color="blue" />. <TakeAnotherAction />
     </>
   )}/>),
 
   (<FactionCard name="Study Comet" type="Explorer Society" score={0} ability={(
     <>
-      Move up to 2 <Facility /> you own to spaces on either side of 1<Comet />.
-
-      <TakeAnotherAction />
+      Move up to 2 <Facility /> you own to spaces on either side of 1<Comet />. <TakeAnotherAction />
     </>
   )}/>),
 

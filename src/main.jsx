@@ -9,11 +9,18 @@ import { factionCards, theScavengersCards, cruxCabalCards, unearthIncCards, hydr
 import { achievements } from './achievements.jsx';
 import { contracts } from './contracts.jsx';
 import { turnOrderCards } from './turnOrderCards.jsx';
+import { HelperCard } from './cardTemplates.jsx';
 import { FactionMats } from './factionMats.jsx';
 import { EndGameCard } from './cardTemplates.jsx';
+import { EndGameMarker } from './endGameMarker.jsx';
 
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
+const helperCards = [];
+
+for (let i = 0; i < 4; i++) {
+  helperCards.push(<HelperCard type="Helper" />);
+}
 
 let duplicateFactionCards = [];
 for (let i = 0; i < factionCards.length; i += 8) {
@@ -22,15 +29,16 @@ for (let i = 0; i < factionCards.length; i += 8) {
   }
 }
 
-let cards = contracts.concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
+let cards = helperCards.concat(contracts).concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />, <HelperCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
 
-cards = [
-  contracts,
-].flat();
+//cards = [
+//  contracts,
+//].flat();
 
 reactRoot.render(
   <React.StrictMode>
     <FactionMats />
     <CardPages cards={cards}/>
+    <EndGameMarker />
   </React.StrictMode>
 );

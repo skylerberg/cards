@@ -16,7 +16,7 @@ import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Contracts, FactionCardIcon, Action, Facility, Rocket, Contract } from './icons.jsx';
+import { Ally, Achievement, VictoryPoints, Asteroid, Comet, TakeAnotherAction, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
@@ -324,6 +324,165 @@ export function TurnOrderCard({name, score, text}) {
   );
 }
 
+export function HelperCard({type}) {
+  const backgroundImage = backImages[`./assets/images/backs/faction.jpg`]?.default;
+  const filter = 'brightness(0.5) grayscale() invert()';
+  const cruxCabalIcon = iconImages[`./assets/images/icons/crux-cabal.svg`]?.default;
+  const cyborgUnionIcon = iconImages[`./assets/images/icons/cyborg-union.svg`]?.default;
+  const explorerSocietyIcon = iconImages[`./assets/images/icons/explorer-society.svg`]?.default;
+  const hydrusGangIcon = iconImages[`./assets/images/icons/hydrus-gang.svg`]?.default;
+  const theScavengersIcon = iconImages[`./assets/images/icons/the-scavengers.svg`]?.default;
+  const unearthIncIcon = iconImages[`./assets/images/icons/unearth-inc..svg`]?.default;
+
+  return (
+    <div className="card">
+      <img className="card-background-image" src={backgroundImage} style={
+        {
+          filter: filter,
+        }
+      }>
+      </img>
+
+      <div class="helper-card-title">
+        Faction Overviews
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={unearthIncIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Builds extra facilities (<Facility />) then destroys (<Destroy />) them.
+        </p>
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={hydrusGangIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Draws rockets (<Rocket />) and destroys (<Destroy />) facilities (<Facility />).
+        </p>
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={cyborgUnionIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Draws contracts (<Contract />) and helps other players.
+        </p>
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={explorerSocietyIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Moves and replaces their facilities (<Facility />).
+        </p>
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={theScavengersIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Has easy ways to complete 1 contract (<Contract />) at a time.
+        </p>
+      </div>
+
+      <div class="helper-card-faction-line">
+        <img className="helper-card-faction-icon" src={cruxCabalIcon}></img>
+        <p class="helper-card-faction-description">
+          <span class="helper-card-faction-title"></span>
+          Draws allies (<Ally />) and uses other players' cards.
+        </p>
+      </div>
+
+    </div>
+  );
+}
+
+export function HelperCardBack() {
+  const backgroundImage = backImages[`./assets/images/backs/faction.jpg`]?.default;
+  const filter = 'brightness(0.5) grayscale() invert()';
+
+  return (
+    <div className="card">
+      <img className="card-background-image" src={backgroundImage} style={
+        {
+          filter: filter,
+        }
+      }>
+      </img>
+
+      <div class="helper-card-turn-overview helper-card-section">
+        <div class="helper-card-title">
+          Turn Overview
+        </div>
+        <div class="legend-item">
+          <Action /> Take 1 action
+        </div>
+        <div class="legend-item">
+          <Contract /> Restock public contracts
+        </div>
+        <div class="legend-item">
+          <Achievement /> Claim acheivements
+        </div>
+      </div>
+
+      <div class="helper-card-section">
+        <div class="helper-card-title">
+          Legend
+        </div>
+
+        <div class="helper-card-icon-grid">
+          <div class="legend-item">
+            <Asteroid /> Asteroid
+          </div>
+          <div class="legend-item">
+            <Comet /> Comet
+          </div>
+
+          <div class="legend-item">
+            <FactionCardIcon /> Faction card
+          </div>
+          <div class="legend-item">
+            <Rocket /> Rocket
+          </div>
+
+          <div class="legend-item">
+            <Contract /> Contract
+          </div>
+          <div class="legend-item">
+            <Ally /> Ally
+          </div>
+
+          <div class="legend-item double-column">
+            <Contracts /> Any number of contracts
+          </div>
+
+          <div class="legend-item double-column">
+            <Facility /> Facility <i>(<Circle />, <Square />, or <Droplet />)</i>
+          </div>
+
+          <div class="legend-item double-column">
+            <Destroy /> Destroy <i>(return <Facility /> to supply)</i>
+          </div>
+
+          <div class="legend-item double-column">
+            <Action /> Available action
+          </div>
+
+          <div class="legend-item double-column">
+            <TakeAnotherAction /> Take another action
+          </div>
+
+          <div class="legend-item double-column">
+            <VictoryPoints /> Victory Points
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 export function FacilityShape({image, scale}) {
   return <img
@@ -434,11 +593,12 @@ export function ContractCard({name, route, bonuses}) {
 }
 
 
-export function GenericCardBack({type}) {
+export function GenericCardBack({type, style}) {
   const jpgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.jpg`;
   const svgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
   let imageUrl = backImages[`./assets/images/backs/${jpgName}`]?.default;
   const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default;
+  const additionalStyle = style || {};
 
   let filter = '';
   if (type === 'Contract') {
@@ -463,7 +623,7 @@ export function GenericCardBack({type}) {
   }
 
   return (
-    <div className="card">
+    <div className="card" style={additionalStyle}>
       <img className="card-background-image" src={imageUrl} style={
         {
           filter: filter,
@@ -487,6 +647,9 @@ export function GenericCardBack({type}) {
 export function CardBack({type}) {
   if (!type) {
     return EndGameCard();
+  }
+  else if (type === 'Helper') {
+    return HelperCardBack();
   }
   return GenericCardBack({type});
 }

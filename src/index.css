@@ -607,3 +607,141 @@ faction-mat-edge {
   margin-top: 10px;
   margin-bottom: 25px;
 }
+
+.helper-card-faction-line {
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+  align-items: center;
+}
+
+.helper-card-faction-icon {
+  width: 44px;
+  margin: 2px;
+}
+
+.helper-card-faction-title {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.helper-card-faction-description {
+  font-size: 10pt;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 3px;
+  align-self: middle;
+  text-align: left;
+  font-variation-settings: "wdth" 60;
+}
+
+.helper-card-section {
+  backdrop-filter: brightness(120%) blur(2px);
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 4px;
+}
+
+.helper-card-icon-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 60%);
+  font-size: 11pt;
+  font-variation-settings: "wdth" 60;
+  text-align: left;
+}
+
+.legend-item {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.double-column {
+  grid-column: 1 / 3;
+}
+
+.helper-card-turn-overview {
+  font-size: 11pt;
+  font-variation-settings: "wdth" 60;
+  text-align: left;
+}
+
+.helper-card-title {
+  font-size: 12pt;
+  font-weight: bold;
+  font-variation-settings: "wdth" 60;
+  text-align: center;
+}
+
+.end-game-marker {
+  width: 3.5in;
+  height: 4.5in;
+  border-color: black;
+  border-style: solid;
+  border-width: 1mm;
+  padding: 3mm;
+  display: flex;
+  /*box-shadow: inset 0 0 20px black;*/
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.end-game-title {
+  position: absolute;
+  width: 3.5in;
+  height: 30px;
+  font-size: 16pt;
+  font-variation-settings: "wdth" 100;
+}
+
+.end-game-titles {
+  align-items: center;
+  display: flex;
+}
+
+.end-game-left {
+  transform: translateX(-50%) rotate(90deg) translateY(-50%) ;
+}
+
+.end-game-right {
+  transform: translateX(50%) rotate(-90deg) translateY(-100%) translateY(-3mm);
+}
+
+.end-game-top {
+  margin-top: 0px;
+  margin-left: -14px;
+  transform: rotate(180deg) /*translateY(-75%) translateY(-3mm);*/
+}
+
+.end-game-bottom {
+  align-self: end;
+  margin-left: -14px;
+}
+
+.end-game-card-box {
+  width: 2.5in;
+  height: 3.5in;
+  border-radius: 10px;
+  border-color: white;
+  border-style: dashed;
+  border-width: 1mm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fffa;
+  backdrop-filter: blur(1px);
+  text-align: center;
+}
+
+.end-game-heading {
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+}

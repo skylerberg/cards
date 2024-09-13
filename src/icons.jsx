@@ -127,7 +127,7 @@ export function Action() {
 
 export function TakeAnotherAction() {
   return <>
-     &nbsp;<img src={takeAnotherActionImage} className="icon-image" />
+     <img src={takeAnotherActionImage} className="icon-image" />
   </>
   }
 
@@ -155,15 +155,17 @@ export function VictoryPoints() {
 export function Contracts() {
   return (
     <>
-      <span className="first-contract">
-        <img src={contractCardImage} className="card-icon-image" />
-      </span>
-      <span className="second-contract">
-        <img src={contractCardImage} className="card-icon-image" />
-      </span>
-      <span className="third-contract">
-        <img src={contractCardImage} className="card-icon-image" />
-      </span>
+      <nobr>
+        <span className="first-contract">
+          <img src={contractCardImage} className="card-icon-image" />
+        </span>
+        <span className="second-contract">
+          <img src={contractCardImage} className="card-icon-image" />
+        </span>
+        <span className="third-contract">
+          <img src={contractCardImage} className="card-icon-image" />
+        </span>
+      </nobr>
     </>
   );
 }
