@@ -12,7 +12,7 @@ import { turnOrderCards } from './turnOrderCards.jsx';
 import { HelperCard } from './cardTemplates.jsx';
 import { FactionMats } from './factionMats.jsx';
 import { EndGameCard } from './cardTemplates.jsx';
-import { EndGameMarker } from './endGameMarker.jsx';
+import { EndGameMarkerPage } from './endGameMarker.jsx';
 
 const rootDiv = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(rootDiv);
@@ -31,14 +31,13 @@ for (let i = 0; i < factionCards.length; i += 8) {
 
 let cards = helperCards.concat(contracts).concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />, <HelperCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
 
-//cards = [
-//  contracts,
-//].flat();
+cards = [
+].flat();
 
 reactRoot.render(
   <React.StrictMode>
     <FactionMats />
     <CardPages cards={cards}/>
-    <EndGameMarker />
+    <EndGameMarkerPage />
   </React.StrictMode>
 );

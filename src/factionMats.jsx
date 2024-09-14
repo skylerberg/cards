@@ -1,6 +1,6 @@
 import { FactionMatPage } from './pages.jsx';
-import achievementIcon from './assets/images/icons/achievement.svg';
 import { Facility, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
+import backImage from './assets/images/backs/faction-mat-back.jpg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -17,9 +17,23 @@ export function FactionMats() {
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
+          <FactionMatBack />
+          <FactionMatBack />
+          <FactionMatBack />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Cyborg Union" />
           <FactionMat name="Crux Cabal" />
           <FactionMat name="Unearth Inc." />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
+          <FactionMatBack />
+          <FactionMatBack />
+          <FactionMatBack />
         </div>
       )} />
     </>
@@ -128,6 +142,25 @@ function FactionMat({ name }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function FactionMatBack() {
+  const factionIconImage = iconImages[`./assets/images/icons/faction-generic.svg`]?.default;
+
+  return (
+    <div className='faction-mat' style={{}}>
+        <img className="" src={backImage} style={
+          {
+            filter: 'brightness(0.5) grayscale() invert()',
+            position: 'absolute',
+            width: '7.5in',
+            zIndex: '-4',
+          }
+        }>
+        </img>
+        <img src={factionIconImage} className="faction-mat-icon-back" />
     </div>
   );
 }

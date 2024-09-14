@@ -439,6 +439,13 @@ body {
   opacity: 92%;
 }
 
+.faction-mat-icon-back {
+  margin: auto;
+  width: 2in;
+  height: 2in;
+  z-index: 2;
+}
+
 .faction-title-box {
   margin: 10px;
   margin-left: -48px;
