@@ -463,7 +463,7 @@ export function HelperCardBack() {
           </div>
 
           <div class="legend-item double-column">
-            <Destroy /> Destroy <i>(return <Facility /> to supply)</i>
+            <Destroy /> Destroy <i class="legend-parenthetical">(return <Facility /> to supply)</i>
           </div>
 
           <div class="legend-item double-column">

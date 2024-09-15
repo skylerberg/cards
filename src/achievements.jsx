@@ -117,5 +117,13 @@ export const achievements = [
     </>
   )}/>),
 
+  /*
+  (<AchievementCard name="Doppelganger" score={4} type="Achievement" text={(
+    <>
+      Have a <Facility /> of each type (<Circle />, <Square />, <Droplet />) adjacent to an opponent's <Facility /> of the same type with a <Comet /> between them.
+    </>
+  )}/>),
+  */
+
 ].map((achievement) => [React.cloneElement(achievement, { key: achievement.props.name })]).flat();
 //In 1 turn, complete 2<Contract /> using routes with <Comet /> without gaining any bonuses.

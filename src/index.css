@@ -662,8 +662,11 @@ faction-mat-edge {
 }
 
 .legend-item {
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 3px;
+}
+
+.legend-parenthetical {
+  font-size: 10pt;
 }
 
 .double-column {
