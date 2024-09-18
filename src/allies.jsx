@@ -104,7 +104,7 @@ export let allies = [
 
   (<AllyCard name="Innovator" score={1} type="Ally" ability={(
     <>
-      <Action /> Draw the bottom 2<Contract /> from the <Contract /> deck.
+      <Action /> Draw 2<Contract /> from beneath the End Game divider.
     </>
   )}/>),
 
