@@ -11,7 +11,7 @@ export const achievements = [
 
   (<AchievementCard name="Versatile" score={3} type="Achievement" text={(
     <>
-      Have at least 1<Circle large="true" />, 1<Square large="true" />, and 1<Droplet large="true" /> on the board, at least 1<Ally large="true" />, and at least 1<Contract large="true" />, 1<Rocket large="true" />, and 1<FactionCardIcon large="true" /> in your hand.
+      Have an <Ally large="true"/> in play; <Contract large="true"/><Rocket large="true"/><FactionCardIcon large="true"/> in your hand; and a <Circle large="true" />, <Square large="true" />, and <Droplet large="true" /> on the board.
     </>
   )}/>),
 
@@ -60,12 +60,6 @@ export const achievements = [
   (<AchievementCard name="Minimal" score={3} type="Achievement" text={(
     <>
       Have 2 fewer <Facility /> on the board than each other player.
-    </>
-  )}/>),
-
-  (<AchievementCard name="Well Rounded" score={3} type="Achievement" text={(
-    <>
-      Have scored at least 3<FactionCardIcon large="true" />, 3<Rocket large="true" />, and 3<Contract large="true" />.
     </>
   )}/>),
 

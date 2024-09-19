@@ -39,7 +39,7 @@ export const theScavengersCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Fly-By Job" score={0} type="The Scavengers" ability={(
+  (<FactionCard name="Skirt the Rules" score={0} type="The Scavengers" ability={(
     <>
       Complete 1<Contract /> treating any 2 neutral <Facility /> as adjacent.
 
@@ -49,11 +49,24 @@ export const theScavengersCards = [
 
   (<FactionCard name="Overload" score={1} type="The Scavengers" ability={(
     <>
-      Complete 1<Contract /> treating 1 <Facility /> used as any number of <Facility /> of the same shape as that <Facility />.
+      Complete 1<Contract /> treating 1 <Facility /> used as 2 or more <Facility /> of the same shape as that <Facility />.
     </>
   )}/>),
-
 ];
+
+/*
+skirt the rules
+Free Ride
+unite the outsiders
+Unapproved transport
+Space Catapult
+Hitch Hike
+  (<FactionCard name="Overload" score={0} type="The Scavengers" ability={(
+    <>
+      Complete 1<Contract />. Your route may return to <Facility /> previously used in the route.
+    </>
+  )}/>),
+*/
 
 export const hydrusGangCards = [
   (<FactionCard name="Show Up & Blow Up" score={0} type="Hydrus Gang" ability={(
@@ -99,9 +112,9 @@ export const hydrusGangCards = [
   )}/>),
 
 
-  (<FactionCard name="Phoenix Initiative" score={1} type="Hydrus Gang" ability={(
+  (<FactionCard name="Tough Love" score={1} type="Hydrus Gang" ability={(
     <>
-      You may <Destroy /> a <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />. <TakeAnotherAction />
+      <Destroy /> up to 1 <Facility /> owned by each player. Each player whose <Facility /> you <Destroy /> draws 1<Contract />. <TakeAnotherAction />
     </>
   )}/>),
 
@@ -128,7 +141,7 @@ export const unearthIncCards = [
 
   (<FactionCard name="Expand" score={1} type="Unearth Inc." ability={(
     <>
-      Build a <Facility />. You may build a <Facility /> on a different <Asteroid />.
+      Build a <Facility /> and build another <Facility /> on a different <Asteroid />.
     </>
   )}/>),
 
@@ -191,15 +204,16 @@ export const cyborgUnionCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Severance" score={0} type="Cyborg Union" ability={(
+  (<FactionCard name="Severance" score={1} type="Cyborg Union" ability={(
     <>
-      Reveal any number of <Contract /> from your hand, collect all bonuses on each <Contract />, then put the revealed <Contract /> on the bottom of the <Contract /> deck.
+      Put 2<Contract /> from your hand on top of the <Contract /> deck to draw 1<FactionCardIcon />, 1<Rocket />, and 1<Ally />.
+
     </>
   )}/>),
 
   (<FactionCard name="Exchange Program" score={0} type="Cyborg Union" ability={(
     <>
-      Draw 1<Contract /> and 1<Ally />. Choose an opponent to draw 1<Contract />.
+      Draw 1<Contract /> and 1<Ally />. Choose an opponent to also draw 1<Contract />.
     </>
   )}/>),
 
@@ -259,8 +273,14 @@ export const explorerSocietyCards = [
       Move up to 2 <Facility /> you own to spaces on either side of 1<Comet />. <TakeAnotherAction />
     </>
   )}/>),
-
 ];
+/*
+  (<FactionCard name="Overhaul" type="Explorer Society" score={1} ability={(
+    <>
+      Replace 1 <Facility /> you own. <TakeAnotherAction />
+    </>
+  )}/>),
+*/
 
 export const cruxCabalCards = [
   (<FactionCard name="Deduce Strategy" type="Crux Cabal" score={0} ability={(
@@ -289,7 +309,7 @@ export const cruxCabalCards = [
     </>
   )}/>),
 
-  (<FactionCard name="Duel" type="Crux Cabal" score={0} ability={(
+  (<FactionCard name="Intriguing Offer" type="Crux Cabal" score={0} ability={(
     <>
       Draw 1<Ally />. You may give that <Ally /> to an opponent to draw 1<Ally /> and 1<FactionCardIcon /> from any player's <FactionCardIcon /> deck.
     </>

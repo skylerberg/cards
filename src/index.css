@@ -330,6 +330,13 @@ body {
   width: 157px;
 }
 
+.turn-order-title {
+  font-size: 16pt !important;
+  position: absolute;
+  margin-left: 48px;
+  width: 170px;
+}
+
 .faction-card-title {
   font-size: 18pt !important;
   position: absolute;

@@ -137,8 +137,6 @@ function FactionMat({ name }) {
             &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
             <br />
             &nbsp;&nbsp;<Action /> Play <FactionCardIcon /> or <Rocket />
-            <br />
-            &nbsp;&nbsp;<Action /> Use an <Ally />
           </div>
         </div>
       </div>

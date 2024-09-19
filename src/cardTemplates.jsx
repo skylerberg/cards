@@ -293,13 +293,13 @@ export function TurnOrderCard({name, score, text}) {
       }>
       </img>
       <Banner score={score} typeImage={turnOrderIcon} />
-      <h1 className="turn-order-title card-title contract-title white-shadow-intense">{name}</h1>
+      <h1 className="card-title turn-order-title white-shadow-intense">{name}</h1>
 
       <p className="turn-order-score-text white-shadow-intense">Score this card</p>
       <span className="scored-cards-text">Scored <br /> cards</span>
       <img className="turn-order-diagram white-shadow-intense" src={diagram}></img>
       <div className="turn-order-draw">
-        <h4 className="turn-order-draw-text white-shadow-intense">Draw</h4>
+        <h4 className="turn-order-draw-text white-shadow-intense">Starting hand</h4>
         <div style={{
         }}>
           <img src={factionCardImage} className="card-icon-image white-shadow-" style={{
