@@ -108,9 +108,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Challenger" score={0} type="Ally" ability={(
+  (<AllyCard name="Challenger" score={1} type="Ally" ability={(
     <>
-      <Action /> If you have fewer <Facility /> than another player, build 2 <Facility />.
+      <Action /> If you have 2 fewer <Facility /> than another player, build 2 <Facility />.
     </>
   )}/>),
 
