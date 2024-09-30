@@ -467,12 +467,14 @@ export function HelperCardBack() {
           </div>
 
           <div class="legend-item double-column">
-            <Action /> Available action
+            <Action /> Action
           </div>
 
+          {/*
           <div class="legend-item double-column">
             <TakeAnotherAction /> Take another action
           </div>
+          */}
 
           <div class="legend-item double-column">
             <VictoryPoints /> Victory Points

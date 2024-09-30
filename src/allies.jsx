@@ -92,7 +92,7 @@ export let allies = [
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If the <Rocket /> does not end with <TakeAnotherAction />, then <TakeAnotherAction />. You may not use this <Ally /> again this turn.
+      <Action /> Play 1<Rocket />. If "<Action />" does not appear in the text of the <Rocket />, take another <Action />. You may not use this <Ally /> again this turn.
     </>
   )}/>),
 

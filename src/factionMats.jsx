@@ -134,9 +134,9 @@ function FactionMat({ name }) {
             <br />
             &nbsp;&nbsp;<Action /> Complete <Contracts />
             <br />
-            &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
-            <br />
             &nbsp;&nbsp;<Action /> Play <FactionCardIcon /> or <Rocket />
+            <br />
+            &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
           </div>
         </div>
       </div>

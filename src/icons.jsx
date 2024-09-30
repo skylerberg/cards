@@ -127,7 +127,9 @@ export function Action() {
 
 export function TakeAnotherAction() {
   return <>
-     <img src={takeAnotherActionImage} className="icon-image" />
+  <nobr>
+     Take another <Action />.
+   </nobr>
   </>
   }
 
