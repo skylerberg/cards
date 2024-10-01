@@ -387,7 +387,9 @@ export function HelperCard({type}) {
         </p>
       </div>
 
-      <div class="helper-card-faction-line">
+      <div class="helper-card-faction-line" style={{
+        border: 'none',
+      }}>
         <img className="helper-card-faction-icon" src={cruxCabalIcon}></img>
         <p class="helper-card-faction-description">
           <span class="helper-card-faction-title"></span>
@@ -466,10 +468,6 @@ export function HelperCardBack() {
             <Destroy /> Destroy <i class="legend-parenthetical">(return <Facility /> to supply)</i>
           </div>
 
-          <div class="legend-item double-column">
-            <Action /> Action
-          </div>
-
           {/*
           <div class="legend-item double-column">
             <TakeAnotherAction /> Take another action
@@ -478,6 +476,10 @@ export function HelperCardBack() {
 
           <div class="legend-item double-column">
             <VictoryPoints /> Victory Points
+          </div>
+
+          <div class="legend-item double-column">
+            <Action /> Action
           </div>
         </div>
       </div>

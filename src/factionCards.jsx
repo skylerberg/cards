@@ -299,7 +299,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Coerce" type="Crux Cabal" score={0} ability={(
     <>
-      Draw 1<Ally /> or use any <Ally /> in play.
+      Use any <Ally /> in play or draw 1<Ally />.
     </>
   )}/>),
 

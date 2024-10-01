@@ -74,7 +74,9 @@ export let allies = [
 
   (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
     <>
-      <Action /> Build a <Droplet />. Play 1<Rocket />. You may not use this <Ally /> again this turn.
+      <Action /> Build a <Droplet />. Play 1<Rocket />.
+      <br />
+      You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
@@ -86,13 +88,16 @@ export let allies = [
 
   (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />. You may not use this <Ally /> again this turn.
+      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />.
+      <br />
+      You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If "<Action />" does not appear in the text of the <Rocket />, take another <Action />. You may not use this <Ally /> again this turn.
+      <Action /> Play 1<Rocket />. If "<Action />" does not appear in the text of the <Rocket />, take another <Action />.
+      You may not use this <Ally /> again this turn.
     </>
   )}/>),
 
@@ -110,7 +115,7 @@ export let allies = [
 
   (<AllyCard name="Challenger" score={1} type="Ally" ability={(
     <>
-      <Action /> If you have 2 fewer <Facility /> than another player, build 2 <Facility />.
+      <Action /> If you have 2 fewer <Facility /> than any player, build 2 <Facility />.
     </>
   )}/>),
 
