@@ -127,16 +127,56 @@ function FactionMat({ name }) {
         </div>
 
         <div className="faction-info-boxes">
-          <div className="overlay-box action-box">
-            <span class="action-box-title">Actions</span> <i>(1 <Action/> per turn)</i>
-            <br />
-            &nbsp;&nbsp;<Action /> Build a <Facility />
-            <br />
-            &nbsp;&nbsp;<Action /> Complete <Contracts />
-            <br />
-            &nbsp;&nbsp;<Action /> Play <FactionCardIcon /> or <Rocket />
-            <br />
-            &nbsp;&nbsp;<Action /> Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
+          <div className="action-box">
+
+            <span className="action-box-center">
+              <div className="action-box-item-content">
+                <div>Actions</div>
+                <div><Action large={true}/></div>
+                <div>1 Per turn</div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-1">
+              <div className="action-box-item-content">
+                <div>Build</div>
+                <div><Facility /></div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-2">
+              <div className="action-box-item-content">
+                <div>Play</div>
+                <div><FactionCardIcon /> / <Rocket /></div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-4">
+              <div className="action-box-item-content">
+                <div>Complete</div>
+                <div><Contracts /></div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-5">
+              <div className="action-box-item-content">
+                <div>Draw</div>
+                <div>
+                  <FactionCardIcon />/<Rocket />/<Contract />
+                </div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-3">
+              <div className="action-box-item-content">
+                <div>Use</div>
+                <div>
+                  <Ally />
+                </div>
+              </div>
+            </span>
+
+            {/*<span class="action-box-title">Actions</span> <i>(1 <Action/> per turn)</i>*/}
           </div>
         </div>
       </div>

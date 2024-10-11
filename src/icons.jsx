@@ -121,8 +121,12 @@ export function Facility() {
   return <Icon name="facility" />;
 }
 
-export function Action() {
-  return <img src={actionImage} className="icon-image" />
+export function Action({large}) {
+  let className = 'icon-image ';
+  if (large) {
+    className += ' icon-image-large';
+  }
+  return <img src={actionImage} className={className} />
 }
 
 export function TakeAnotherAction() {
