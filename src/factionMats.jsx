@@ -1,6 +1,7 @@
 import { FactionMatPage } from './pages.jsx';
 import { Facility, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
 import backImage from './assets/images/backs/faction-mat-back.jpg';
+import pentagon from './assets/images/mats/pentagon.svg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -128,50 +129,86 @@ function FactionMat({ name }) {
 
         <div className="faction-info-boxes">
           <div className="action-box">
-
+            <img className="" src={pentagon} style={
+              {
+                position: 'absolute',
+                width: '100%',
+              }
+            }>
+            </img>
             <span className="action-box-center">
               <div className="action-box-item-content">
                 <div>Actions</div>
+                <div style={{
+                  fontSize: '8pt',
+                }}>(1 per turn)</div>
                 <div><Action large={true}/></div>
-                <div>1 Per turn</div>
+                <div>&nbsp;</div>
               </div>
             </span>
 
             <span className="action-box-item action-box-item-1">
               <div className="action-box-item-content">
-                <div>Build</div>
-                <div><Facility /></div>
-              </div>
-            </span>
-
-            <span className="action-box-item action-box-item-2">
-              <div className="action-box-item-content">
-                <div>Play</div>
-                <div><FactionCardIcon /> / <Rocket /></div>
+                <div style={{}}>
+                  <div className="action-box-item-title action-box-item-title-1">
+                    Build
+                  </div>
+                  <Facility />
+                </div>
               </div>
             </span>
 
             <span className="action-box-item action-box-item-4">
               <div className="action-box-item-content">
-                <div>Complete</div>
-                <div><Contracts /></div>
+                <div style={{
+                  transform: 'rotate(-72deg)'
+                }}>
+                  <div className="action-box-item-title action-box-item-title-4">
+                    Play
+                  </div>
+                  <FactionCardIcon />/<Rocket /></div>
+              </div>
+            </span>
+
+            <span className="action-box-item action-box-item-2">
+              <div className="action-box-item-content">
+                <div style={{
+                  transform: 'rotate(72deg)'
+                }}>
+                  <div className="action-box-item-title action-box-item-title-2">
+                    Complete
+                  </div>
+                  <Contracts />
+                </div>
               </div>
             </span>
 
             <span className="action-box-item action-box-item-5">
               <div className="action-box-item-content">
-                <div>Draw</div>
-                <div>
-                  <FactionCardIcon />/<Rocket />/<Contract />
+                <div style={{
+                  transform: 'rotate(-144deg)'
+                }}>
+                  <div className="action-box-item-title action-box-item-title-5">
+                    Use
+                  </div>
+                  <div className="action-box-item-title-5">
+                    <Ally />
+                  </div>
                 </div>
               </div>
             </span>
 
             <span className="action-box-item action-box-item-3">
               <div className="action-box-item-content">
-                <div>Use</div>
-                <div>
-                  <Ally />
+                <div style={{
+                  transform: 'rotate(144deg)'
+                }}>
+                  <div className="action-box-item-title action-box-item-title-3">
+                    Draw
+                  </div>
+                  <div className="action-box-item-title-3">
+                    <FactionCardIcon />/<Rocket />/<Contract />
+                  </div>
                 </div>
               </div>
             </span>
