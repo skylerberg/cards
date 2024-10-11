@@ -52,3 +52,71 @@ export function CardPages({ cards }) {
     </>
   );
 }
+
+export function TableTopSimulatorPages({ cards, page, side }) {
+  let cardGroups = [];
+  for (let i = 0; i < cards.length; i += 69) {
+    cardGroups.push(cards.slice(i, i + 69));
+  }
+  let pages = cardGroups.map((cardGroup, i) => <TableTopSimulatorPage key={i} cards={cardGroup} side={side}/>)
+  if (page === undefined) {
+    return (
+      <>
+        {pages}
+      </>
+    );
+  }
+  else {
+    return (
+      <>
+        {pages[page]}
+      </>
+    );
+  }
+}
+
+export function TableTopSimulatorPage({ cards, side }) {
+  const backs = [];
+  for (let card of cards) {
+    backs.push(CardBack({type: card.props.type}));
+  }
+  const front = 
+    <>
+      <div className="tabletop-simulator-page">
+        <div className="tabletop-simulator-card-grid">
+          {cards}
+        </div>
+      </div>
+    </>;
+  const back = 
+    <>
+      <div className="tabletop-simulator-page">
+        <div className="tabletop-simulator-card-grid">
+          {backs}
+        </div>
+      </div>
+    </>;
+
+  if (side === 'front') {
+    return (
+      <>
+        {front}
+      </>
+    );
+  }
+  else if (side === 'back') {
+    return (
+      <>
+        {back}
+      </>
+    );
+  }
+  else {
+    return (
+      <>
+        {front}
+        {back}
+      </>
+    );
+  }
+}

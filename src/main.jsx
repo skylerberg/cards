@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './assets/fonts/icons.css';
-import { CardPages } from './pages.jsx';
+import { CardPages, TableTopSimulatorPages } from './pages.jsx';
 import { allies } from './allies.jsx';
 import { rockets } from './rockets.jsx';
 import { factionCards, theScavengersCards, cruxCabalCards, unearthIncCards, hydrusGangCards, explorerSocietyCards, cyborgUnionCards } from './factionCards.jsx';
@@ -32,14 +32,12 @@ for (let i = 0; i < factionCards.length; i += 8) {
 let cards = helperCards.concat(contracts).concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />, <HelperCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
 
 //cards = [
-//  unearthIncCards[3],
-//  unearthIncCards[3],
-//  theScavengersCards[6],
-//  theScavengersCards[7],
-//  achievements[1],
-//  hydrusGangCards[7],
-//  cyborgUnionCards[6],
+//  allies[13],
+//  allies[11],
+//  helperCards,
 //  cyborgUnionCards[5],
+//  allies[0],
+//  allies[9],
 //].flat();
 
 reactRoot.render(
@@ -49,3 +47,9 @@ reactRoot.render(
     <EndGameMarkerPage />
   </React.StrictMode>
 );
+
+//reactRoot.render(
+//  <React.StrictMode>
+//    <TableTopSimulatorPages cards={cards} page={2} side="back" />
+//  </React.StrictMode>
+//);
