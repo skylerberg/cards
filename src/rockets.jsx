@@ -3,53 +3,59 @@ import { Rotate, Asteroid, Destroy, Ally, Action, Facility, Rocket, Contracts, F
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
-  (<RocketCard name="Precision Rocket" score={0} type="Rocket" ability={(
+  (<RocketCard name="Precision Rocket" cost={0} score={0} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> to any position. <TakeAnotherAction />
+      <Rotate /> an <Asteroid /> to any position.
     </>
   )}/>),
 
-  (<RocketCard name="Divergent Rockets" score={0} type="Rocket" ability={(
+  (<RocketCard name="Divergent Rockets" cost={0} score={0} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> up to 2 spaces. <Rotate /> a different <Asteroid /> up to 1 space. <TakeAnotherAction />
+      <Rotate /> an <Asteroid /> up to 2 spaces. <Rotate /> a different <Asteroid /> up to 1 space.
     </>
   )}/>),
 
-  (<RocketCard name="Barrage" score={0} type="Rocket" ability={(
+  (<RocketCard name="Barrage" cost={0} score={0} type="Rocket" ability={(
     <>
-      <Rotate /> up to 3 different <Asteroid /> 1 space each. <TakeAnotherAction />
+      <Rotate /> up to 3 different <Asteroid /> 1 space each.
     </>
   )}/>),
 
-  (<RocketCard name="Triple Precision Rockets" score={2} type="Rocket" ability={(
+  (<RocketCard name="Double Precision Rockets" cost={1} score={1} type="Rocket" ability={(
+    <>
+      <Rotate /> 2 <Asteroid /> to any positions.
+    </>
+  )}/>),
+
+  (<RocketCard name="Triple Precision Rockets" cost={2} score={2} type="Rocket" ability={(
     <>
       <Rotate /> 3 <Asteroid /> to any positions.
     </>
   )}/>),
 
-  (<RocketCard name="Carrier Rockets" score={0} type="Rocket" ability={(
+  (<RocketCard name="Carrier Rocket" cost={2} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Build a <Facility />.
+      <Rotate /> an <Asteroid /> up to 2 spaces. Build a <Facility />.
     </>
   )}/>),
 
-  (<RocketCard name="Harbinger Rocket" score={0} type="Rocket" ability={(
+  (<RocketCard name="Exploratory Rockets" cost={2} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> up to 2 spaces. Draw 1<Rocket /> and a 1<FactionCardIcon />.
+      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Research twice.
     </>
   )}/>),
 
-  (<RocketCard name="Friendly Rocket" score={1} type="Rocket" ability={(
+  (<RocketCard name="Friendly Rocket" cost={2} score={1} type="Rocket" ability={(
     <>
       <Rotate /> an <Asteroid /> 1 space.
 
-      Use an <Ally /> you own or draw 1<Ally />.
+      Draw 1<Ally />.
     </>
   )}/>),
 
-  (<RocketCard name="Twin Rockets" score={1} type="Rocket" ability={(
+  (<RocketCard name="Twin Rockets" cost={0} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> up to 2 different <Asteroid /> 1 space each. <TakeAnotherAction />
+      <Rotate /> up to 2 different <Asteroid /> 1 space each.
     </>
   )}/>),
 

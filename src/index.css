@@ -104,9 +104,16 @@ body {
   margin-left: auto;
 }
 
-.banner-plate-box {
+.header-left {
   width: 50px;
-  margin-left: 0px;
+  margin-left: 0;
+  z-index: -3;
+  position: absolute;
+}
+
+.header-right {
+  width: 50px;
+  margin-left: auto;
   z-index: -3;
 }
 
@@ -118,6 +125,19 @@ body {
 .victory-point-text {
   font-size: 18pt;
   font-weight: bold;
+}
+
+.funding-points {
+  display: flex;
+  justify-content: center;
+}
+
+.funding-text {
+  font-size: 18pt;
+  font-weight: bold;
+  top: 2px;
+  color: white;
+  margin-left: -12px;
 }
 
 .card-type {
@@ -279,6 +299,19 @@ body {
   height: .18in !important;
 }
 
+.funding {
+  margin-bottom: -5px;
+  height: .20in;
+}
+
+.cost {
+  position: absolute;
+  margin-left: 3px;
+  padding-top: 1px;
+  color: white;
+  font-size: 10pt;
+}
+
 .specific-facility-icon {
   margin-bottom: -1px;
   height: .14in;
@@ -349,15 +382,13 @@ body {
 .contract-title {
   font-size: 16pt !important;
   position: absolute;
-  margin-left: 64px;
-  width: 157px;
+  width: 160px;
 }
 
 .turn-order-title {
   font-size: 16pt !important;
   position: absolute;
-  margin-left: 48px;
-  width: 170px;
+  width: 160px;
 }
 
 .faction-card-title {

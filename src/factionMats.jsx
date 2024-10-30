@@ -2,6 +2,9 @@ import { FactionMatPage } from './pages.jsx';
 import { Facility, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
 import backImage from './assets/images/backs/faction-mat-back.jpg';
 import pentagon from './assets/images/mats/pentagon.svg';
+import cyborgUnionTreeImage from './assets/images/mats/cyborg-union-tree.svg';
+import cruxCabalTreeImage from './assets/images/mats/crux-cabal-tree.svg';
+import theScavengersTreeImage from './assets/images/mats/the-scavengers-tree.svg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -12,8 +15,8 @@ export function FactionMats() {
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
           <FactionMat name="Hydrus Gang" />
+          <FactionMat name="Unearth Inc." />
           <FactionMat name="Explorer Society" />
-          <FactionMat name="The Scavengers" />
         </div>
       )} />
       <FactionMatPage factionMats={(
@@ -27,7 +30,7 @@ export function FactionMats() {
         <div className="faction-mat-grid">
           <FactionMat name="Cyborg Union" />
           <FactionMat name="Crux Cabal" />
-          <FactionMat name="Unearth Inc." />
+          <FactionMat name="The Scavengers" />
         </div>
       )} />
       <FactionMatPage factionMats={(
@@ -47,6 +50,7 @@ function FactionMat({ name }) {
   const backgroundImageUrl = factionImages[`./assets/images/mats/${jpgName}`]?.default;
   const factionIconImage = iconImages[`./assets/images/icons/${svgName}`]?.default;
   let edgeColor = '';
+  let tree= '';
   if (name === 'Hydrus Gang') {
     edgeColor = 'rgba(210, 0, 0, 80%)';
   }
@@ -55,12 +59,15 @@ function FactionMat({ name }) {
   }
   else if (name === 'The Scavengers') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
+    tree = theScavengersTreeImage;
   }
   else if (name === 'Cyborg Union') {
     edgeColor = 'rgba(240, 240, 11, 80%)';
+    tree = cyborgUnionTreeImage;
   }
   else if (name === 'Crux Cabal') {
     edgeColor = 'rgba(198, 0, 252, 80%)';
+    tree = cruxCabalTreeImage;
   }
   else if (name === 'Unearth Inc.') {
     edgeColor = 'rgba(59, 198, 59, 80%)';
@@ -85,6 +92,9 @@ function FactionMat({ name }) {
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
     }}>
+      <img src={tree} className="white-shadow" style={{
+        position: 'absolute',
+      }}/>
       <div className="faction-deck-arrow" style={{
           background: edgeColor,
       }}>
@@ -128,6 +138,7 @@ function FactionMat({ name }) {
         </div>
 
         <div className="faction-info-boxes">
+          {/*
           <div className="action-box">
             <img className="" src={pentagon} style={
               {
@@ -213,8 +224,8 @@ function FactionMat({ name }) {
               </div>
             </span>
 
-            {/*<span class="action-box-title">Actions</span> <i>(1 <Action/> per turn)</i>*/}
           </div>
+          */}
         </div>
       </div>
     </div>

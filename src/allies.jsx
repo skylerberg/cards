@@ -1,121 +1,115 @@
 import React from 'react';
-import { Contracts, FactionCardIcon, Ally, Achievement, Action, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints, TakeAnotherAction } from './icons.jsx';
+import { FactionCardIcon, To, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
 
   (<AllyCard name='Foreman' score={0} type="Ally" ability={(
       <>
-        <Action /> Build a <Facility />. Complete 1 public <Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
+        <Funds cost={2}/> Build a <Facility />. Complete a <Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
       </>
     )
   }/>),
 
   (<AllyCard name="Rogue Pilot" score={1} type="Ally" ability={(
     <>
-      <Action /> <Move /> a <Facility /> you own. Complete <Contracts />. <Destroy /> the <Facility /> you moved.
-
+      <Funds cost={1}/> <Move /> a <Facility /> you own. Complete 1<Contract />. <Destroy /> the <Facility /> you moved.
     </>
   )}/>),
 
   (<AllyCard name="Negotiator" score={0} type="Ally" ability={(
     <>
-      <Action /> Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
+      <Funds cost={2}/> Complete a <Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Generalist" score={1} type="Ally" ability={(
+  (<AllyCard name="Researcher" score={1} type="Ally" ability={(
     <>
-      <Action /> Choose 2: draw 1<Rocket />, draw 1<Contract />, or draw 1<FactionCardIcon />.
+      <Funds cost={2} /> Research 3 times.
     </>
   )}/>),
 
-  (<AllyCard name="Streamliner" score={1} type="Ally" ability={(
+  (<AllyCard name="Streamliner" score={0} type="Ally" ability={(
     <>
-      <Action /> Complete 1<Contract />. Draw 1<Contract />.
+      <Funds cost={1} /> Complete <Contracts />.
     </>
   )}/>),
 
   (<AllyCard name="Recycling Expert" score={0} type="Ally" ability={(
     <>
-      <Action /> <Destroy /> a <Facility /> you own to build 2 <Facility />.
+      <Funds cost={2} /> <Destroy /> a <Facility /> you own to build 2 <Facility />.
     </>
   )}/>),
 
   (<AllyCard name="Opportunist" score={1} type="Ally" ability={(
     <>
-      <Action /> Complete <Contracts />. Restock public <Contracts />. Complete <Contracts />.
+      <Funds cost={2} /> Complete <Contracts />. Restock public <Contracts />. Complete <Contracts />.
     </>
   )}/>),
 
-  (<AllyCard name="Technician" score={2} type="Ally" ability={(
+  (<AllyCard name="Technician" score={1} type="Ally" ability={(
     <>
-      <Action /> Draw 2<Rocket />.
+      <Funds cost={1} /> Draw 1<Rocket />.
     </>
   )}/>),
 
-  (<AllyCard name="Consultant" score={0} type="Ally" ability={(
+  (<AllyCard name="Consultant" score={1} type="Ally" ability={(
     <>
-      <Action /> Replace a <Facility /> you own. Use an <Ally /> you own or draw 1<Ally />. You may not use this <Ally /> again this turn.
+      <Funds cost={1} /> Replace a <Facility /> you own.
     </>
   )}/>),
 
   (<AllyCard name="Extremist" score={1} type="Ally" ability={(
     <>
-      <Action /> Complete <Contracts />. If you completed at least 1<Contract /> worth 2<VictoryPoints /> or 5<VictoryPoints />, <Destroy /> any 1 <Facility />.
+      <Funds cost={2} /> Complete <Contracts />. If any completed <Contract /> was worth 2 or 5 <VictoryPoints />, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Miner" score={1} type="Ally" ability={(
+  (<AllyCard name="Miner" score={0} type="Ally" ability={(
     <>
-      <Action /> Build 2 <Circle />.
+      <Funds cost={1} /> Build a <Circle />.
     </>
   )}/>),
 
   (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
     <>
-      <Action /> Build a <Droplet />. Play 1<Rocket />.
-      <br />
-      You may not use this <Ally /> again this turn.
+      <Funds cost={1} /> Build a <Droplet />.
     </>
   )}/>),
 
   (<AllyCard name="Industrial Engineer" score={0} type="Ally" ability={(
     <>
-      <Action /> Build a <Square />. Draw 1<Contract />.
+      <Funds cost={1} /> Build a <Square />.
     </>
   )}/>),
 
-  (<AllyCard name="Fanatic" score={0} type="Ally" ability={(
+  (<AllyCard name="Loyalist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<FactionCardIcon />. At the end of your turn, draw 1<Rocket />.
-      <br />
-      You may not use this <Ally /> again this turn.
+      <Funds cost={1} /> Draw 1<FactionCardIcon />.
     </>
   )}/>),
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Action /> Play 1<Rocket />. If "<Action />" does not appear in the text of the <Rocket />, take another <Action />.
-      You may not use this <Ally /> again this turn.
+      <Funds cost={0} /> Play 1<Rocket /> without paying its cost.
     </>
   )}/>),
 
   (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
     <>
-      <Action /> Score a <Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      <Funds cost={2} /> Score a <Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 
   (<AllyCard name="Innovator" score={1} type="Ally" ability={(
     <>
-      <Action /> Draw 2<Contract /> from beneath the End Game divider.
+      <Funds cost={1} /> Draw 1<Contract /> anywhere in the <Contract /> deck.
     </>
   )}/>),
 
-  (<AllyCard name="Challenger" score={1} type="Ally" ability={(
+  (<AllyCard name="Challenger" score={0} type="Ally" ability={(
     <>
-      <Action /> If you have 2 fewer <Facility /> than any player, build 2 <Facility />.
+      <Funds cost={1} /> If you have fewer <Facility /> than any player, build a <Facility />.
     </>
   )}/>),
 

@@ -9,10 +9,18 @@ import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
 import achievement from './assets/images/icons/achievement.svg';
 import actionImage from './assets/images/icons/action.svg';
-import takeAnotherActionImage from './assets/images/icons/take-another-action.svg';
+import gemImage from './assets/images/icons/gem.svg';
+import fundingImage from './assets/images/icons/funding.svg';
 
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);
+}
+
+export function Funds({cost}) {
+  return <>
+    <span className="cost">{cost}</span>
+    <img src={actionImage} className="funding" />
+  </>;
 }
 
 export function Droplet({ color, large }) {
@@ -101,12 +109,24 @@ export function Rotate() {
   //return <Icon name="rotate" />;
 }
 
+export function To() {
+  return <span>→</span>;
+}
+
 export function Asteroid({large}) {
   let className = 'asteroid';
   if (large) {
     className += ' asteroid-large';
   }
   return <img src={asteroidImage} className={className} />;
+}
+
+export function Mineral({large}) {
+  let className = 'asteroid';
+  if (large) {
+    className += ' asteroid-large';
+  }
+  return <img src={gemImage} className={className} />;
 }
 
 export function RotateClockwise() {

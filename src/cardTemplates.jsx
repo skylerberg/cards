@@ -1,4 +1,5 @@
 import victoryPointsImage from './assets/images/icons/victory-points.svg';
+import fundingImage from './assets/images/icons/action.svg';
 import allyIconImage from './assets/general/ally.svg';
 import rocketIconImage from './assets/general/rocket.svg';
 import defaultAchievementImage from './assets/images/achievements/default.jpg';
@@ -28,36 +29,34 @@ const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true
 const backImages = import.meta.glob('./assets/images/backs/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
 
-function Banner({score, typeImage}) {
-  let cardType = <></>;
-  if (typeImage) {
-    cardType = (
-        <div style={
-          {
-            position: 'absolute',
-          }
-        }>
-          <div className="type-icon">
-            <div className="victory-points">
-              <img class="" src={typeImage} style={
-                {
-                  marginBottom: '-4px',
-                  width: '40px',
-                  maxHeight: '40px',
-                }
-              }/>
-            </div>
-          </div>
+function Banner({score, cost, typeImage}) {
+  let costSection = <></>;
+  if (cost !== undefined) {
+    costSection = 
+      <div className="header-left">
+        <div className="funding-points white-shadow">
+          <img class="" src={fundingImage} style={
+            {
+              width: '40px',
+            }
+          }/>
+          <span class="funding-text" style={
+            {
+              position: 'absolute',
+            }
+          }>
+            {cost}
+          </span>
         </div>
-    );
+      </div>;
   }
-  cardType = <></>;
   return (
     <>
-      {cardType}
-      <div className="banner-plate-box">
+      {costSection}
 
-        <div className="victory-points white-shadow-intense">
+      <div className="header-right">
+
+        <div className="victory-points white-shadow">
           <img class="" src={victoryPointsImage} style={
             {
               width: '50px',
@@ -134,7 +133,7 @@ function Cloud({ name, ability, largeText }) {
   );
 }
 
-export function FactionCard({name, score, ability, type}) {
+export function FactionCard({name, score, ability, cost, type}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '').replaceAll('"', '')}`;
   const imageUrl = factionCardImages[`./assets/images/faction-cards/${imageName}.png`]?.default ||
     factionCardJpgs[`./assets/images/faction-cards/${imageName}.jpg`]?.default || console.log(imageName);
@@ -178,7 +177,7 @@ export function FactionCard({name, score, ability, type}) {
           zIndex: '-1',
         }
       }/>
-      <Banner score={score} typeImage={iconUrl} />
+      <Banner cost={cost} score={score} typeImage={iconUrl} />
       <Cloud name={name} ability={ability} />
     </div>
   );
@@ -205,7 +204,7 @@ export function AllyCard({name, score, ability}) {
   );
 }
 
-export function RocketCard({name, score, ability}) {
+export function RocketCard({name, score, cost, ability}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
   const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
     rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
@@ -249,7 +248,7 @@ export function RocketCard({name, score, ability}) {
           zIndex: '-1',
         }
       }/>
-      <Banner score={score} typeImage={rocketIconImage} />
+      <Banner cost={cost} score={score} typeImage={rocketIconImage} />
       <Cloud name={name} ability={ability} />
     </div>
   );

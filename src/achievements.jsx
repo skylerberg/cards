@@ -63,18 +63,6 @@ export const achievements = [
     </>
   )}/>),
 
-  (<AchievementCard name="Independent" score={3} type="Achievement" text={(
-    <>
-      Complete 2 or more <Contract large="true" /> on your turn with no neutral <Facility /> and no <Comet large="true" /> in any routes used.
-    </>
-  )}/>),
-
-  (<AchievementCard name="Efficient" score={4} type="Achievement" text={(
-    <>
-      Have more scored <Contract large="true" /> than you have <Facility />.
-    </>
-  )}/>),
-
   (<AchievementCard name="Centered" score={3} type="Achievement" text={(
     <>
       Have 5 fewer <Facility /> adjacent to neutral <Facility /> than an opponent.
@@ -83,13 +71,7 @@ export const achievements = [
 
   (<AchievementCard name="Trail Blazer" score={3} type="Achievement" text={(
     <>
-      All <Asteroid large="true" /> have at least 1 <Facility />.
-    </>
-  )}/>),
-
-  (<AchievementCard name="Ambitious" score={3} type="Achievement" text={(
-    <>
-      Have at least 3 scored <Contract large="true" /> and half or more of your scored <Contract large="true" /> are worth 5 <VictoryPoints />.
+      All <Asteroid large="true" /> have at least 1 <Facility /> owned by any player(s).
     </>
   )}/>),
 
@@ -105,11 +87,18 @@ export const achievements = [
     </>
   )}/>),
 
-  (<AchievementCard name="Patient" score={3} type="Achievement" text={(
+  (<AchievementCard name="Learned" score={5} type="Achievement" text={(
     <>
-      Be the only player with no scored <Contract large="true" />.
+      Have 7 or more research markers.
     </>
   )}/>),
+
+  (<AchievementCard name="Hasty" score={3} type="Achievement" text={(
+    <>
+      Be the player who reveals The Rush divider.
+    </>
+  )}/>),
+
 
   /*
   (<AchievementCard name="Doppelganger" score={4} type="Achievement" text={(
