@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rotate, Asteroid, Destroy, Ally, Action, Facility, Rocket, Contracts, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
+import { Rotate, Asteroid, Destroy, Research, Ally, Action, Facility, Rocket, Contracts, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
@@ -41,7 +41,7 @@ export const rockets = [
 
   (<RocketCard name="Exploratory Rockets" cost={2} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Research twice.
+      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Place 2 <Research />.
     </>
   )}/>),
 

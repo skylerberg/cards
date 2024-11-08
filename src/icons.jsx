@@ -4,6 +4,7 @@ import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
 import asteroidImage from './assets/general/asteroid.png';
+import researchImage from './assets/images/icons/bead.png';
 import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
@@ -119,6 +120,14 @@ export function Asteroid({large}) {
     className += ' asteroid-large';
   }
   return <img src={asteroidImage} className={className} />;
+}
+
+export function Research({large}) {
+  let className = 'asteroid';
+  if (large) {
+    className += ' asteroid-large';
+  }
+  return <img src={researchImage} className={className} />;
 }
 
 export function Mineral({large}) {

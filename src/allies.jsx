@@ -1,12 +1,12 @@
 import React from 'react';
-import { FactionCardIcon, To, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
+import { FactionCardIcon, To, Research, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
 
   (<AllyCard name='Foreman' score={0} type="Ally" ability={(
       <>
-        <Funds cost={2}/> Build a <Facility />. Complete a <Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
+        <Funds cost={2}/> Build a <Facility />. Complete 1<Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
       </>
     )
   }/>),
@@ -19,13 +19,13 @@ export let allies = [
 
   (<AllyCard name="Negotiator" score={0} type="Ally" ability={(
     <>
-      <Funds cost={2}/> Complete a <Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
+      <Funds cost={2}/> Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
     </>
   )}/>),
 
   (<AllyCard name="Researcher" score={1} type="Ally" ability={(
     <>
-      <Funds cost={2} /> Research 3 times.
+      <Funds cost={2} /> Place 3 <Research />.
     </>
   )}/>),
 
@@ -97,7 +97,7 @@ export let allies = [
 
   (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
     <>
-      <Funds cost={2} /> Score a <Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      <Funds cost={2} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 

@@ -516,6 +516,7 @@ body {
   z-index: 1;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: .8in;
 }
 
 .faction-title {
@@ -533,81 +534,11 @@ body {
 }
 
 .action-box {
+  padding: 10px;
   margin: 10px;
+  background: #ffffffd8;
   font-size: 11pt;
-  width: 200px;
-  height: 190px;
-  position: relative;
-}
-
-.action-box-center {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.action-box-item {
-  border-radius: 50px;
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.action-box-item-1 {
-  margin-left: calc(0);
-  margin-top: -34%;
-}
-
-.action-box-item-2 {
-  margin-left: 28%;
-  margin-top: -14%;
-}
-
-.action-box-item-3 {
-  margin-left: 17%;
-  margin-top: 19%;
-}
-
-.action-box-item-4 {
-  margin-left: -28%;
-  margin-top: -14%;
-}
-
-.action-box-item-5 {
-  margin-left: -17%;
-  margin-top: 19%;
-}
-
-.action-box-item-title {
-  color: white;
-  margin-bottom: 7px;
-}
-
-.action-box-item-title-3 {
-  transform: rotate(180deg);
-}
-
-.action-box-item-title-5 {
-  transform: rotate(180deg);
-}
-
-.action-box-item-content {
-  display: block;
-  text-align: center;
+  line-height: 160%;
 }
 
 .faction-mat-grid {
@@ -629,7 +560,7 @@ body {
 
 .faction-mat {
   width: 7.5in;
-  height: 3.5in;
+  height: 5.25in;
   background-size: cover;
   border-color: black;
   border-style: solid;
@@ -640,6 +571,8 @@ body {
 }
 
 .faction-mat-interior {
+  display: flex;
+  justify-content: space-between;
   padding: 30px;
 }
 
@@ -656,6 +589,7 @@ faction-mat-edge {
   height: 30px;
   text-align: center;
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+  margin-top: 0.5in;
 }
 
 .scored-cards-arrow {
@@ -667,6 +601,7 @@ faction-mat-edge {
   height: 30px;
   text-align: center;
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+  margin-top: 0.5in;
 }
 
 .allies-arrow {

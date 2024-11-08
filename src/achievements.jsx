@@ -1,5 +1,5 @@
 import React from 'react';
-import { Asteroid, Circle, Square, Droplet, Ally, FactionCardIcon, Comet, Contract, Rocket, Facility, VictoryPoints } from './icons.jsx';
+import { Asteroid, Research, Circle, Square, Droplet, Ally, FactionCardIcon, Comet, Contract, Rocket, Facility, VictoryPoints } from './icons.jsx';
 import { AchievementCard } from './cardTemplates.jsx';
 
 export const achievements = [
@@ -89,7 +89,7 @@ export const achievements = [
 
   (<AchievementCard name="Learned" score={5} type="Achievement" text={(
     <>
-      Have 7 or more research markers.
+      Have 7 or more <Research />.
     </>
   )}/>),
 

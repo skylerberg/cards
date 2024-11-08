@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contracts, Comet, Funds, Droplet, Circle, Square, Ally, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
+import { Contracts, Comet, Funds, Research, Droplet, Circle, Square, Ally, Facility, Asteroid, Destroy, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { FactionCard } from './cardTemplates.jsx';
 
 export const theScavengersCards = [
@@ -331,7 +331,7 @@ export const cruxCabalCards = [
 
   (<FactionCard name="Deduce Strategy" type="Crux Cabal" cost={2} score={1} ability={(
     <>
-      Research twice, then take a card from an opponent's hand. <i>You do not get to look at their hand.</i>
+      Place 2 <Research />, then take a card from an opponent's hand. <i>You do not get to look at their hand.</i>
     </>
   )}/>),
 ];

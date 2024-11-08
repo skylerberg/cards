@@ -1,10 +1,11 @@
 import { FactionMatPage } from './pages.jsx';
-import { Facility, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
+import { Facility, Funds, Research, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
 import backImage from './assets/images/backs/faction-mat-back.jpg';
 import pentagon from './assets/images/mats/pentagon.svg';
 import cyborgUnionTreeImage from './assets/images/mats/cyborg-union-tree.svg';
 import cruxCabalTreeImage from './assets/images/mats/crux-cabal-tree.svg';
 import theScavengersTreeImage from './assets/images/mats/the-scavengers-tree.svg';
+import hydrusGangTreeImage from './assets/images/mats/hydrus-gang-tree.svg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -16,19 +17,22 @@ export function FactionMats() {
         <div className="faction-mat-grid">
           <FactionMat name="Hydrus Gang" />
           <FactionMat name="Unearth Inc." />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
+          <FactionMatBack />
+          <FactionMatBack />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Explorer Society" />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
-          <FactionMatBack />
-          <FactionMatBack />
-          <FactionMatBack />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
           <FactionMat name="Cyborg Union" />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Crux Cabal" />
           <FactionMat name="The Scavengers" />
         </div>
@@ -36,6 +40,11 @@ export function FactionMats() {
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
           <FactionMatBack />
+          <FactionMatBack />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMatBack />
           <FactionMatBack />
         </div>
@@ -53,6 +62,7 @@ function FactionMat({ name }) {
   let tree= '';
   if (name === 'Hydrus Gang') {
     edgeColor = 'rgba(210, 0, 0, 80%)';
+    tree = hydrusGangTreeImage;
   }
   else if (name === 'Explorer Society') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
@@ -138,94 +148,16 @@ function FactionMat({ name }) {
         </div>
 
         <div className="faction-info-boxes">
-          {/*
-          <div className="action-box">
-            <img className="" src={pentagon} style={
-              {
-                position: 'absolute',
-                width: '100%',
-              }
-            }>
-            </img>
-            <span className="action-box-center">
-              <div className="action-box-item-content">
-                <div>Actions</div>
-                <div style={{
-                  fontSize: '8pt',
-                }}>(1 per turn)</div>
-                <div><Action large={true}/></div>
-                <div>&nbsp;</div>
-              </div>
-            </span>
 
-            <span className="action-box-item action-box-item-1">
-              <div className="action-box-item-content">
-                <div style={{}}>
-                  <div className="action-box-item-title action-box-item-title-1">
-                    Build
-                  </div>
-                  <Facility />
-                </div>
-              </div>
-            </span>
-
-            <span className="action-box-item action-box-item-4">
-              <div className="action-box-item-content">
-                <div style={{
-                  transform: 'rotate(-72deg)'
-                }}>
-                  <div className="action-box-item-title action-box-item-title-4">
-                    Play
-                  </div>
-                  <FactionCardIcon />/<Rocket /></div>
-              </div>
-            </span>
-
-            <span className="action-box-item action-box-item-2">
-              <div className="action-box-item-content">
-                <div style={{
-                  transform: 'rotate(72deg)'
-                }}>
-                  <div className="action-box-item-title action-box-item-title-2">
-                    Complete
-                  </div>
-                  <Contracts />
-                </div>
-              </div>
-            </span>
-
-            <span className="action-box-item action-box-item-5">
-              <div className="action-box-item-content">
-                <div style={{
-                  transform: 'rotate(-144deg)'
-                }}>
-                  <div className="action-box-item-title action-box-item-title-5">
-                    Use
-                  </div>
-                  <div className="action-box-item-title-5">
-                    <Ally />
-                  </div>
-                </div>
-              </div>
-            </span>
-
-            <span className="action-box-item action-box-item-3">
-              <div className="action-box-item-content">
-                <div style={{
-                  transform: 'rotate(144deg)'
-                }}>
-                  <div className="action-box-item-title action-box-item-title-3">
-                    Draw
-                  </div>
-                  <div className="action-box-item-title-3">
-                    <FactionCardIcon />/<Rocket />/<Contract />
-                  </div>
-                </div>
-              </div>
-            </span>
-
+          <div className="overlay-box action-box">
+            <span className="action-box-title">Basic actions</span>
+            <br />
+            &nbsp;&nbsp;<Funds cost={2} /> Build a <Facility />
+            <br />
+            &nbsp;&nbsp;<Funds cost={2} /> Complete <Contracts />
+            <br />
+            &nbsp;&nbsp;<Funds cost={1} /> Place a <Research />
           </div>
-          */}
         </div>
       </div>
     </div>

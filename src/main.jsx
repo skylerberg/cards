@@ -31,43 +31,11 @@ for (let i = 0; i < factionCards.length; i += 8) {
 
 let cards = helperCards.concat(contracts).concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />, <HelperCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
 
-//cards = [
-//  unearthIncCards,
-//  unearthIncCards[0],
-//  unearthIncCards[1],
-//  unearthIncCards[2],
-//  unearthIncCards[3],
-//  explorerSocietyCards,
-//  explorerSocietyCards[0],
-//  explorerSocietyCards[1],
-//  explorerSocietyCards[2],
-//  explorerSocietyCards[3],
-//  hydrusGangCards,
-//  hydrusGangCards[0],
-//  hydrusGangCards[1],
-//  hydrusGangCards[2],
-//  hydrusGangCards[3],
-//  rockets,
-//  rockets,
-//  rockets,
-//  allies[1],
-//  allies[3],
-//  allies[13],
-//  allies[16],
-//  theScavengersCards[0],
-//  theScavengersCards[0],
-//  theScavengersCards[7],
-//  cruxCabalCards[0],
-//  cruxCabalCards[4],
-//  cruxCabalCards[6],
-//  cruxCabalCards[7],
-//  cyborgUnionCards[1],
-//  cyborgUnionCards[1],
-//  cyborgUnionCards[3],
-//  cyborgUnionCards[3],
-//  achievements[14],
-//  achievements[15],
-//].flat();
+cards = [
+  rockets,
+  turnOrderCards,
+  helperCards,
+].flat();
 
 reactRoot.render(
   <React.StrictMode>

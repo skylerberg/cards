@@ -17,7 +17,7 @@ import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Ally, Achievement, VictoryPoints, Asteroid, Comet, TakeAnotherAction, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
+import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, TakeAnotherAction, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
@@ -418,7 +418,7 @@ export function HelperCardBack() {
           Turn Overview
         </div>
         <div class="legend-item">
-          <Action /> Take 1 action
+          <Action /> Spend funding
         </div>
         <div class="legend-item">
           <Contract /> Restock public contracts
@@ -433,14 +433,21 @@ export function HelperCardBack() {
           Legend
         </div>
 
+
         <div class="helper-card-icon-grid">
-          <div class="legend-item">
+          <div class="legend-item double-column">
             <Asteroid /> Asteroid
           </div>
-          <div class="legend-item">
+
+          <div class="legend-item double-column">
             <Comet /> Comet
           </div>
 
+          <div class="legend-item double-column">
+            <Research /> Research marker
+          </div>
+
+          {/*
           <div class="legend-item">
             <FactionCardIcon /> Faction card
           </div>
@@ -454,6 +461,7 @@ export function HelperCardBack() {
           <div class="legend-item">
             <Ally /> Ally
           </div>
+          */}
 
           <div class="legend-item double-column">
             <Contracts /> Any number of contracts
@@ -474,11 +482,11 @@ export function HelperCardBack() {
           */}
 
           <div class="legend-item double-column">
-            <VictoryPoints /> Victory Points
+            <VictoryPoints /> Victory points
           </div>
 
           <div class="legend-item double-column">
-            <Action /> Action
+            <Funds cost="x" /> Funding cost
           </div>
         </div>
       </div>
