@@ -1,6 +1,7 @@
 import { FactionMatPage } from './pages.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 import { Contract, Facility, FactionCardIcon, Rocket } from './icons.jsx';
+import fundingImage from './assets/images/icons/action.svg';
 
 export function EndGameMarkerPage() {
   return (
@@ -11,16 +12,16 @@ export function EndGameMarkerPage() {
             marginLeft: '50px',
           }}
           >
-            <EndGameMarker />
-            <EndGameMarker />
+            <TheRushMarker />
+            <TheRushMarker />
           </div>
           <div style={{
             width: '100%',
             margin: '10px',
           }}
           >
-            <TheRushMarker />
-            <TheRushMarker />
+            <FundingTile />
+            <FundingTile />
           </div>
         </>
       )} />
@@ -115,25 +116,88 @@ export function TheRushMarker() {
               Put this tile 6 cards above the End Game tile.
             </div>
             <br />
+            <br />
             <div className="end-game-heading">
               When Revealed
             </div>
             <br />
             <div className="">
-              Put this tile by the board.
+              Replace the Funding Level tile with this tile.
+            </div>
+            <br />
+            <div className="funding-points white-shadow">
+              <img class="" src={fundingImage} style={
+                {
+                  width: '80px',
+                }
+              }/>
+              <span class="tile-funding-text" style={
+                {
+                  position: 'absolute',
+                }
+              }>
+                3
+              </span>
+            </div>
+            <br />
+          </div>
+      </div>
+    </>
+  );
+}
+
+export function FundingTile() {
+  return (
+    <>
+      <div className="end-game-marker">
+          <img className="divider-background-image" src={starscapeImage} style={
+            {
+              filter: 'hue-rotate(240deg) brightness(1.0) contrast(1.3)',
+            }
+          }>
+          </img>
+
+          {/*
+          <span className="end-game-title end-game-bottom white-shadow-intense card-title">Funding Level</span>
+
+          <span className="end-game-title end-game-top white-shadow-intense card-title">Funding Level</span>
+
+          <div className="end-game-titles">
+
+            <span className="end-game-title end-game-left white-shadow-intense card-title">Funding Level</span>
+
+            <span className="end-game-title end-game-right white-shadow-intense card-title">Funding Level</span>
+
+          </div>
+            */}
+
+          <div className="funding-level-box">
+            <div className="end-game-heading">
+              Funding Level
+            </div>
+            <div className="end-game-heading">
+            </div>
+            <br />
+            <div className="funding-points white-shadow">
+              <img class="" src={fundingImage} style={
+                {
+                  width: '80px',
+                }
+              }/>
+              <span class="tile-funding-text" style={
+                {
+                  position: 'absolute',
+                }
+              }>
+                2
+              </span>
             </div>
             <br />
             <div className="">
-              At the start of each player's turn, that player gets to:
+              Use it or lose it!
             </div>
             <br />
-            <div className="">
-              Build a <Facility />
-            <br />
-            OR
-            <br />
-              Draw <FactionCardIcon /> or <Rocket /> or <Contract whiteShadow="true"/>
-            </div>
+              Your turn ends as soon as you are out of funding.
           </div>
       </div>
     </>

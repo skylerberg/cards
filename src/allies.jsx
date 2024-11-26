@@ -91,25 +91,25 @@ export let allies = [
 
   (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
     <>
-      <Funds cost={0} /> Play 1<Rocket /> without paying its cost.
+      <Funds cost={0} /> Play a <Rocket /> without paying its cost.
     </>
   )}/>),
 
-  (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
+  (<AllyCard name="Jury Rigger" score={0} type="Ally" ability={(
     <>
-      <Funds cost={2} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      <Funds cost={1} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 
   (<AllyCard name="Innovator" score={1} type="Ally" ability={(
     <>
-      <Funds cost={1} /> Draw 1<Contract /> anywhere in the <Contract /> deck.
+      <Funds cost={1} /> Draw 1<Contract /> from anywhere in the <Contract /> deck.
     </>
   )}/>),
 
   (<AllyCard name="Challenger" score={0} type="Ally" ability={(
     <>
-      <Funds cost={1} /> If you have fewer <Facility /> than any player, build a <Facility />.
+      <Funds cost={1} /> If you have fewer <Facility /> than another player, build a <Facility />.
     </>
   )}/>),
 

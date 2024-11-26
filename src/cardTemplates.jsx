@@ -1,14 +1,8 @@
 import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import fundingImage from './assets/images/icons/action.svg';
-import allyIconImage from './assets/general/ally.svg';
-import rocketIconImage from './assets/general/rocket.svg';
 import defaultAchievementImage from './assets/images/achievements/default.jpg';
 import turnOrderDiagram from './assets/images/turn-order/diagram.svg';
 import turnOrderDiagramFirstPlayer from './assets/images/turn-order/diagram-first-player.svg';
-import defaultContractImage from './assets/images/contracts/default.png';
-import achievementIcon from './assets/images/icons/achievement.svg';
-import turnOrderIcon from './assets/images/icons/turn-order.svg';
-import contractIcon from './assets/images/icons/contract.svg';
 import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
 import square from './assets/images/icons/square.svg';
@@ -17,7 +11,7 @@ import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, TakeAnotherAction, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
+import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
@@ -29,7 +23,7 @@ const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true
 const backImages = import.meta.glob('./assets/images/backs/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
 
-function Banner({score, cost, typeImage}) {
+function Banner({score, cost}) {
   let costSection = <></>;
   if (cost !== undefined) {
     costSection = 
@@ -75,19 +69,6 @@ function Banner({score, cost, typeImage}) {
     </>
   );
 }
-  /*
-      <div className="card-type">
-        <img src={typeImage} style={
-          {
-            width: '45px',
-            maxHeight: '42px',
-            marginTop: '40px',
-            position: 'absolute',
-            opacity: '80%',
-          }
-        }/>
-      </div>
-      */
 
 function Newspaper({ name, text }) {
   return (
@@ -177,7 +158,7 @@ export function FactionCard({name, score, ability, cost, type}) {
           zIndex: '-1',
         }
       }/>
-      <Banner cost={cost} score={score} typeImage={iconUrl} />
+      <Banner cost={cost} score={score} />
       <Cloud name={name} ability={ability} />
     </div>
   );
@@ -198,7 +179,7 @@ export function AllyCard({name, score, ability}) {
         zIndex: '-4',
       }
     }>
-      <Banner score={score} typeImage={allyIconImage} />
+      <Banner score={score} />
       <Cloud name={name} ability={ability} />
     </div>
   );
@@ -248,7 +229,7 @@ export function RocketCard({name, score, cost, ability}) {
           zIndex: '-1',
         }
       }/>
-      <Banner cost={cost} score={score} typeImage={rocketIconImage} />
+      <Banner cost={cost} score={score} />
       <Cloud name={name} ability={ability} />
     </div>
   );
@@ -266,7 +247,7 @@ export function AchievementCard({name, score, text}) {
         zIndex: '-4',
       }
     }>
-      <Banner score={score} typeImage={achievementIcon} />
+      <Banner score={score} />
       <Cloud name={name} ability={text} largeText={true} />
     </div>
   );
@@ -291,7 +272,7 @@ export function TurnOrderCard({name, score, text}) {
         }
       }>
       </img>
-      <Banner score={score} typeImage={turnOrderIcon} />
+      <Banner score={score} />
       <h1 className="card-title turn-order-title white-shadow-intense">{name}</h1>
 
       <p className="turn-order-score-text white-shadow-intense">Score this card</p>
@@ -433,8 +414,12 @@ export function HelperCardBack() {
           Legend
         </div>
 
-
         <div class="helper-card-icon-grid">
+
+          <div class="legend-item double-column">
+            <Contracts /> Any number of contracts
+          </div>
+
           <div class="legend-item double-column">
             <Asteroid /> Asteroid
           </div>
@@ -464,10 +449,6 @@ export function HelperCardBack() {
           */}
 
           <div class="legend-item double-column">
-            <Contracts /> Any number of contracts
-          </div>
-
-          <div class="legend-item double-column">
             <Facility /> Facility <i>(<Circle />, <Square />, or <Droplet />)</i>
           </div>
 
@@ -482,12 +463,13 @@ export function HelperCardBack() {
           */}
 
           <div class="legend-item double-column">
-            <VictoryPoints /> Victory points
+            <Funds cost="x" /> Funding cost
           </div>
 
           <div class="legend-item double-column">
-            <Funds cost="x" /> Funding cost
+            <VictoryPoints /> Victory points
           </div>
+
         </div>
       </div>
     </div>
@@ -585,7 +567,7 @@ export function ContractCard({name, route, bonuses}) {
         zIndex: '-4',
       }
     }>
-      <Banner score={route.length} typeImage={contractIcon}/>
+      <Banner score={route.length} />
       <h1 className="card-title contract-title white-shadow-intense">{name}</h1>
       <div className="contract-boxes">
         <div className="route-box overlay-box">

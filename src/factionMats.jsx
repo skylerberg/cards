@@ -1,11 +1,12 @@
 import { FactionMatPage } from './pages.jsx';
 import { Facility, Funds, Research, Action, Rocket, Contract, FactionCardIcon, Contracts, Ally } from './icons.jsx';
-import backImage from './assets/images/backs/faction-mat-back.jpg';
-import pentagon from './assets/images/mats/pentagon.svg';
+import backImage from './assets/images/backs/faction-mat-back-big.jpg';
 import cyborgUnionTreeImage from './assets/images/mats/cyborg-union-tree.svg';
 import cruxCabalTreeImage from './assets/images/mats/crux-cabal-tree.svg';
 import theScavengersTreeImage from './assets/images/mats/the-scavengers-tree.svg';
 import hydrusGangTreeImage from './assets/images/mats/hydrus-gang-tree.svg';
+import explorerSocietyTreeImage from './assets/images/mats/explorer-society-tree.svg';
+import unearthIncTreeImage from './assets/images/mats/unearth-inc-tree.svg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
@@ -33,14 +34,14 @@ export function FactionMats() {
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Crux Cabal" />
-          <FactionMat name="The Scavengers" />
+          <FactionMatBack />
+          <FactionMatBack />
         </div>
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMatBack />
-          <FactionMatBack />
+          <FactionMat name="Crux Cabal" />
+          <FactionMat name="The Scavengers" />
         </div>
       )} />
       <FactionMatPage factionMats={(
@@ -66,6 +67,7 @@ function FactionMat({ name }) {
   }
   else if (name === 'Explorer Society') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
+    tree = explorerSocietyTreeImage;
   }
   else if (name === 'The Scavengers') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
@@ -81,6 +83,7 @@ function FactionMat({ name }) {
   }
   else if (name === 'Unearth Inc.') {
     edgeColor = 'rgba(59, 198, 59, 80%)';
+    tree = unearthIncTreeImage;
   }
   /*
           <div className="turn-order">
@@ -152,11 +155,19 @@ function FactionMat({ name }) {
           <div className="overlay-box action-box">
             <span className="action-box-title">Basic actions</span>
             <br />
-            &nbsp;&nbsp;<Funds cost={2} /> Build a <Facility />
+            <span style={{
+              position: 'relative'
+            }}>
+              &nbsp;&nbsp;<Funds cost={2} /> Build a <Facility />
+            </span>
             <br />
-            &nbsp;&nbsp;<Funds cost={2} /> Complete <Contracts />
+            <span>
+              &nbsp;&nbsp;<Funds cost={2} /> Complete <Contracts />
+            </span>
             <br />
-            &nbsp;&nbsp;<Funds cost={1} /> Place a <Research />
+            <span>
+              &nbsp;&nbsp;<Funds cost={1} /> Place a <Research />
+            </span>
           </div>
         </div>
       </div>

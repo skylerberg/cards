@@ -9,9 +9,7 @@
   font-family: "Roboto Serif", system-ui;
   font-optical-sizing: auto;
   font-weight: 500;
-  font-variation-settings:
-    "wdth" 80,
-    "GRAD" 0;
+  font-variation-settings: "GRAD" 0;
 }
 
 html, body, .main, .tabs, .tabbed-content { float: none; }
@@ -93,7 +91,7 @@ body {
 }
 
 .card-type {
-  font-size: 10pt;
+  font-size: 11pt;
   font-weight: normal;
 }
 
@@ -138,6 +136,14 @@ body {
   top: 2px;
   color: white;
   margin-left: -12px;
+}
+
+.tile-funding-text {
+  font-size: 32pt;
+  font-weight: bold;
+  top: 6px;
+  color: white;
+  margin-left: -34px;
 }
 
 .card-type {
@@ -310,6 +316,10 @@ body {
   padding-top: 1px;
   color: white;
   font-size: 10pt;
+}
+
+.action-box .cost {
+  padding-top: 0px;
 }
 
 .specific-facility-icon {
@@ -625,6 +635,7 @@ faction-mat-edge {
   text-align: left;
   font-size: 11pt;
   filter: unset;
+  font-variation-settings: "wdth" 80;
 }
 
 .cloud-text-large {
@@ -660,8 +671,8 @@ faction-mat-edge {
 .scored-cards-text {
   position: absolute;
   font-size: 6pt;
-  margin-left: 168px;
-  margin-top: 128px;
+  margin-left: 167px;
+  margin-top: 138px;
   z-index: 1;
 }
 
@@ -673,7 +684,7 @@ faction-mat-edge {
 }
 
 .turn-order-draw {
-  margin-top: 1.57in;
+  margin-top: 1.67in;
   padding-top: 0px;
   padding-bottom: 20px;
   font-size: 14pt;
@@ -687,7 +698,7 @@ faction-mat-edge {
 
 .turn-order-draw-text {
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .helper-card-faction-line {
@@ -706,7 +717,7 @@ faction-mat-edge {
 
 .helper-card-faction-title {
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 .helper-card-faction-description {
@@ -739,10 +750,11 @@ faction-mat-edge {
 
 .legend-item {
   margin-top: 4px;
+  font-variation-settings: "wdth" 80;
 }
 
 .legend-parenthetical {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 .double-column {
@@ -815,6 +827,21 @@ faction-mat-edge {
   border-color: white;
   border-style: dashed;
   border-width: 1mm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fffa;
+  backdrop-filter: blur(1px);
+  text-align: center;
+}
+
+.funding-level-box {
+  width: 2.5in;
+  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;

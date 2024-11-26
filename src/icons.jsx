@@ -1,9 +1,9 @@
-import cometIcon from './assets/images/icons/comet.png';
+import cometIcon from './assets/images/icons/comet-small.png';
 import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import asteroidImage from './assets/general/asteroid.png';
+import asteroidImage from './assets/images/icons/asteroid.png';
 import researchImage from './assets/images/icons/bead.png';
 import droplet from './assets/images/icons/droplet.svg';
 import circle from './assets/images/icons/circle.svg';
@@ -11,7 +11,6 @@ import square from './assets/images/icons/square.svg';
 import achievement from './assets/images/icons/achievement.svg';
 import actionImage from './assets/images/icons/action.svg';
 import gemImage from './assets/images/icons/gem.svg';
-import fundingImage from './assets/images/icons/funding.svg';
 
 export function Icon({name}) {
   return (<i className={`icon-${name}`} />);

@@ -29,21 +29,23 @@ for (let i = 0; i < factionCards.length; i += 8) {
   }
 }
 
-let cards = helperCards.concat(contracts).concat(turnOrderCards).concat(allies).concat(rockets).concat(factionCards).concat(achievements).concat([<EndGameCard />, <HelperCard />].concat(duplicateFactionCards).concat(rockets).concat(rockets));
+let cards = allies.concat(rockets).concat(factionCards).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards)
+  .concat(duplicateFactionCards).concat(rockets).concat(rockets);
 
 cards = [
-  rockets,
   turnOrderCards,
   helperCards,
+  allies[16]
 ].flat();
 
 reactRoot.render(
   <React.StrictMode>
-    <FactionMats />
     <CardPages cards={cards}/>
   </React.StrictMode>
 );
 
+//<EndGameMarkerPage />
+//<FactionMats />
 //reactRoot.render(
 //  <React.StrictMode>
 //    <TableTopSimulatorPages cards={cards} page={2} side="back" />
