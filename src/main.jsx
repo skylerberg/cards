@@ -32,11 +32,11 @@ for (let i = 0; i < factionCards.length; i += 8) {
 let cards = allies.concat(rockets).concat(factionCards).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards)
   .concat(duplicateFactionCards).concat(rockets).concat(rockets);
 
-cards = [
-  turnOrderCards,
-  helperCards,
-  allies[16]
-].flat();
+//cards = [
+//  turnOrderCards,
+//  helperCards,
+//  allies[16]
+//].flat();
 
 reactRoot.render(
   <React.StrictMode>

@@ -5,8 +5,11 @@
  font-family: "Roboto Serif", serif;
  line-height: 120%;
  font-variation-settings: "wdth" 150;
-  */
+
   font-family: "Roboto Serif", system-ui;
+  font-weight: 500;
+  */
+  font-family: "EB Garamond", system-ui;
   font-optical-sizing: auto;
   font-weight: 500;
   font-variation-settings: "GRAD" 0;
@@ -90,11 +93,6 @@ body {
   text-align: center;
 }
 
-.card-type {
-  font-size: 11pt;
-  font-weight: normal;
-}
-
 .type-icon {
   width: 50px;
   height: 100px;
@@ -146,22 +144,16 @@ body {
   margin-left: -34px;
 }
 
-.card-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
-}
-
 .card-title {
-  font-size: 12pt;
+  font-size: 16pt;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-weight: bold;
-  margin-bottom: 2px;
-  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "EB Garamond", system-ui;
+  font-weight: 600;
 }
 
 .title-box {
@@ -238,16 +230,7 @@ body {
 }
 
 .card-text-box {
-  padding: 5px;
   margin-top: auto;
-}
-
-.newspaper-border {
-  position: relative;
-  background:
-    repeating-linear-gradient(transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.02) 2px),
-    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.02) 2px),
-  linear-gradient(to bottom, transparent 8px, #e0e0e0 8px);
 }
 
 .first-contract {
@@ -547,7 +530,7 @@ body {
   padding: 10px;
   margin: 10px;
   background: #ffffffd8;
-  font-size: 11pt;
+  font-size: 10pt;
   line-height: 160%;
 }
 
@@ -635,7 +618,10 @@ faction-mat-edge {
   text-align: left;
   font-size: 11pt;
   filter: unset;
-  font-variation-settings: "wdth" 80;
+  font-family: "EB Garamond", system-ui;
+  font-weight: 500;
+  font-variation-settings: "wdth" 100;
+  text-align: center;
 }
 
 .cloud-text-large {
