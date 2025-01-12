@@ -47,9 +47,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Technician" score={1} type="Ally" ability={(
+  (<AllyCard name="Technician" score={0} type="Ally" ability={(
     <>
-      <Funds cost={1} /> Draw 1<Rocket />.
+      <Funds cost={1} /> Build a <Facility /> on a space not adjacent to any other <Facility /> you own.
     </>
   )}/>),
 
@@ -85,7 +85,7 @@ export let allies = [
 
   (<AllyCard name="Loyalist" score={1} type="Ally" ability={(
     <>
-      <Funds cost={1} /> Draw 1<FactionCardIcon />.
+      <Funds cost={0} /> The first time you play a <FactionCardIcon /> this turn, gain <Funds cost={1} />.
     </>
   )}/>),
 
@@ -95,9 +95,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Jury Rigger" score={0} type="Ally" ability={(
+  (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
     <>
-      <Funds cost={1} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      <Funds cost={2} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 
