@@ -35,7 +35,7 @@ export const rockets = [
 
   (<RocketCard name="Carrier Rocket" cost={2} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> up to 2 spaces. Build a <Facility />.
+      <Rotate /> an <Asteroid /> up to 2 spaces. <br/> Build a <Facility />.
     </>
   )}/>),
 

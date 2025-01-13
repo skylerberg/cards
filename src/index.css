@@ -85,7 +85,6 @@ body {
   border-style: solid;
   /* Margin is 3mm. Bleed is 3mm. Bleed not shown here */
   border-width: 1mm;
-  padding: 2mm;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -102,7 +101,8 @@ body {
 
 .header-left {
   width: 50px;
-  margin-left: 0;
+  margin-top: 2mm;
+  margin-left: 2mm;
   z-index: -3;
   position: absolute;
 }
@@ -110,6 +110,8 @@ body {
 .header-right {
   width: 50px;
   margin-left: auto;
+  margin-right: 2mm;
+  margin-top: 2mm;
   z-index: -3;
 }
 
@@ -144,8 +146,29 @@ body {
   margin-left: -34px;
 }
 
+.card-text-box {
+  margin-top: auto;
+  /*background: #ddd;*/
+  padding: 2mm;
+}
+
+.card-text-box {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top-left-radius: 2mm;
+  border-top-right-radius: 2mm;
+}
+
+.text-box {
+  border: black solid;
+  border-width: 1px;
+  filter: drop-shadow(0px 2px 3px);
+}
+
 .card-title {
-  font-size: 16pt;
+  font-size: 12pt;
   display: flex;
   align-items: center;
   text-align: center;
@@ -153,59 +176,8 @@ body {
   margin-bottom: 0px;
   margin-top: 0px;
   font-family: "EB Garamond", system-ui;
-  font-weight: 600;
-}
-
-.title-box {
-  border: black solid;
-  border-width: 1px;
-  border-radius: 6px;
-  background: #000;
-  margin-bottom: 4px;
-  margin-top: -11px;
-  margin-left: -9px;
-  margin-right: -9px;
-  color: white;
-}
-
-.text-box {
-  border: black solid;
-  border-width: 1px;
-  border-radius: 6px;
-  background: #ddd;
-  filter: drop-shadow(0px 2px 3px);
-
-}
-
-  /*
-.text-box {
-  border: black solid;
-  border-width: 1px;
-  border-radius: 8px;
-  background: #dddd;
-  margin-bottom: 6px;
-  margin-left: 6px;
-  margin-right: 6px;
-}
-*/
-
-.card-back-title {
-  font-size: 38pt;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-bottom: -5px;
-  text-shadow: white -5px -5px 5px,
-               white -5px 5px 5px,
-               white 5px -5px 5px,
-               white 5px 5px 5px;
-}
-
-.faction-card-back-title {
-  font-size: 32pt !important;
+  font-weight: 500;
+  font-variant-caps: small-caps;
 }
 
 .white-shadow {
@@ -227,10 +199,6 @@ body {
           drop-shadow(-7px 7px 7px #ffffffdd)
           drop-shadow(7px -7px 7px #ffffffdd)
           drop-shadow(7px 7px 7px #ffffffdd);
-}
-
-.card-text-box {
-  margin-top: auto;
 }
 
 .first-contract {
@@ -546,7 +514,7 @@ body {
 
 .faction-info-boxes {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -620,18 +588,13 @@ faction-mat-edge {
   filter: unset;
   font-family: "EB Garamond", system-ui;
   font-weight: 500;
-  font-variation-settings: "wdth" 100;
-  text-align: center;
 }
 
 .cloud-text-large {
   font-size: 13pt;
-  font-variation-settings: "wdth" 73;
 }
 
 .card-background-image {
-  margin-left: -3mm;
-  margin-top: -3mm;
   position: absolute;
   width: 2.5in;
   height: 3.5in;
@@ -713,7 +676,6 @@ faction-mat-edge {
   padding-left: 3px;
   align-self: middle;
   text-align: left;
-  font-variation-settings: "wdth" 60;
 }
 
 .helper-card-section {
@@ -724,19 +686,20 @@ faction-mat-edge {
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 4px;
+  margin-left: 2mm;
+  margin-right: 2mm;
 }
 
 .helper-card-icon-grid {
+  width: 100%;
   display: inline-grid;
   grid-template-columns: repeat(2, 60%);
   font-size: 11pt;
-  font-variation-settings: "wdth" 60;
   text-align: left;
 }
 
 .legend-item {
   margin-top: 4px;
-  font-variation-settings: "wdth" 80;
 }
 
 .legend-parenthetical {

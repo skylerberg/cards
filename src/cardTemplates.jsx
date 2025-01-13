@@ -86,21 +86,12 @@ function Newspaper({ name, text }) {
 }
 
 function Cloud({ name, ability, largeText }) {
-  /*
-        <hr style={
-          {
-            'marginTop': '3px',
-            'marginBottom': '5px',
-            'marginLeft': '20px',
-            'marginRight': '20px',
-          }
-        }/>
-        */
   return (
       <div className="card-text-box text-box">
         <div className="title-box">
           <h1 className="card-title">{name}</h1>
         </div>
+
         <div style={
           {
             'textAlign': 'center',
@@ -164,7 +155,7 @@ export function FactionCard({name, score, ability, cost, type}) {
   );
 }
 
-export function AllyCard({name, score, ability}) {
+export function AllyCard({name, score, ability, cost}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-')}`;
   const imageUrl = allyPngs[`./assets/images/allies/${imageName}.png`]?.default ||
     allyJpgs[`./assets/images/allies/${imageName}.jpg`]?.default;
@@ -180,7 +171,32 @@ export function AllyCard({name, score, ability}) {
       }
     }>
       <Banner score={score} />
-      <Cloud name={name} ability={ability} />
+
+      <div className="card-text-box text-box">
+        <div className="title-box">
+          <h1 className="card-title">🙚 {name} 🙘</h1>
+        </div>
+
+        <div style={
+          {
+            textAlign: 'center',
+          }
+        }>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+            <span><Funds cost={cost}/></span>
+            &nbsp;
+            <span>
+              <p className={'cloud-text'}>
+                {ability}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }

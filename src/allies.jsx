@@ -1,115 +1,145 @@
 import React from 'react';
-import { FactionCardIcon, To, Research, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
+import { FactionCardIcon, Asteroid, Research, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
 
-  (<AllyCard name='Foreman' score={0} type="Ally" ability={(
+  (<AllyCard name='Foreman' score={0} type="Ally" cost={2} ability={(
       <>
-        <Funds cost={2}/> Build a <Facility />. Complete 1<Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
+        Build a <Facility />. Complete 1<Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
       </>
     )
   }/>),
 
-  (<AllyCard name="Rogue Pilot" score={1} type="Ally" ability={(
+  (<AllyCard name="Rogue Pilot" score={1} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1}/> <Move /> a <Facility /> you own. Complete 1<Contract />. <Destroy /> the <Facility /> you moved.
+      <Move /> a <Facility /> you own. Complete 1<Contract />. <Destroy /> the <Facility /> you moved.
     </>
   )}/>),
 
-  (<AllyCard name="Negotiator" score={0} type="Ally" ability={(
+  (<AllyCard name="Negotiator" score={0} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2}/> Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
+      Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Researcher" score={1} type="Ally" ability={(
+  (<AllyCard name="Researcher" score={1} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2} /> Place 3 <Research />.
+      Place 3 <Research />.
     </>
   )}/>),
 
-  (<AllyCard name="Streamliner" score={0} type="Ally" ability={(
+  (<AllyCard name="Streamliner" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Complete <Contracts />.
+      Complete <Contracts />.
     </>
   )}/>),
 
-  (<AllyCard name="Recycling Expert" score={0} type="Ally" ability={(
+  (<AllyCard name="Recycling Expert" score={0} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2} /> <Destroy /> a <Facility /> you own to build 2 <Facility />.
+      <Destroy /> a <Facility /> you own to build 2 <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Opportunist" score={1} type="Ally" ability={(
+  (<AllyCard name="Opportunist" score={1} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2} /> Complete <Contracts />. Restock public <Contracts />. Complete <Contracts />.
+      Complete <Contracts />. Restock public&nbsp;<Contracts />. Complete <Contracts />.
     </>
   )}/>),
 
-  (<AllyCard name="Technician" score={0} type="Ally" ability={(
+  (<AllyCard name="Technician" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Build a <Facility /> on a space not adjacent to any other <Facility /> you own.
+      Build a <Facility /> that is not adjacent to any other <Facility /> you own.
     </>
   )}/>),
 
-  (<AllyCard name="Consultant" score={1} type="Ally" ability={(
+  (<AllyCard name="Consultant" score={1} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Replace a <Facility /> you own.
+      Replace a <Facility /> you own.
     </>
   )}/>),
 
-  (<AllyCard name="Extremist" score={1} type="Ally" ability={(
+  (<AllyCard name="Extremist" score={1} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2} /> Complete <Contracts />. If any completed <Contract /> was worth 2 or 5 <VictoryPoints />, <Destroy /> any 1 <Facility />.
+      Complete <Contracts />. <br/> If any completed <Contract /> was worth 2 or 5 <VictoryPoints />, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
-  (<AllyCard name="Miner" score={0} type="Ally" ability={(
+  (<AllyCard name="Miner" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Build a <Circle />.
+      Build a <Circle />.
     </>
   )}/>),
 
-  (<AllyCard name="Fuel Supplier" score={0} type="Ally" ability={(
+  (<AllyCard name="Fuel Supplier" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Build a <Droplet />.
+      Build a <Droplet />.
     </>
   )}/>),
 
-  (<AllyCard name="Industrial Engineer" score={0} type="Ally" ability={(
+  (<AllyCard name="Industrial Engineer" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Build a <Square />.
+      Build a <Square />.
     </>
   )}/>),
 
-  (<AllyCard name="Loyalist" score={1} type="Ally" ability={(
+  (<AllyCard name="Loyalist" score={1} type="Ally" cost={0} ability={(
     <>
-      <Funds cost={0} /> The first time you play a <FactionCardIcon /> this turn, gain <Funds cost={1} />.
+      The first time you play a <FactionCardIcon /> this turn, gain <Funds cost={1} />.
     </>
   )}/>),
 
-  (<AllyCard name="Rocket Scientist" score={1} type="Ally" ability={(
+  (<AllyCard name="Rocket Scientist" score={1} type="Ally" cost={0} ability={(
     <>
-      <Funds cost={0} /> Play a <Rocket /> without paying its cost.
+      Play a <Rocket /> without paying its cost.
     </>
   )}/>),
 
-  (<AllyCard name="Jury Rigger" score={1} type="Ally" ability={(
+  (<AllyCard name="Jury Rigger" score={1} type="Ally" cost={2} ability={(
     <>
-      <Funds cost={2} /> Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
     </>
   )}/>),
 
-  (<AllyCard name="Innovator" score={1} type="Ally" ability={(
+  (<AllyCard name="Innovator" score={1} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> Draw 1<Contract /> from anywhere in the <Contract /> deck.
+      Draw 1<Contract /> from anywhere in the <Contract /> deck.
     </>
   )}/>),
 
-  (<AllyCard name="Challenger" score={0} type="Ally" ability={(
+  (<AllyCard name="Challenger" score={0} type="Ally" cost={1} ability={(
     <>
-      <Funds cost={1} /> If you have fewer <Facility /> than another player, build a <Facility />.
+      If you have fewer <Facility /> than another player, build a <Facility />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Mechanic" score={1} type="Ally" cost={1} ability={(
+    <>
+      Take 1<Rocket /> from your scored cards into your hand.
+    </>
+  )}/>),
+
+  (<AllyCard name="Arms Dealer" score={1} type="Ally" cost={1} ability={(
+    <>
+      Take a random <Rocket /> from another player's hand. They draw 1<Ally />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Scrapper" score={2} type="Ally" cost={2} ability={(
+    <>
+      <Destroy /> 1 <Facility /> you own to draw 1<Rocket />, 1<Contract />, and 1 <Ally />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Contract Lawyer" score={1} type="Ally" cost={2} ability={(
+    <>
+      Draw 1<Contract />. Complete <Contracts />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Rocket Man" score={1} type="Ally" cost={1} ability={(
+    <>
+      Rotate an <Asteroid /> 1 space.
     </>
   )}/>),
 
