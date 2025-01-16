@@ -5,7 +5,6 @@ import './assets/fonts/icons.css';
 import { CardPages, TableTopSimulatorPages } from './pages.jsx';
 import { allies } from './allies.jsx';
 import { rockets } from './rockets.jsx';
-import { factionCards, theScavengersCards, cruxCabalCards, unearthIncCards, hydrusGangCards, explorerSocietyCards, cyborgUnionCards } from './factionCards.jsx';
 import { achievements } from './achievements.jsx';
 import { contracts } from './contracts.jsx';
 import { turnOrderCards } from './turnOrderCards.jsx';
@@ -22,15 +21,8 @@ for (let i = 0; i < 4; i++) {
   helperCards.push(<HelperCard type="Helper" />);
 }
 
-let duplicateFactionCards = [];
-for (let i = 0; i < factionCards.length; i += 8) {
-  for (let j = 0; j < 4; j++) {
-    duplicateFactionCards.push(factionCards[i +j]);
-  }
-}
-
-let cards = allies.concat(rockets).concat(factionCards).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(duplicateFactionCards).concat(rockets).concat(rockets);
-cards = allies;
+let cards = allies.concat(rockets).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(rockets).concat(rockets);
+cards = contracts
 
 //cards = [
 //  turnOrderCards,
@@ -40,8 +32,8 @@ cards = allies;
 
 reactRoot.render(
   <React.StrictMode>
-    <CardPages cards={cards}/>
     <FactionMats />
+    <CardPages cards={cards}/>
   </React.StrictMode>
 );
 

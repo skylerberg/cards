@@ -1,5 +1,5 @@
 import React from 'react';
-import { FactionCardIcon, Asteroid, Research, Funds, Ally, Mineral, Action, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
+import { FactionCardIcon, Asteroid, Research, Funds, Ally, Mineral, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -14,12 +14,6 @@ export let allies = [
   (<AllyCard name="Rogue Pilot" score={1} type="Ally" cost={1} ability={(
     <>
       <Move /> a <Facility /> you own. Complete 1<Contract />. <Destroy /> the <Facility /> you moved.
-    </>
-  )}/>),
-
-  (<AllyCard name="Negotiator" score={0} type="Ally" cost={2} ability={(
-    <>
-      Complete 1<Contract /> treating 1 <Facility /> owned by an opponent as though it were your <Facility />.
     </>
   )}/>),
 
@@ -53,12 +47,6 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Consultant" score={1} type="Ally" cost={1} ability={(
-    <>
-      Replace a <Facility /> you own.
-    </>
-  )}/>),
-
   (<AllyCard name="Extremist" score={1} type="Ally" cost={2} ability={(
     <>
       Complete <Contracts />. <br/> If any completed <Contract /> was worth 2 or 5 <VictoryPoints />, <Destroy /> any 1 <Facility />.
@@ -80,12 +68,6 @@ export let allies = [
   (<AllyCard name="Industrial Engineer" score={0} type="Ally" cost={1} ability={(
     <>
       Build a <Square />.
-    </>
-  )}/>),
-
-  (<AllyCard name="Loyalist" score={1} type="Ally" cost={0} ability={(
-    <>
-      The first time you play a <FactionCardIcon /> this turn, gain <Funds cost={1} />.
     </>
   )}/>),
 
@@ -113,12 +95,6 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Mechanic" score={1} type="Ally" cost={1} ability={(
-    <>
-      Take 1<Rocket /> from your scored cards into your hand.
-    </>
-  )}/>),
-
   (<AllyCard name="Arms Dealer" score={1} type="Ally" cost={1} ability={(
     <>
       Take a random <Rocket /> from another player's hand. They draw 1<Ally />.
@@ -139,7 +115,7 @@ export let allies = [
 
   (<AllyCard name="Rocket Man" score={1} type="Ally" cost={1} ability={(
     <>
-      Rotate an <Asteroid /> 1 space.
+      Rotate 1 <Asteroid /> to any position.
     </>
   )}/>),
 

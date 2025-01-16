@@ -120,16 +120,6 @@ function FactionMat({ name }) {
       <img src={tree} className="white-shadow" style={{
         position: 'absolute',
       }}/>
-      <div className="faction-deck-arrow" style={{
-          background: edgeColor,
-      }}>
-        <span style={{
-          marginTop: 'auto',
-          marginBottom: 'auto',
-        }}>
-          ↑ <FactionCardIcon /> Deck ↑
-        </span>
-      </div>
 
       <div className="scored-cards-arrow" style={{
         background: edgeColor,

@@ -11,7 +11,7 @@ import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Circle, Square, Droplet, FactionCardIcon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
+import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Circle, Square, Droplet, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
@@ -271,7 +271,7 @@ export function AchievementCard({name, score, text}) {
 
 export function TurnOrderCard({name, score, text}) {
   const backgroundImage = backImages[`./assets/images/backs/turn-order.jpg`]?.default;
-  const diagram = name === '1st Player' ? turnOrderDiagramFirstPlayer : turnOrderDiagram;
+  const diagram = name === '1st Player' ? turnOrderDiagram : turnOrderDiagram;
   const filter = 'grayscale() brightness(1.4)';
   const rocket = <>
       <img src={rocketCardImage} className="card-icon-image" style={{
@@ -280,6 +280,13 @@ export function TurnOrderCard({name, score, text}) {
         marginRight: '10px',
       }} />
     </>;
+  const contract = <>
+      <img src={contractCardImage} className="card-icon-image" style={{
+        height: '40px',
+        marginLeft: '5px',
+        marginRight: '5px',
+        }} />
+      </>;
   return (
     <div className="card">
       <img className="card-background-image" src={backgroundImage} style={
@@ -298,106 +305,16 @@ export function TurnOrderCard({name, score, text}) {
         <h4 className="turn-order-draw-text white-shadow-intense">Starting hand</h4>
         <div style={{
         }}>
-          <img src={factionCardImage} className="card-icon-image white-shadow-" style={{
-            height: '40px',
-            marginLeft: '5px',
-            marginRight: '5px',
-          }} />
-          <img src={factionCardImage} className="card-icon-image" style={{
-            height: '40px',
-            marginLeft: '5px',
-            marginRight: '5px',
-          }} />
-          <img src={contractCardImage} className="card-icon-image" style={{
-            height: '40px',
-            marginLeft: '5px',
-            marginRight: '5px',
-          }} />
-          {name !== '1st Player' ? rocket : ''}
+          {contract}
+          {name !== '1st Player' ? contract : ''}
+          {rocket}
         </div>
       </div>
     </div>
   );
 }
 
-export function HelperCard({type}) {
-  const backgroundImage = backImages[`./assets/images/backs/faction.jpg`]?.default;
-  const filter = 'brightness(0.5) grayscale() invert()';
-  const cruxCabalIcon = iconImages[`./assets/images/icons/crux-cabal.svg`]?.default;
-  const cyborgUnionIcon = iconImages[`./assets/images/icons/cyborg-union.svg`]?.default;
-  const explorerSocietyIcon = iconImages[`./assets/images/icons/explorer-society.svg`]?.default;
-  const hydrusGangIcon = iconImages[`./assets/images/icons/hydrus-gang.svg`]?.default;
-  const theScavengersIcon = iconImages[`./assets/images/icons/the-scavengers.svg`]?.default;
-  const unearthIncIcon = iconImages[`./assets/images/icons/unearth-inc..svg`]?.default;
-
-  return (
-    <div className="card">
-      <img className="card-background-image" src={backgroundImage} style={
-        {
-          filter: filter,
-        }
-      }>
-      </img>
-
-      <div class="helper-card-title">
-        Faction Overviews
-      </div>
-
-      <div class="helper-card-faction-line">
-        <img className="helper-card-faction-icon" src={unearthIncIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Builds extra facilities (<Facility />) then destroys (<Destroy />) them.
-        </p>
-      </div>
-
-      <div class="helper-card-faction-line">
-        <img className="helper-card-faction-icon" src={hydrusGangIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Draws rockets (<Rocket />) and destroys (<Destroy />) facilities (<Facility />).
-        </p>
-      </div>
-
-      <div class="helper-card-faction-line">
-        <img className="helper-card-faction-icon" src={cyborgUnionIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Draws contracts (<Contract />) and helps other players.
-        </p>
-      </div>
-
-      <div class="helper-card-faction-line">
-        <img className="helper-card-faction-icon" src={explorerSocietyIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Moves and replaces their facilities (<Facility />).
-        </p>
-      </div>
-
-      <div class="helper-card-faction-line">
-        <img className="helper-card-faction-icon" src={theScavengersIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Has easy ways to complete 1 contract (<Contract />) at a time.
-        </p>
-      </div>
-
-      <div class="helper-card-faction-line" style={{
-        border: 'none',
-      }}>
-        <img className="helper-card-faction-icon" src={cruxCabalIcon}></img>
-        <p class="helper-card-faction-description">
-          <span class="helper-card-faction-title"></span>
-          Draws allies (<Ally />) and uses other players' cards.
-        </p>
-      </div>
-
-    </div>
-  );
-}
-
-export function HelperCardBack() {
+export function HelperCard() {
   const backgroundImage = backImages[`./assets/images/backs/faction.jpg`]?.default;
   const filter = 'brightness(0.5) grayscale() invert()';
 
@@ -409,28 +326,24 @@ export function HelperCardBack() {
         }
       }>
       </img>
-
-      <div class="helper-card-turn-overview helper-card-section">
-        <div class="helper-card-title">
-          Turn Overview
-        </div>
-        <div class="legend-item">
-          <Action /> Spend funding
-        </div>
-        <div class="legend-item">
-          <Contract /> Restock public contracts
-        </div>
-        <div class="legend-item">
-          <Achievement /> Claim acheivements
-        </div>
-      </div>
 
       <div class="helper-card-section">
-        <div class="helper-card-title">
-          Legend
+        <div class="card-title">
+          🙚 Icon Reference 🙘
         </div>
 
         <div class="helper-card-icon-grid">
+          <div class="legend-item double-column">
+            <Ally /> Ally
+          </div>
+
+          <div class="legend-item double-column">
+            <Rocket /> Rocket
+          </div>
+
+          <div class="legend-item double-column">
+            <Contract /> Contract
+          </div>
 
           <div class="legend-item double-column">
             <Contracts /> Any number of contracts
@@ -447,22 +360,6 @@ export function HelperCardBack() {
           <div class="legend-item double-column">
             <Research /> Research marker
           </div>
-
-          {/*
-          <div class="legend-item">
-            <FactionCardIcon /> Faction card
-          </div>
-          <div class="legend-item">
-            <Rocket /> Rocket
-          </div>
-
-          <div class="legend-item">
-            <Contract /> Contract
-          </div>
-          <div class="legend-item">
-            <Ally /> Ally
-          </div>
-          */}
 
           <div class="legend-item double-column">
             <Facility /> Facility <i>(<Circle />, <Square />, or <Droplet />)</i>
@@ -503,16 +400,13 @@ export function FacilityShape({image, scale}) {
 
 function BonusCardImage({color}) {
   let cardImage;
-  if (color === 'Blue') {
+  if (color === 'Contract') {
     cardImage = contractCardImage;
   }
-  else if (color === 'Red') {
+  else if (color === 'Rocket') {
     cardImage = rocketCardImage;
   }
-  else if (color === 'Green') {
-    cardImage = factionCardImage;
-  }
-  else if (color === 'Gold') {
+  else if (color === 'Ally') {
     cardImage = allyCardImage;
   }
 
@@ -658,7 +552,7 @@ export function CardBack({type}) {
     return EndGameCard();
   }
   else if (type === 'Helper') {
-    return HelperCardBack();
+    return HelperCard();
   }
   return GenericCardBack({type});
 }

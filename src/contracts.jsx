@@ -7,252 +7,252 @@ export const contracts = [
     name="Widget"
     type="Contract"
     route={[ 'Circle', 'Circle', ]}
-    bonuses={[ 'Blue', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Gizmo"
     type="Contract"
     route={[ 'Square', 'Square', ]}
-    bonuses={[ 'Green', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Thingymajig"
     type="Contract"
     route={[ 'Droplet', 'Droplet', ]}
-    bonuses={[ 'Red', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Doohicky"
     type="Contract"
     route={[ 'Droplet', 'Square', ]}
-    bonuses={[ 'Blue', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Gubbins"
     type="Contract"
     route={[ 'Droplet', 'Circle', ]}
-    bonuses={[ 'Green', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Doodad"
     type="Contract"
     route={[ 'Circle', 'Square', ]}
-    bonuses={[ 'Red', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Water Purifier"
     type="Contract"
     route={[ 'Droplet', 'Droplet', 'Droplet', ]}
-    bonuses={[ 'Gold', ]}
+    bonuses={[ 'Ally', ]}
   />),
 
   (<ContractCard
     name="Decorative Plating"
     type="Contract"
     route={[ 'Circle', 'Circle', 'Circle', ]}
-    bonuses={[ 'Gold', ]}
+    bonuses={[ 'Ally', ]}
   />),
 
   (<ContractCard
     name="Compute Cluster"
     type="Contract"
     route={[ 'Square', 'Square', 'Square', ]}
-    bonuses={[ 'Gold', ]}
+    bonuses={[ 'Ally', ]}
   />),
 
   (<ContractCard
     name="Diamond Press"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Circle', ]}
-    bonuses={[ 'Blue', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Medi-Gel Capsules"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Droplet', ]}
-    bonuses={[ 'Red', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Navigation System"
     type="Contract"
     route={[ 'Square', 'Circle', 'Square', ]}
-    bonuses={[ 'Green', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Coolant Pack"
     type="Contract"
     route={[ 'Droplet', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Red', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Neuromorphic Circuits"
     type="Contract"
     route={[ 'Square', 'Droplet', 'Square', ]}
-    bonuses={[ 'Green', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Solar Sail"
     type="Contract"
     route={[ 'Circle', 'Square', 'Circle', ]}
-    bonuses={[ 'Blue', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Laser Cannon"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Square', ]}
-    bonuses={[ 'Blue', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Gravity Generator"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Circle', ]}
-    bonuses={[ 'Red', ]}
+    bonuses={[ 'Contract', ]}
   />),
 
   (<ContractCard
     name="Pressurization Unit"
     type="Contract"
     route={[ 'Square', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Green', ]}
+    bonuses={[ 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Forcefield Generator"
     type="Contract"
     route={[ 'Circle', 'Square', 'Square', 'Circle', ]}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Life Support System"
     type="Contract"
     route={[ 'Square', 'Square', 'Droplet', 'Droplet', ]}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Stasis Chamber"
     type="Contract"
     route={[ 'Square', 'Droplet', 'Droplet', 'Square', ]}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Fuel Optimizer"
     type="Contract"
     route={[ 'Droplet', 'Droplet', 'Circle', 'Circle', ]}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Life-Sign Detector"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Square', 'Droplet', ]}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Escape Pod"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Droplet', 'Circle', ]}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Basic AI System"
     type="Contract"
     route={[ 'Circle', 'Circle', 'Square', 'Square', ]}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Additive Printer"
     type="Contract"
     route={[ 'Square', 'Circle', 'Circle', 'Square', ]}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Waste Recycler"
     type="Contract"
     route={[ 'Droplet', 'Circle', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Carbon Reclaimer"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Thrusters"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Droplet', 'Square', ]}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Control Console"
     type="Contract"
     route={[ 'Square', 'Circle', 'Square', 'Circle', ]}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Luxury Timepiece"
     type="Contract"
     route={[ 'Circle', 'Circle', 'Droplet', 'Square', 'Square']}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Space Yacht"
     type="Contract"
     route={[ 'Droplet', 'Droplet', 'Square', 'Circle', 'Circle']}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Pristine Biodome"
     type="Contract"
     route={[ 'Square', 'Square', 'Circle', 'Droplet', 'Droplet']}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Robot Hive"
     type="Contract"
     route={[ 'Square', 'Droplet', 'Circle', 'Droplet', 'Square']}
-    bonuses={[ 'Blue', 'Gold', ]}
+    bonuses={[ 'Contract', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Warp Drive"
     type="Contract"
     route={[ 'Circle', 'Square', 'Droplet', 'Square', 'Circle']}
-    bonuses={[ 'Red', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<ContractCard
     name="Synthetic Lifeform"
     type="Contract"
     route={[ 'Droplet', 'Circle', 'Square', 'Circle', 'Droplet']}
-    bonuses={[ 'Green', 'Gold', ]}
+    bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   /*
@@ -260,21 +260,21 @@ export const contracts = [
     name="Cryo-Barracks"
     type="Contract"
     route={[ 'Droplet', 'Square', 'Circle', 'Square', 'Droplet', ]}
-    bonuses={[ 'Gold', 'Red', ]}
+    bonuses={[ 'Ally', 'Rocket', ]}
   />),
 
   (<ContractCard
     name="Terraforming Cannon"
     type="Contract"
     route={[ 'Square', 'Circle', 'Droplet', 'Circle', 'Square', ]}
-    bonuses={[ 'Gold', 'Green', ]}
+    bonuses={[ 'Ally', 'Faction', ]}
   />),
 
   (<ContractCard
     name="Fusion Reactor"
     type="Contract"
     route={[ 'Circle', 'Droplet', 'Square', 'Droplet', 'Circle', ]}
-    bonuses={[ 'Gold', 'Blue', ]}
+    bonuses={[ 'Ally', 'Contract', ]}
   />),
   */
 
