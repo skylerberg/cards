@@ -89,12 +89,6 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Challenger" score={0} type="Ally" cost={1} ability={(
-    <>
-      If you have fewer <Facility /> than another player, build a <Facility />.
-    </>
-  )}/>),
-
   (<AllyCard name="Arms Dealer" score={1} type="Ally" cost={1} ability={(
     <>
       Take a random <Rocket /> from another player's hand. They draw 1<Ally />.
