@@ -22,7 +22,6 @@ for (let i = 0; i < 4; i++) {
 }
 
 let cards = allies.concat(rockets).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(rockets).concat(rockets);
-cards = contracts
 
 //cards = [
 //  turnOrderCards,
@@ -32,8 +31,8 @@ cards = contracts
 
 reactRoot.render(
   <React.StrictMode>
-    <FactionMats />
     <CardPages cards={cards}/>
+    <FactionMats />
   </React.StrictMode>
 );
 

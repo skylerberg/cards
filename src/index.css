@@ -231,13 +231,12 @@ body {
 }
 
 .icon-image {
-  margin-bottom: -1px;
-  height: .14in;
-  display: inline-block;
+  margin-bottom: -4px !important;
+  height: .18in !important;
 }
 
 .icon-image-large {
-  margin-bottom: -3px !important;
+  margin-bottom: -4px !important;
   height: .18in !important;
 }
 
@@ -252,7 +251,7 @@ body {
 }
 
 .asteroid-large {
-  margin-bottom: -2px;
+  margin-bottom: -4px;
   height: .18in !important;
 }
 
@@ -269,13 +268,19 @@ body {
   font-size: 10pt;
 }
 
+.victory-point-icon-text {
+  position: absolute;
+  margin-left: 8.5px;
+  font-size: 10pt;
+}
+
 .action-box .cost {
   padding-top: 0px;
 }
 
 .specific-facility-icon {
-  margin-bottom: -1px;
-  height: .14in;
+  margin-bottom: -3px;
+  height: .18in;
 }
 
 .shape-large {
@@ -289,14 +294,14 @@ body {
 
 .card-icon-image {
   filter: drop-shadow(0 1px 1px #000);
-  margin-bottom: -2px;
-  height: 15px;
+  margin-bottom: -4px;
+  height: 18px;
   display: inline-block;
 }
 
 .card-icon-image-large {
-  margin-bottom: -3px !important;
-  height: 18px !important;
+  margin-bottom: -4px;
+  height: 18px;
 }
 
 .route-box {

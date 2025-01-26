@@ -1,5 +1,8 @@
 import cometIcon from './assets/images/icons/comet-small.png';
 import contractCardImage from './assets/images/icons/contract-card.svg';
+import facilityImage from './assets/images/icons/facility.svg';
+import destroyImage from './assets/images/icons/destroy.svg';
+import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
@@ -11,10 +14,6 @@ import square from './assets/images/icons/square.svg';
 import achievement from './assets/images/icons/achievement.svg';
 import actionImage from './assets/images/icons/action.svg';
 import gemImage from './assets/images/icons/gem.svg';
-
-export function Icon({name}) {
-  return (<i className={`icon-${name}`} />);
-}
 
 export function Funds({cost}) {
   return <>
@@ -106,7 +105,6 @@ export function Ally({large}) {
 
 export function Rotate() {
   return <span>Rotate</span>;
-  //return <Icon name="rotate" />;
 }
 
 export function To() {
@@ -114,7 +112,7 @@ export function To() {
 }
 
 export function Asteroid({large}) {
-  let className = 'asteroid';
+  let className = 'asteroid-large';
   if (large) {
     className += ' asteroid-large';
   }
@@ -137,16 +135,12 @@ export function Mineral({large}) {
   return <img src={gemImage} className={className} />;
 }
 
-export function RotateClockwise() {
-  return <Icon name="rotate-clockwise" />;
-}
-
 export function Destroy() {
-  return <Icon name="destroy" />;
+  return <img src={destroyImage} className={'icon-image-large'} />;
 }
 
 export function Facility() {
-  return <Icon name="facility" />;
+  return <img src={facilityImage} className={'icon-image-large'} />;
 }
 
 export function Action({large}) {
@@ -167,7 +161,6 @@ export function TakeAnotherAction() {
 
 export function Move() {
   return <span>Move</span>;
-  //return <Icon name="move" />;
 }
 
 export function Comet({large}) {
@@ -182,8 +175,11 @@ export function Achievement() {
   return <img src={achievement} className="icon-image" />;
 }
 
-export function VictoryPoints() {
-  return <Icon name="victory-points" />;
+export function VictoryPoints({value}) {
+  return <nobr>
+    <span className="victory-point-icon-text">{value}</span>
+    <img src={victoryPointsImage} className="icon-image-large" />
+  </nobr>;
 }
 
 export function Contracts() {

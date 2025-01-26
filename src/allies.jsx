@@ -6,7 +6,7 @@ export let allies = [
 
   (<AllyCard name='Foreman' score={0} type="Ally" cost={2} ability={(
       <>
-        Build a <Facility />. Complete 1<Contract /> worth 4 <VictoryPoints /> with a route using that <Facility />.
+        Build a <Facility />. Complete 1<Contract /> worth <VictoryPoints value={4} /> with a route using that <Facility />.
       </>
     )
   }/>),
@@ -49,7 +49,7 @@ export let allies = [
 
   (<AllyCard name="Extremist" score={1} type="Ally" cost={2} ability={(
     <>
-      Complete <Contracts />. <br/> If any completed <Contract /> was worth 2 or 5 <VictoryPoints />, <Destroy /> any 1 <Facility />.
+      Complete <Contracts />. <br/> If any completed <Contract /> was worth <VictoryPoints value={2}/> or <VictoryPoints value={5}/>, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
@@ -79,7 +79,7 @@ export let allies = [
 
   (<AllyCard name="Jury Rigger" score={1} type="Ally" cost={2} ability={(
     <>
-      Score 1<Contract /> worth 3 <VictoryPoints /> even if you do not have a route to complete it.
+      Score 1<Contract /> worth <VictoryPoints value={3} /> even if you do not have a route to complete it.
     </>
   )}/>),
 
@@ -97,7 +97,7 @@ export let allies = [
 
   (<AllyCard name="Scrapper" score={2} type="Ally" cost={2} ability={(
     <>
-      <Destroy /> 1 <Facility /> you own to draw 1<Rocket />, 1<Contract />, and 1 <Ally />.
+      <Destroy /> a <Facility /> you own to draw 1<Rocket />, 1<Contract />, and 1 <Ally />.
     </>
   )}/>),
 
