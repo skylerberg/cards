@@ -399,41 +399,6 @@ export function FacilityShape({image, scale}) {
   />;
 }
 
-function BonusCardImage({color}) {
-  let cardImage;
-  if (color === 'Contract') {
-    cardImage = contractCardImage;
-  }
-  else if (color === 'Rocket') {
-    cardImage = rocketCardImage;
-  }
-  else if (color === 'Ally') {
-    cardImage = allyCardImage;
-  }
-
-  return (
-    <img src={cardImage} className='bonus-line-item bonus-line-card' />
-  );
-}
-
-export function Bonus({small, doubleComets, colors}) {
-  const cards = colors.map(color => BonusCardImage({color}));
-  const secondComet = doubleComets ? 
-      <img src={cometIcon} className='bonus-line-item comet' />
-    : <></>;
-
-  const additionalClass = small ? 'bonus-line-small' : '';
-
-  return (
-    <div class={`bonus-line ${additionalClass}`}>
-      <img src={cometIcon} className='bonus-line-item comet' />
-      {secondComet}
-      <h1 className="bonus-line-item bonus-colon">: </h1>
-      {cards}
-    </div>
-  );
-}
-
 export function ContractCard({name, route, bonuses}) {
   const routeImages = route.map((name) => {
     if (name === 'Square') {
@@ -447,26 +412,8 @@ export function ContractCard({name, route, bonuses}) {
     }
   });
 
-  const bonusText = bonuses.length === 1 ? 'Bonus' : 'Bonuses';
-  const bonusBoxSize = bonuses.length === 1 ? 'bonus-box-small' : 'bonus-box-large';
-
-  const bonusLines = [];
-
-  if (bonuses.length === 3) {
-      bonusLines.push(<Bonus colors={bonuses.slice(0, 2)} doubleComets={false} small={false}/>)
-      bonusLines.push(<Bonus colors={[bonuses[2]]} doubleComets={true} small={false}/>)
-  }
-  else {
-    for (const [index, color] of bonuses.entries()) {
-      bonusLines.push(<Bonus colors={[color]} doubleComets={index > 0} small={bonuses.length === 1}/>)
-    }
-  }
-
-  for (let i = bonusLines.length - 1; i > 0; i--) {
-    bonusLines.splice(i, 0, <hr className="bonus-seperator" />);
-  }
-
   let backgroundImage = backImages[`./assets/images/backs/contract.jpg`]?.default;
+  let bonusWord = route.length >= 4 ? 'per' : 'for';
 
   return (
     <div className="card" style={
@@ -487,9 +434,13 @@ export function ContractCard({name, route, bonuses}) {
           }}>Route</span>
           {routeImages}
         </div>
-        <div className={`bonus-box ${bonusBoxSize} overlay-box`}>
-          <span className="overlay-box-label">{bonusText}</span>
-          {bonusLines}
+        <div className={`bonus-box bonus-box-large overlay-box`}>
+          <span className="overlay-box-label">Bonus</span>
+          <div class={`bonus-line`}>
+            <img src={researchImage} className='bonus-line-research' />
+            <h1 className="bonus-word">{bonusWord}</h1>
+            <img src={cometIcon} className='bonus-line-comet comet' />
+          </div>
         </div>
       </div>
     </div>
