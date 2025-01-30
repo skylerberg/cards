@@ -21,7 +21,7 @@ for (let i = 0; i < 4; i++) {
   helperCards.push(<HelperCard type="Helper" />);
 }
 
-let cards = allies.concat(rockets).concat(achievements).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(rockets).concat(rockets);
+let cards = allies.concat(rockets).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(rockets).concat(rockets).concat(achievements);
 
 //cards = [
 //  turnOrderCards,

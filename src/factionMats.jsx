@@ -66,7 +66,7 @@ function FactionMat({ name }) {
   if (name === 'Hydrus Gang') {
     edgeColor = 'rgba(210, 0, 0, 80%)';
     tree = hydrusGangTreeImage;
-    factionAbility = <span>After you play a <Rocket />, gain <Funds cost={1} /></span>;
+    factionAbility = <span>Once per turn, after you play a <Rocket />, gain <Funds cost={1} /></span>;
   }
   else if (name === 'Explorer Society') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
@@ -90,7 +90,11 @@ function FactionMat({ name }) {
   else if (name === 'Crux Cabal') {
     edgeColor = 'rgba(198, 0, 252, 80%)';
     tree = cruxCabalTreeImage;
-    factionAbility = <span>You may use other players' <Ally /> actions</span>;
+    factionAbility = <span>
+      At the end of your turn, you may <br />
+      complete 1<Contract /> from your hand <br />
+      <i>(you still need a matching route)</i>
+    </span>;
   }
   else if (name === 'Unearth Inc.') {
     edgeColor = 'rgba(59, 198, 59, 80%)';

@@ -17,9 +17,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Researcher" score={1} type="Ally" cost={2} ability={(
+  (<AllyCard name="Researcher" score={0} type="Ally" cost={1} ability={(
     <>
-      Place 3 <Research />.
+      Place 1 <Research /> anywhere on your research tree.
     </>
   )}/>),
 
@@ -85,7 +85,7 @@ export let allies = [
 
   (<AllyCard name="Innovator" score={1} type="Ally" cost={1} ability={(
     <>
-      Draw 1<Contract /> from anywhere in the <Contract /> deck.
+      Draw 1<Contract /> OR draw 1<Rocket />.
     </>
   )}/>),
 

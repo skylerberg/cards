@@ -13,6 +13,7 @@ import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
 import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Circle, Square, Droplet, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
+import researchImage from './assets/images/icons/bead.png';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
 const allyJpgs = import.meta.glob('./assets/images/allies/*.jpg', { eager: true });
