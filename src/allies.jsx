@@ -1,5 +1,5 @@
 import React from 'react';
-import { FactionCardIcon, Asteroid, Research, Funds, Ally, Mineral, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
+import { FactionCardIcon, Comet, Asteroid, Research, Funds, Ally, Mineral, Contracts, Square, Circle, Droplet, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -11,17 +11,23 @@ export let allies = [
     )
   }/>),
 
-  (<AllyCard name="Rogue Pilot" score={1} type="Ally" cost={1} ability={(
+  (<AllyCard name="Rogue Pilot" score={0} type="Ally" cost={1} ability={(
     <>
-      <Move /> a <Facility /> you own. Complete 1<Contract />. <Destroy /> the <Facility /> you moved.
+      <Move /> a <Facility /> you own. Complete <Contracts />. <Destroy /> the <Facility /> you moved.
     </>
   )}/>),
 
-  (<AllyCard name="Researcher" score={0} type="Ally" cost={1} ability={(
+  (<AllyCard name="Rogue Manager" score={0} type="Ally" cost={1} ability={(
     <>
-      Place 1 <Research /> anywhere on your research tree.
+      Replace a <Facility /> you own. Complete <Contracts />. <br /> <Destroy /> the <Facility /> you replaced.
     </>
   )}/>),
+
+  //(<AllyCard name="Researcher" score={1} type="Ally" cost={2} ability={(
+  //  <>
+  //    Place 3 <Research />.
+  //  </>
+  //)}/>),
 
   (<AllyCard name="Streamliner" score={0} type="Ally" cost={1} ability={(
     <>
@@ -35,21 +41,9 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Opportunist" score={1} type="Ally" cost={2} ability={(
-    <>
-      Complete <Contracts />. Restock public&nbsp;<Contracts />. Complete <Contracts />.
-    </>
-  )}/>),
-
   (<AllyCard name="Technician" score={0} type="Ally" cost={1} ability={(
     <>
       Build a <Facility /> that is not adjacent to any other <Facility /> you own.
-    </>
-  )}/>),
-
-  (<AllyCard name="Extremist" score={1} type="Ally" cost={2} ability={(
-    <>
-      Complete <Contracts />. <br/> If any completed <Contract /> was worth <VictoryPoints value={2}/> or <VictoryPoints value={5}/>, <Destroy /> any 1 <Facility />.
     </>
   )}/>),
 
@@ -71,46 +65,69 @@ export let allies = [
     </>
   )}/>),
 
-  (<AllyCard name="Rocket Scientist" score={1} type="Ally" cost={0} ability={(
+  (<AllyCard name="Jury Rigger" score={0} type="Ally" cost={1} ability={(
     <>
-      Play a <Rocket /> without paying its cost.
+      Score 1<Contract /> worth <VictoryPoints value={3} /> even if you do not have a matching route.
     </>
   )}/>),
 
-  (<AllyCard name="Jury Rigger" score={1} type="Ally" cost={2} ability={(
+  (<AllyCard name="Double Dealer" score={0} type="Ally" cost={1} ability={(
     <>
-      Score 1<Contract /> worth <VictoryPoints value={3} /> even if you do not have a route to complete it.
+      Complete 1<Contract /> treating a <Facility /> you own as 2 <Facility /> of that shape.
     </>
   )}/>),
 
-  (<AllyCard name="Innovator" score={1} type="Ally" cost={1} ability={(
+  (<AllyCard name="Expediter" score={0} type="Ally" cost={2} ability={(
     <>
-      Draw 1<Contract /> OR draw 1<Rocket />.
+      Complete 1<Contract /> treating a <Comet /> as a <Facility /> of any shape instead of a <Comet />.
     </>
   )}/>),
 
-  (<AllyCard name="Arms Dealer" score={1} type="Ally" cost={1} ability={(
+  (<AllyCard name="Extremist" score={0} type="Ally" cost={1} ability={(
     <>
-      Take a random <Rocket /> from another player's hand. They draw 1<Ally />.
+      Complete 1<Contract /> worth <VictoryPoints value={2} /> or <VictoryPoints value={5} /> and double the <Research /> bonus.
     </>
   )}/>),
 
-  (<AllyCard name="Scrapper" score={2} type="Ally" cost={2} ability={(
+  (<AllyCard name="Replicator" score={0} type="Ally" cost={1} ability={(
     <>
-      <Destroy /> a <Facility /> you own to draw 1<Rocket />, 1<Contract />, and 1 <Ally />.
+      Build a <Facility /> that is the same shape as an adjacent <Facility /> you own.
     </>
   )}/>),
 
-  (<AllyCard name="Contract Lawyer" score={1} type="Ally" cost={2} ability={(
+  (<AllyCard name="Liaison" score={0} type="Ally" cost={1} ability={(
     <>
-      Draw 1<Contract />. Complete <Contracts />.
+      Complete 1<Contract /> then place 1 <Research /> for each neutral <Facility /> used.
     </>
   )}/>),
 
-  (<AllyCard name="Rocket Man" score={1} type="Ally" cost={1} ability={(
+  (<AllyCard name="Teamster" score={0} type="Ally" cost={2} ability={(
     <>
-      Rotate 1 <Asteroid /> to any position.
+      Swap the position of 2 <Facility /> you own, then complete <Contracts />.
     </>
   )}/>),
 
+  (<AllyCard name="Recycling Protégé" score={0} type="Ally" cost={1} ability={(
+    <>
+      <Destroy /> a <Facility /> you own to build a <Facility />
+    </>
+  )}/>),
+
+  (<AllyCard name="Profiteer" score={0} type="Ally" cost={1} ability={(
+    <>
+      Put a <Contract /> or <Rocket /> from your hand on the bottom of its deck to build a <Facility />.
+    </>
+  )}/>),
+
+  (<AllyCard name="Freighter Captain" score={0} type="Ally" cost={1} ability={(
+    <>
+      Build a <Facility /> next to a neutral <Droplet />.
+    </>
+  )}/>),
+
+  //(<AllyCard name="Reviewer" score={1} type="Ally" cost={1} ability={(
+  //  <>
+  //    Remove up to 3 of your <Research />.
+  //  </>
+  //)}/>),
 ].map((ally) => React.cloneElement(ally, { key: ally.props.name }));

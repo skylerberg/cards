@@ -171,8 +171,6 @@ export function AllyCard({name, score, ability, cost}) {
         zIndex: '-4',
       }
     }>
-      <Banner score={score} />
-
       <div className="card-text-box text-box">
         <div className="title-box">
           <h1 className="card-title">🙚 {name} 🙘</h1>
@@ -202,12 +200,13 @@ export function AllyCard({name, score, ability, cost}) {
   );
 }
 
-export function RocketCard({name, score, cost, ability}) {
+export function RocketCard({name, score, cost, ability, shrinkName}) {
   const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
   const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
     rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
   let backgroundImage = backImages[`./assets/images/backs/rocket.jpg`]?.default;
   const filter = 'hue-rotate(160deg) brightness(0.6) contrast(1.3)';
+  console.log(shrinkName);
 
   return (
     <div className="card" style={
@@ -224,7 +223,7 @@ export function RocketCard({name, score, cost, ability}) {
       <div style={
         {
           position: 'absolute',
-          marginTop: '0.15in',
+          marginTop: '0.25in',
           alignSelf: 'center',
           width: '2.30in',
           height: '2.30in',
@@ -238,7 +237,7 @@ export function RocketCard({name, score, cost, ability}) {
       <img src={imageUrl ? imageUrl : undefined} style={
         {
           position: 'absolute',
-          marginTop: '0.20in',
+          marginTop: '0.30in',
           alignSelf: 'center',
           width: '2.20in',
           height: '2.20in',
@@ -247,7 +246,31 @@ export function RocketCard({name, score, cost, ability}) {
         }
       }/>
       <Banner cost={cost} score={score} />
-      <Cloud name={name} ability={ability} />
+      <div className="card-text-box text-box">
+        <div className="title-box">
+          <h1 className={'card-title' + (shrinkName ? ' small-title' : '')}>🙚 {name} 🙘</h1>
+        </div>
+
+        <div style={
+          {
+            textAlign: 'center',
+          }
+        }>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+            <span>
+              <p className={'cloud-text'} style={{
+                textAlign: 'center',
+              }}>
+                {ability}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
@@ -270,24 +293,10 @@ export function AchievementCard({name, score, text}) {
   );
 }
 
-export function TurnOrderCard({name, score, text}) {
+export function TurnOrderCard({name, score, cards}) {
   const backgroundImage = backImages[`./assets/images/backs/turn-order.jpg`]?.default;
   const diagram = name === '1st Player' ? turnOrderDiagram : turnOrderDiagram;
   const filter = 'grayscale() brightness(1.4)';
-  const rocket = <>
-      <img src={rocketCardImage} className="card-icon-image" style={{
-        height: '40px',
-        marginLeft: '5px',
-        marginRight: '10px',
-      }} />
-    </>;
-  const contract = <>
-      <img src={contractCardImage} className="card-icon-image" style={{
-        height: '40px',
-        marginLeft: '5px',
-        marginRight: '5px',
-        }} />
-      </>;
   return (
     <div className="card">
       <img className="card-background-image" src={backgroundImage} style={
@@ -306,9 +315,7 @@ export function TurnOrderCard({name, score, text}) {
         <h4 className="turn-order-draw-text white-shadow-intense">Starting hand</h4>
         <div style={{
         }}>
-          {contract}
-          {name !== '1st Player' ? contract : ''}
-          {rocket}
+          {cards}
         </div>
       </div>
     </div>
@@ -334,17 +341,6 @@ export function HelperCard() {
         </div>
 
         <div class="helper-card-icon-grid">
-          <div class="legend-item double-column">
-            <Ally /> Ally
-          </div>
-
-          <div class="legend-item double-column">
-            <Rocket /> Rocket
-          </div>
-
-          <div class="legend-item double-column">
-            <Contract /> Contract
-          </div>
 
           <div class="legend-item double-column">
             <Contracts /> Any number of contracts
@@ -381,7 +377,7 @@ export function HelperCard() {
           </div>
 
           <div class="legend-item double-column">
-            <VictoryPoints /> Victory points
+            <VictoryPoints value="x" /> Victory points
           </div>
 
         </div>
@@ -500,10 +496,7 @@ export function GenericCardBack({type, style}) {
 }
 
 export function CardBack({type}) {
-  if (!type) {
-    return EndGameCard();
-  }
-  else if (type === 'Helper') {
+  if (type === 'Helper') {
     return HelperCard();
   }
   return GenericCardBack({type});
@@ -512,37 +505,5 @@ export function CardBack({type}) {
 export function EmptyCard() {
   return (
     <div className="card"></div>
-  );
-}
-
-export function EndGameCard() {
-  return (
-    <div className="card" style={
-      {
-        backgroundSize: 'cover',
-        backgroundImage: `url(${starscapeImage})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'top',
-        zIndex: '-4',
-      }
-    }>
-      <Banner score={0} />
-      <div className="card-text-box white-shadow-main-text">
-        <h1 className="card-title">End Game</h1>
-        <hr style={
-          {
-            'marginLeft': '20px',
-            'marginRight': '20px',
-          }
-        }/>
-        <p style={
-          {
-            'textAlign': 'center',
-          }
-        }>
-          When this card is revealed, score it immediately. This is your last turn. Each other player gets one more turn.
-        </p>
-      </div>
-    </div>
   );
 }

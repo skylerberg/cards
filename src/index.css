@@ -584,6 +584,10 @@ faction-mat-edge {
   font-weight: 500;
 }
 
+.small-title {
+  font-size: 11pt !important;
+}
+
 .cloud-text-large {
   font-size: 13pt;
 }
@@ -593,6 +597,8 @@ faction-mat-edge {
   width: 2.5in;
   height: 3.5in;
   z-index: -4;
+  margin-top: -3px;
+  margin-left: -3px;
 }
 
 .divider-background-image {
@@ -636,6 +642,8 @@ faction-mat-edge {
   border-color: black;
   border-width: 2px;
   border-radius: 10px;
+  margin-left: 2mm;
+  margin-right: 2mm;
   z-index: 2;
   backdrop-filter: brightness(85%);
 }

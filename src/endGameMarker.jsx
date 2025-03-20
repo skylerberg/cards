@@ -12,7 +12,7 @@ export function EndGameMarkerPage() {
             marginLeft: '50px',
           }}
           >
-            <TheRushMarker />
+            <EndGameMarker />
             <TheRushMarker />
           </div>
           <div style={{
@@ -116,13 +116,12 @@ export function TheRushMarker() {
               Put this tile 6 cards above the End Game tile.
             </div>
             <br />
-            <br />
             <div className="end-game-heading">
               When Revealed
             </div>
             <br />
             <div className="">
-              Replace the Funding Level tile with this tile.
+              Players start each turn with
             </div>
             <br />
             <div className="funding-points white-shadow">

@@ -11,17 +11,17 @@ export const rockets = [
 
   (<RocketCard name="Divergent Rockets" cost={0} score={0} type="Rocket" ability={(
     <>
-      <Rotate /> an <Asteroid /> up to 2 spaces. <Rotate /> a different <Asteroid /> up to 1 space.
+      <Rotate /> an <Asteroid /> up to 2 spaces. <br /><Rotate /> a different <Asteroid /> up to 1 space.
     </>
   )}/>),
 
   (<RocketCard name="Barrage" cost={0} score={0} type="Rocket" ability={(
     <>
-      <Rotate /> up to 3 different <Asteroid /> 1 space each.
+      <Rotate /> up to 3 different <Asteroid /> <br />1 space each.
     </>
   )}/>),
 
-  (<RocketCard name="Double Precision Rockets" cost={1} score={1} type="Rocket" ability={(
+  (<RocketCard name="Double Precision Rockets" shrinkName={false} cost={1} score={1} type="Rocket" ability={(
     <>
       <Rotate /> 2 <Asteroid /> to any positions.
     </>
@@ -33,13 +33,13 @@ export const rockets = [
     </>
   )}/>),
 
-  (<RocketCard name="Exploratory Rockets" cost={2} score={1} type="Rocket" ability={(
+  (<RocketCard name="Exploratory Rocket" cost={1} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> 2 different <Asteroid /> up to 2 spaces each. Place 2 <Research />.
+      <Rotate /> an <Asteroid /> up to 2 spaces. <br /> Place 1 <Research />.
     </>
   )}/>),
 
-  (<RocketCard name="Friendly Rocket" cost={2} score={1} type="Rocket" ability={(
+  (<RocketCard name="Friendly Rocket" cost={1} score={0} type="Rocket" ability={(
     <>
       <Rotate /> an <Asteroid /> 1 space.
 
@@ -49,7 +49,7 @@ export const rockets = [
 
   (<RocketCard name="Twin Rockets" cost={0} score={1} type="Rocket" ability={(
     <>
-      <Rotate /> up to 2 different <Asteroid /> 1 space each.
+      <Rotate /> up to 2 different <Asteroid /><br />1 space each.
     </>
   )}/>),
 

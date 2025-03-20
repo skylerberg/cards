@@ -9,12 +9,6 @@ export const achievements = [
     </>
   )}/>),
 
-  (<AchievementCard name="Versatile" score={3} type="Achievement" text={(
-    <>
-      Have an <Ally large="true"/> in play; <Contract large="true"/><Rocket large="true"/><FactionCardIcon large="true"/> in your hand; and a <Circle large="true" />, <Square large="true" />, and <Droplet large="true" /> on the board.
-    </>
-  )}/>),
-
   (<AchievementCard name="Contiguous" score={4} type="Achievement" text={(
     <>
       Have a route of 9 or more connected <Facility /> you own.
@@ -23,7 +17,7 @@ export const achievements = [
 
   (<AchievementCard name="Open Book" score={3} type="Achievement" text={(
     <>
-      Have at least 4 less cards in your hand than the player who has the most.
+      Have at least 4 fewer cards in your hand than another player.
     </>
   )}/>),
 
@@ -87,15 +81,21 @@ export const achievements = [
     </>
   )}/>),
 
-  (<AchievementCard name="Learned" score={5} type="Achievement" text={(
+  (<AchievementCard name="Learned" score={3} type="Achievement" text={(
     <>
-      Have 7 or more <Research />.
+      Have <Research /> on all non-empty spaces on your research tree.
     </>
   )}/>),
 
   (<AchievementCard name="Hasty" score={3} type="Achievement" text={(
     <>
-      Be the player who reveals The Rush divider.
+      Start "The Rush."
+    </>
+  )}/>),
+
+  (<AchievementCard name="Conclusive" score={3} type="Achievement" text={(
+    <>
+      Start the final round of the game.
     </>
   )}/>),
 
