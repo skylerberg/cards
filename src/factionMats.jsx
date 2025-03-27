@@ -11,31 +11,31 @@ export function FactionMats() {
     <>
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Rocket Gang" />
-          <FactionMat name="Unearth Inc." />
+          <FactionMat name="Theodore Thorne" />
+          <FactionMat name="Laura Lymm" />
         </div>
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Explorer Society" />
-          <FactionMat name="Cyborg Union" />
+          <FactionMat name="Florence Fleet" />
+          <FactionMat name="Ian Ipswich" />
         </div>
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Lunar Refugees" />
-          <FactionMat name="Eridian Network" />
+          <FactionMat name="Norman Newcastle" />
+          <FactionMat name="Peter Pickwell" />
         </div>
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="The Scavengers" />
-          <FactionMat name="Crux Cabal" />
+          <FactionMat name="Beatrice  Bolton" />
+          <FactionMat name="Edward Edgecote" />
         </div>
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Cosmian Outcasts" />
+          <FactionMat name="Sophia St. Michael" />
           <FactionMat name="Crux Cabal" />
         </div>
       )} />
@@ -59,46 +59,46 @@ function FactionMat({ name }) {
   let edgeColor = '';
   let factionAbility = null;
   let factionAction = null;
-  if (name === 'Rocket Gang') {
+  if (name === 'Theodore Thorne') {
     edgeColor = 'rgba(210, 0, 0, 80%)';
     factionAction = <span><Funds cost={1} /> Rotate an <Asteroid /> to any position.</span>;
   }
-  else if (name === 'Explorer Society') {
+  else if (name === 'Florence Fleet') {
     edgeColor = 'rgba(59, 198, 59, 80%)';
     factionAction = <span><Funds cost={1} /> Move 1 <Facility /> you own</span>;
   }
-  else if (name === 'The Scavengers') {
+  else if (name === 'Beatrice Bolton') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAbility = <span>
       At the end of your turn, you may <br />
       complete 1<Contract /> from your hand <br />
     </span>;
   }
-  else if (name === 'Cyborg Union') {
+  else if (name === 'Ian Ipswich') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAction = <span><Funds cost={1} /> Replace 1 <Facility /> you own.</span>;
   }
-  else if (name === 'Eridian Network') {
+  else if (name === 'Peter Pickwell') {
     edgeColor = 'rgba(240, 240, 11, 80%)';
     factionAbility = <span>
       When you draw <Ally />, draw 2, keep 1 and <br />put the other on the bottom of the deck.
     </span>;
   }
-  else if (name === 'Crux Cabal') {
+  else if (name === 'Edward Edgecote') {
     edgeColor = 'rgba(198, 0, 252, 80%)';
     factionAction = <span>
       <Funds cost={2} /> Complete 1<Contract /> treating 1 <Facility /> owned by 
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an opponent as though it were your <Facility />.</span>;
   }
-  else if (name === 'Lunar Refugees') {
+  else if (name === 'Norman Newcastle') {
     edgeColor = 'rgba(255, 255, 255, 80%)';
     factionAction = <span><Funds cost={1} /> Build a <Facility /> on an <Asteroid /> <br />you do not have a <Facility /> on.</span>;
   }
-  else if (name === 'Unearth Inc.') {
+  else if (name === 'Laura Lymm') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
     factionAction = <span><Funds cost={1} /> Complete 1<Contract /></span>;
   }
-  else if (name === 'Cosmian Outcasts') {
+  else if (name === 'Sophia St. Michael') {
     edgeColor = 'rgba(255, 255, 255, 80%)';
     factionAbility = <span>
       At the end of your turn, draw <Contract /> <br />

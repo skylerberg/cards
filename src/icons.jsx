@@ -116,7 +116,7 @@ export function Asteroid({large}) {
   if (large) {
     className += ' asteroid-large';
   }
-  return <img src={asteroidImage} className={className} />;
+  return <span>lands</span>;
 }
 
 export function Research({large}) {
