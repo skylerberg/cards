@@ -240,6 +240,11 @@ body {
   height: .18in !important;
 }
 
+.icon-image-stamp {
+  margin-bottom: -5px !important;
+  height: .20in !important;
+}
+
 .icon-margins {
   margin-left: 2px;
   margin-right: 2px;
@@ -327,19 +332,18 @@ body {
 }
 
 .facility {
-  max-height: .4in;
+  max-height: .6in;
   margin-top: 7px;
 }
 
 .contract-card {
 }
 
-.contract-boxes {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  margin-top: 15px;
-  margin: 2mm;
+.stamp {
+  position: absolute;
+  width: .7in;
+  margin-top: 7px;
+  margin-left: 1.65in;
 }
 
 .overlay-box-label {

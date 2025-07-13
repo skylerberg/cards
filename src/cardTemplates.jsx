@@ -3,26 +3,28 @@ import fundingImage from './assets/images/icons/action.svg';
 import defaultAchievementImage from './assets/images/achievements/default.jpg';
 import turnOrderDiagram from './assets/images/turn-order/diagram.svg';
 import turnOrderDiagramFirstPlayer from './assets/images/turn-order/diagram-first-player.svg';
-import droplet from './assets/images/icons/droplet.svg';
-import circle from './assets/images/icons/circle.svg';
-import square from './assets/images/icons/square.svg';
+import pigeon from './assets/images/icons/pigeon.svg';
+import person from './assets/images/icons/person.svg';
+import horse from './assets/images/icons/horse.svg';
 import cometIcon from './assets/images/icons/comet.png';
 import contractCardImage from './assets/images/icons/contract-card.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import rocketCardImage from './assets/images/icons/rocket-card.svg';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Circle, Square, Droplet, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
+import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Person, Horse, Pigeon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 import researchImage from './assets/images/icons/bead.png';
 
 const allyPngs = import.meta.glob('./assets/images/allies/*.png', { eager: true });
 const allyJpgs = import.meta.glob('./assets/images/allies/*.jpg', { eager: true });
-const leaderImages = import.meta.glob('./assets/images/leaders/*.png', { eager: true });
 const factionCardImages = import.meta.glob('./assets/images/faction-cards/*.png', { eager: true });
 const factionCardJpgs = import.meta.glob('./assets/images/faction-cards/*.jpg', { eager: true });
-const rocketImages = import.meta.glob('./assets/images/rockets/*', { eager: true });
+const runeImages = import.meta.glob('./assets/images/runes/*', { eager: true });
 const backImages = import.meta.glob('./assets/images/backs/*.jpg', { eager: true });
+const frontImages = import.meta.glob('./assets/images/fronts/*.jpg', { eager: true });
+const stampImages = import.meta.glob('./assets/images/stamps/*.png', { eager: true });
 const iconImages = import.meta.glob('./assets/images/icons/*.svg', { eager: true });
+const pngIconImages = import.meta.glob('./assets/images/icons/*.png', { eager: true });
 
 function Banner({score, cost}) {
   let costSection = <></>;
@@ -156,8 +158,8 @@ export function FactionCard({name, score, ability, cost, type}) {
   );
 }
 
-export function AllyCard({name, score, ability, cost}) {
-  const imageName = `${name.toLowerCase().replaceAll(' ', '-')}`;
+export function AllyCard({title, ability, cost}) {
+  const imageName = `${title.replaceAll(' ', '_')}`;
   const imageUrl = allyPngs[`./assets/images/allies/${imageName}.png`]?.default ||
     allyJpgs[`./assets/images/allies/${imageName}.jpg`]?.default;
   return (
@@ -173,7 +175,7 @@ export function AllyCard({name, score, ability, cost}) {
     }>
       <div className="card-text-box text-box">
         <div className="title-box">
-          <h1 className="card-title">🙚 {name} 🙘</h1>
+          <h1 className="card-title">🙚 {title} 🙘</h1>
         </div>
 
         <div style={
@@ -201,11 +203,11 @@ export function AllyCard({name, score, ability, cost}) {
 }
 
 export function RocketCard({name, score, cost, ability, shrinkName}) {
-  const imageName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}`;
-  const imageUrl = rocketImages[`./assets/images/rockets/${imageName}.png`]?.default ||
-    rocketImages[`./assets/images/rockets/${imageName}.jpg`]?.default;
+  const imageName = `${name.replaceAll(' ', '_').replaceAll('\'', '')}`;
+  const imageUrl = runeImages[`./assets/images/runes/${imageName}.png`]?.default ||
+    runeImages[`./assets/images/runes/${imageName}.jpg`]?.default;
   let backgroundImage = backImages[`./assets/images/backs/rocket.jpg`]?.default;
-  const filter = 'hue-rotate(160deg) brightness(0.6) contrast(1.3)';
+  const filter = 'brightness(0.5) grayscale() invert()';
   console.log(shrinkName);
 
   return (
@@ -217,6 +219,7 @@ export function RocketCard({name, score, cost, ability, shrinkName}) {
       <img className="card-background-image" src={backgroundImage} style={
         {
           filter: filter,
+          backgroundColor: 'black',
         }
       }>
       </img>
@@ -346,25 +349,31 @@ export function HelperCard() {
             <Contracts /> Any number of contracts
           </div>
 
+          {/*
           <div class="legend-item double-column">
             <Asteroid /> Asteroid
           </div>
+          */}
 
+          {/*
           <div class="legend-item double-column">
             <Comet /> Comet
           </div>
+          */}
 
           <div class="legend-item double-column">
             <Research /> Research marker
           </div>
 
           <div class="legend-item double-column">
-            <Facility /> Facility <i>(<Circle />, <Square />, or <Droplet />)</i>
+            <Person /> / <Horse /> / <Pigeon /> Courier
           </div>
 
+          {/*
           <div class="legend-item double-column">
             <Destroy /> Destroy <i class="legend-parenthetical">(return <Facility /> to supply)</i>
           </div>
+          */}
 
           {/*
           <div class="legend-item double-column">
@@ -395,21 +404,21 @@ export function FacilityShape({image, scale}) {
   />;
 }
 
-export function ContractCard({name, route, bonuses}) {
+export function LetterCard({route}) {
   const routeImages = route.map((name) => {
-    if (name === 'Square') {
-      return <FacilityShape image={square} scale="90%"/>;
+    if (name === 'Horse') {
+      return <FacilityShape image={horse} scale=""/>;
     }
-    if (name === 'Circle') {
-      return <FacilityShape image={circle} scale="" />;
+    if (name === 'Person') {
+      return <FacilityShape image={person} scale="" />;
     }
-    if (name === 'Droplet') {
-      return <FacilityShape image={droplet} />;
+    if (name === 'Pigeon') {
+      return <FacilityShape image={pigeon} />;
     }
   });
 
-  let backgroundImage = backImages[`./assets/images/backs/contract.jpg`]?.default;
-  let bonusWord = route.length >= 4 ? 'per' : 'for';
+  const backgroundImage = frontImages[`./assets/images/fronts/letter.jpg`]?.default;
+  const stampImage = stampImages[`./assets/images/stamps/${route.length}.png`]?.default;
 
   return (
     <div className="card" style={
@@ -419,25 +428,12 @@ export function ContractCard({name, route, bonuses}) {
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: 'top',
         zIndex: '-4',
+        display: 'flex',
       }
     }>
-      <Banner score={route.length} />
-      <h1 className="card-title contract-title white-shadow-intense">{name}</h1>
-      <div className="contract-boxes">
-        <div className="route-box overlay-box">
-          <span className="overlay-box-label" style={{
-            marginBottom: '-7px',  // counter-act the margin-top on .facility
-          }}>Route</span>
-          {routeImages}
-        </div>
-        <div className={`bonus-box bonus-box-large overlay-box`}>
-          <span className="overlay-box-label">Bonus</span>
-          <div class={`bonus-line`}>
-            <img src={researchImage} className='bonus-line-research' />
-            <h1 className="bonus-word">{bonusWord}</h1>
-            <img src={cometIcon} className='bonus-line-comet comet' />
-          </div>
-        </div>
+      <img class="stamp" src={stampImage} />
+      <div className="route-box">
+        {routeImages}
       </div>
     </div>
   );
@@ -447,12 +443,13 @@ export function ContractCard({name, route, bonuses}) {
 export function GenericCardBack({type, style}) {
   const jpgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.jpg`;
   const svgName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.svg`;
+  const pngName = `${type.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.png`;
   let imageUrl = backImages[`./assets/images/backs/${jpgName}`]?.default;
-  const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default;
+  const iconUrl = iconImages[`./assets/images/icons/${svgName}`]?.default || pngIconImages[`./assets/images/icons/${pngName}`]?.default;
   const additionalStyle = style || {};
 
   let filter = '';
-  if (type === 'Contract') {
+  if (type === 'Letter') {
     filter = 'brightness(1.0)';
   }
   else if (type === 'Ally') {

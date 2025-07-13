@@ -1,19 +1,19 @@
 import cometIcon from './assets/images/icons/comet-small.png';
-import contractCardImage from './assets/images/icons/contract-card.svg';
+import letterCardImage from './assets/images/icons/letter-card.png';
 import facilityImage from './assets/images/icons/facility.svg';
 import destroyImage from './assets/images/icons/destroy.svg';
 import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
-import rocketCardImage from './assets/images/icons/rocket-card.svg';
+import runeCardImage from './assets/images/icons/rune-card.png';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import asteroidImage from './assets/images/icons/asteroid.png';
 import researchImage from './assets/images/icons/bead.png';
-import droplet from './assets/images/icons/droplet.svg';
-import circle from './assets/images/icons/circle.svg';
-import square from './assets/images/icons/square.svg';
+import pigeon from './assets/images/icons/pigeon.svg';
+import person from './assets/images/icons/person.svg';
+import horse from './assets/images/icons/horse.svg';
 import achievement from './assets/images/icons/achievement.svg';
 import actionImage from './assets/images/icons/action.svg';
 import gemImage from './assets/images/icons/gem.svg';
+const stampImages = import.meta.glob('./assets/images/stamps/*.png', { eager: true });
 
 export function Funds({cost}) {
   return <>
@@ -22,7 +22,7 @@ export function Funds({cost}) {
   </>;
 }
 
-export function Droplet({ color, large }) {
+export function Pigeon({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
@@ -30,10 +30,10 @@ export function Droplet({ color, large }) {
   if (large) {
     className += ' shape-large';
   }
-  return <img src={droplet} className={className} />;
+  return <img src={pigeon} className={className} />;
 }
 
-export function Circle({ color, large }) {
+export function Person({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
@@ -41,10 +41,10 @@ export function Circle({ color, large }) {
   if (large) {
     className += ' shape-large';
   }
-  return <img src={circle} className={className} />;
+  return <img src={person} className={className} />;
 }
 
-export function Square({ color, large }) {
+export function Horse({ color, large }) {
   let className = 'specific-facility-icon';
   if (color === 'blue') {
     className += ' filter-blue';
@@ -52,7 +52,7 @@ export function Square({ color, large }) {
   if (large) {
     className += ' shape-large';
   }
-  return <img src={square} className={className} />;
+  return <img src={horse} className={className} />;
 }
 
 export function Contract({large}) {
@@ -62,7 +62,7 @@ export function Contract({large}) {
   }
   return <>
     <nobr>
-      <img src={contractCardImage} className={className} />
+      <img src={letterCardImage} className={className} />
     </nobr>
   </>
 }
@@ -86,7 +86,7 @@ export function Rocket({large}) {
   }
   return <>
     <nobr>
-      <img src={rocketCardImage} className={className} />
+      <img src={runeCardImage} className={className} />
     </nobr>
   </>
 }
@@ -176,9 +176,9 @@ export function Achievement() {
 }
 
 export function VictoryPoints({value}) {
+  const stampImage = stampImages[`./assets/images/stamps/${value}.png`]?.default;
   return <nobr>
-    <span className="victory-point-icon-text">{value}</span>
-    <img src={victoryPointsImage} className="icon-image-large" />
+    <img src={stampImage} className="icon-image-stamp" />
   </nobr>;
 }
 
@@ -187,13 +187,13 @@ export function Contracts() {
     <>
       <nobr>
         <span className="first-contract">
-          <img src={contractCardImage} className="card-icon-image" />
+          <img src={letterCardImage} className="card-icon-image" />
         </span>
         <span className="second-contract">
-          <img src={contractCardImage} className="card-icon-image" />
+          <img src={letterCardImage} className="card-icon-image" />
         </span>
         <span className="third-contract">
-          <img src={contractCardImage} className="card-icon-image" />
+          <img src={letterCardImage} className="card-icon-image" />
         </span>
       </nobr>
     </>

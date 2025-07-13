@@ -1,5 +1,5 @@
 import { FactionMatPage } from './pages.jsx';
-import { Facility, Funds, Research, Asteroid, Rocket, Contract, Contracts, Ally } from './icons.jsx';
+import { Facility, Funds, Research, Asteroid, Person, Horse, Pigeon, Contract, Contracts, Ally } from './icons.jsx';
 import backImage from './assets/images/backs/faction-mat-back-big.jpg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
@@ -11,32 +11,20 @@ export function FactionMats() {
     <>
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
-          <FactionMat name="Theodore Thorne" />
           <FactionMat name="Laura Lymm" />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
-          <FactionMat name="Florence Fleet" />
-          <FactionMat name="Ian Ipswich" />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
           <FactionMat name="Norman Newcastle" />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
+          <FactionMat name="Katherine Kingsbridge" />
+          <FactionMat name="Theodore Thorne" />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Peter Pickwell" />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
-          <FactionMat name="Beatrice  Bolton" />
-          <FactionMat name="Edward Edgecote" />
-        </div>
-      )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
-          <FactionMat name="Sophia St. Michael" />
-          <FactionMat name="Crux Cabal" />
+          <FactionMat name="Beatrice Bolton" />
         </div>
       )} />
       <FactionMatPage factionMats={(
@@ -48,6 +36,8 @@ export function FactionMats() {
     </>
   );
 }
+          {/*
+          */}
 
 function FactionMat({ name }) {
   const jpgName = `${name.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '')}.jpg`;
@@ -60,23 +50,23 @@ function FactionMat({ name }) {
   let factionAbility = null;
   let factionAction = null;
   if (name === 'Theodore Thorne') {
-    edgeColor = 'rgba(210, 0, 0, 80%)';
-    factionAction = <span><Funds cost={1} /> Rotate an <Asteroid /> to any position.</span>;
+    edgeColor = 'rgba(255, 255, 255, 80%)';
+    factionAction = <span><Funds cost={1} /> Rotate a land to any position</span>;
   }
   else if (name === 'Florence Fleet') {
     edgeColor = 'rgba(59, 198, 59, 80%)';
-    factionAction = <span><Funds cost={1} /> Move 1 <Facility /> you own</span>;
+    factionAction = <span><Funds cost={1} /> Move 1 of your couriers</span>;
   }
   else if (name === 'Beatrice Bolton') {
-    edgeColor = 'rgba(250, 142, 0, 80%)';
+    edgeColor = 'rgba(210, 0, 0, 80%)';
     factionAbility = <span>
-      At the end of your turn, you may <br />
-      complete 1<Contract /> from your hand <br />
+      At the start of your turn, you may <br />
+      complete 1<Contract />.<br />
     </span>;
   }
   else if (name === 'Ian Ipswich') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
-    factionAction = <span><Funds cost={1} /> Replace 1 <Facility /> you own.</span>;
+    factionAction = <span><Funds cost={1} /> Replace 1 of your couriers.</span>;
   }
   else if (name === 'Peter Pickwell') {
     edgeColor = 'rgba(240, 240, 11, 80%)';
@@ -85,25 +75,47 @@ function FactionMat({ name }) {
     </span>;
   }
   else if (name === 'Edward Edgecote') {
-    edgeColor = 'rgba(198, 0, 252, 80%)';
+    //edgeColor = 'rgba(198, 0, 252, 80%)'; purple
+    edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAction = <span>
       <Funds cost={2} /> Complete 1<Contract /> treating 1 <Facility /> owned by 
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an opponent as though it were your <Facility />.</span>;
   }
   else if (name === 'Norman Newcastle') {
-    edgeColor = 'rgba(255, 255, 255, 80%)';
-    factionAction = <span><Funds cost={1} /> Build a <Facility /> on an <Asteroid /> <br />you do not have a <Facility /> on.</span>;
+    edgeColor = 'rgba(59, 198, 59, 80%)';
+    factionAction = <span><Funds cost={1} /> Hire on a land you <br />do not have a courier on.</span>;
   }
   else if (name === 'Laura Lymm') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
     factionAction = <span><Funds cost={1} /> Complete 1<Contract /></span>;
   }
   else if (name === 'Sophia St. Michael') {
-    edgeColor = 'rgba(255, 255, 255, 80%)';
+    edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAbility = <span>
       At the end of your turn, draw <Contract /> <br />
       until you have 3 <Contract /> in your hand. <br />
       You cannot complete any public <Contract />.
+    </span>;
+  }
+  else if (name === 'Katherine Kingsbridge') {
+    edgeColor = 'rgba(255, 255, 255, 80%)';
+    factionAction = <span><Funds cost={1} />&nbsp;
+      Choose 2 of your couriers on adjacent lands.<br />
+      Rotate those lands until those couriers are adjacent
+    </span>;
+  }
+  else if (name === 'Guy Goole') {
+    edgeColor = 'rgba(240, 240, 11, 80%)';
+    factionAbility = <span>
+      Instead of taking your first turn, draw 3 <Ally />, keep <br />
+      1 and put the other 2 on the bottom of the deck.
+    </span>;
+  }
+  else if (name === 'Mary Markfield') {
+    edgeColor = 'rgba(59, 198, 59, 80%)';
+    factionAction = <span><Funds cost={1} />&nbsp;
+      Hire a courier on a land you <br />
+      already have at least 3 couriers on.
     </span>;
   }
   /*
@@ -155,7 +167,6 @@ function FactionMat({ name }) {
       <div className="faction-mat-interior">
 
         <div className="faction-icon-and-title">
-          <img src={factionIconImage} className="faction-mat-faction-icon" />
           <div className="faction-title-box">
             <h1 className="faction-title">&nbsp; &nbsp; {name}</h1>
           </div>
@@ -169,7 +180,7 @@ function FactionMat({ name }) {
             <span style={{
               position: 'relative'
             }}>
-              &nbsp;&nbsp;<Funds cost={2} /> Build a <Facility />
+              &nbsp;&nbsp;<Funds cost={2} /> Hire <Person /> / <Horse /> / <Pigeon />
             </span>
             <br />
             <span>

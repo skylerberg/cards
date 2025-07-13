@@ -1,11 +1,11 @@
 import React from 'react';
-import { Asteroid, Research, Circle, Square, Droplet, Ally, FactionCardIcon, Comet, Contract, Rocket, Facility, VictoryPoints } from './icons.jsx';
+import { Asteroid, Research, Person, Horse, Pigeon, Ally, FactionCardIcon, Comet, Contract, Rocket, Facility, VictoryPoints } from './icons.jsx';
 import { AchievementCard } from './cardTemplates.jsx';
 
 export const achievements = [
   (<AchievementCard name="Fabulous" score={4} type="Achievement" text={(
     <>
-      Have a <Facility /> that is adjacent to 3 non-neutral <Square large="true" />.
+      Have a <Facility /> that is adjacent to 3 non-neutral <Horse large="true" />.
     </>
   )}/>),
 
@@ -71,13 +71,13 @@ export const achievements = [
 
   (<AchievementCard name="Extractive" score={4} type="Achievement" text={(
     <>
-      Have 4 or more <Circle large="true" /> you own adjacent to neutral <Facility />.
+      Have 4 or more <Person large="true" /> you own adjacent to neutral <Facility />.
     </>
   )}/>),
 
   (<AchievementCard name="Refined" score={5} type="Achievement" text={(
     <>
-      Have 5 or more <Droplet large="true" /> you own that are not adjacent to each other.
+      Have 5 or more <Pigeon large="true" /> you own that are not adjacent to each other.
     </>
   )}/>),
 
@@ -103,7 +103,7 @@ export const achievements = [
   /*
   (<AchievementCard name="Doppelganger" score={4} type="Achievement" text={(
     <>
-      Have a <Facility /> of each type (<Circle />, <Square />, <Droplet />) adjacent to an opponent's <Facility /> of the same type with a <Comet /> between them.
+      Have a <Facility /> of each type (<Person />, <Horse />, <Pigeon />) adjacent to an opponent's <Facility /> of the same type with a <Comet /> between them.
     </>
   )}/>),
   */

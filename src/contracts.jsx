@@ -1,280 +1,280 @@
 import React from 'react';
 import { Rotate, Asteroid, Action } from './icons.jsx';
-import { ContractCard } from './cardTemplates.jsx';
+import { LetterCard } from './cardTemplates.jsx';
 
 export const contracts = [
-  (<ContractCard
+  (<LetterCard
     name="Widget"
-    type="Contract"
-    route={[ 'Circle', 'Circle', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Person', 'Person', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Gizmo"
-    type="Contract"
-    route={[ 'Square', 'Square', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Horse', 'Horse', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Thingymajig"
-    type="Contract"
-    route={[ 'Droplet', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Pigeon', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Doohicky"
-    type="Contract"
-    route={[ 'Droplet', 'Square', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Gubbins"
-    type="Contract"
-    route={[ 'Droplet', 'Circle', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Person', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Doodad"
-    type="Contract"
-    route={[ 'Circle', 'Square', ]}
+    type="Letter"
+    route={[ 'Person', 'Horse', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Water Purifier"
-    type="Contract"
-    route={[ 'Droplet', 'Droplet', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Pigeon', 'Pigeon', ]}
     bonuses={[ 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Decorative Plating"
-    type="Contract"
-    route={[ 'Circle', 'Circle', 'Circle', ]}
+    type="Letter"
+    route={[ 'Person', 'Person', 'Person', ]}
     bonuses={[ 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Compute Cluster"
-    type="Contract"
-    route={[ 'Square', 'Square', 'Square', ]}
+    type="Letter"
+    route={[ 'Horse', 'Horse', 'Horse', ]}
     bonuses={[ 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Diamond Press"
-    type="Contract"
-    route={[ 'Circle', 'Droplet', 'Circle', ]}
+    type="Letter"
+    route={[ 'Person', 'Pigeon', 'Person', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Medi-Gel Capsules"
-    type="Contract"
-    route={[ 'Droplet', 'Square', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', 'Pigeon', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Navigation System"
-    type="Contract"
-    route={[ 'Square', 'Circle', 'Square', ]}
+    type="Letter"
+    route={[ 'Horse', 'Person', 'Horse', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Coolant Pack"
-    type="Contract"
-    route={[ 'Droplet', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Person', 'Pigeon', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Neuromorphic Circuits"
-    type="Contract"
-    route={[ 'Square', 'Droplet', 'Square', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Horse', 'Pigeon', 'Horse', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Solar Sail"
-    type="Contract"
-    route={[ 'Circle', 'Square', 'Circle', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Person', 'Horse', 'Person', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Laser Cannon"
-    type="Contract"
-    route={[ 'Circle', 'Droplet', 'Square', ]}
+    type="Letter"
+    route={[ 'Person', 'Pigeon', 'Horse', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Gravity Generator"
-    type="Contract"
-    route={[ 'Droplet', 'Square', 'Circle', ]}
-    bonuses={[ 'Contract', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', 'Person', ]}
+    bonuses={[ 'Letter', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Pressurization Unit"
-    type="Contract"
-    route={[ 'Square', 'Circle', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Horse', 'Person', 'Pigeon', ]}
     bonuses={[ 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Forcefield Generator"
-    type="Contract"
-    route={[ 'Circle', 'Square', 'Square', 'Circle', ]}
+    type="Letter"
+    route={[ 'Person', 'Horse', 'Horse', 'Person', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Life Support System"
-    type="Contract"
-    route={[ 'Square', 'Square', 'Droplet', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Horse', 'Horse', 'Pigeon', 'Pigeon', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Stasis Chamber"
-    type="Contract"
-    route={[ 'Square', 'Droplet', 'Droplet', 'Square', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Horse', 'Pigeon', 'Pigeon', 'Horse', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Fuel Optimizer"
-    type="Contract"
-    route={[ 'Droplet', 'Droplet', 'Circle', 'Circle', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Pigeon', 'Person', 'Person', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Life-Sign Detector"
-    type="Contract"
-    route={[ 'Droplet', 'Square', 'Square', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', 'Horse', 'Pigeon', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Escape Pod"
-    type="Contract"
-    route={[ 'Circle', 'Droplet', 'Droplet', 'Circle', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Person', 'Pigeon', 'Pigeon', 'Person', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Basic AI System"
-    type="Contract"
-    route={[ 'Circle', 'Circle', 'Square', 'Square', ]}
+    type="Letter"
+    route={[ 'Person', 'Person', 'Horse', 'Horse', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Additive Printer"
-    type="Contract"
-    route={[ 'Square', 'Circle', 'Circle', 'Square', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Horse', 'Person', 'Person', 'Horse', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Waste Recycler"
-    type="Contract"
-    route={[ 'Droplet', 'Circle', 'Circle', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Person', 'Person', 'Pigeon', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Carbon Reclaimer"
-    type="Contract"
-    route={[ 'Circle', 'Droplet', 'Circle', 'Droplet', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Person', 'Pigeon', 'Person', 'Pigeon', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Thrusters"
-    type="Contract"
-    route={[ 'Droplet', 'Square', 'Droplet', 'Square', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', 'Pigeon', 'Horse', ]}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Control Console"
-    type="Contract"
-    route={[ 'Square', 'Circle', 'Square', 'Circle', ]}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Horse', 'Person', 'Horse', 'Person', ]}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Luxury Timepiece"
-    type="Contract"
-    route={[ 'Circle', 'Circle', 'Droplet', 'Square', 'Square']}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Person', 'Person', 'Pigeon', 'Horse', 'Horse']}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Space Yacht"
-    type="Contract"
-    route={[ 'Droplet', 'Droplet', 'Square', 'Circle', 'Circle']}
+    type="Letter"
+    route={[ 'Pigeon', 'Pigeon', 'Horse', 'Person', 'Person']}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Pristine Biodome"
-    type="Contract"
-    route={[ 'Square', 'Square', 'Circle', 'Droplet', 'Droplet']}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Horse', 'Horse', 'Person', 'Pigeon', 'Pigeon']}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Robot Hive"
-    type="Contract"
-    route={[ 'Square', 'Droplet', 'Circle', 'Droplet', 'Square']}
-    bonuses={[ 'Contract', 'Ally', ]}
+    type="Letter"
+    route={[ 'Horse', 'Pigeon', 'Person', 'Pigeon', 'Horse']}
+    bonuses={[ 'Letter', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Warp Drive"
-    type="Contract"
-    route={[ 'Circle', 'Square', 'Droplet', 'Square', 'Circle']}
+    type="Letter"
+    route={[ 'Person', 'Horse', 'Pigeon', 'Horse', 'Person']}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Synthetic Lifeform"
-    type="Contract"
-    route={[ 'Droplet', 'Circle', 'Square', 'Circle', 'Droplet']}
+    type="Letter"
+    route={[ 'Pigeon', 'Person', 'Horse', 'Person', 'Pigeon']}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   /*
-  (<ContractCard
+  (<LetterCard
     name="Cryo-Barracks"
-    type="Contract"
-    route={[ 'Droplet', 'Square', 'Circle', 'Square', 'Droplet', ]}
+    type="Letter"
+    route={[ 'Pigeon', 'Horse', 'Person', 'Horse', 'Pigeon', ]}
     bonuses={[ 'Ally', 'Rocket', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Terraforming Cannon"
-    type="Contract"
-    route={[ 'Square', 'Circle', 'Droplet', 'Circle', 'Square', ]}
+    type="Letter"
+    route={[ 'Horse', 'Person', 'Pigeon', 'Person', 'Horse', ]}
     bonuses={[ 'Ally', 'Faction', ]}
   />),
 
-  (<ContractCard
+  (<LetterCard
     name="Fusion Reactor"
-    type="Contract"
-    route={[ 'Circle', 'Droplet', 'Square', 'Droplet', 'Circle', ]}
-    bonuses={[ 'Ally', 'Contract', ]}
+    type="Letter"
+    route={[ 'Person', 'Pigeon', 'Horse', 'Pigeon', 'Person', ]}
+    bonuses={[ 'Ally', 'Letter', ]}
   />),
   */
 

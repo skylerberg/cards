@@ -22,17 +22,25 @@ for (let i = 0; i < 4; i++) {
 
 let cards = allies.concat(rockets).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(achievements);
 
-//cards = [
-//  allies,
-//].flat();
+cards = [
+  rockets[0],
+  rockets[0],
+  rockets[0],
+  rockets[3],
+  rockets[3],
+  rockets[3],
+  rockets[4],
+  rockets[4],
+  rockets[4],
+].flat();
 
 reactRoot.render(
   <React.StrictMode>
-    <FactionMats />
     <CardPages cards={cards}/>
   </React.StrictMode>
 );
 
+//<FactionMats />
 //reactRoot.render(
 //  <React.StrictMode>
 //    <TableTopSimulatorPages cards={cards} page={2} side="back" />
