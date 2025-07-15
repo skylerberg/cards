@@ -11,6 +11,12 @@ export function FactionMats() {
     <>
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
+          <FactionMat name="Generic" />
+          <FactionMat name="Generic" />
+        </div>
+      )} />
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Laura Lymm" />
           <FactionMat name="Norman Newcastle" />
         </div>
@@ -49,6 +55,9 @@ function FactionMat({ name }) {
   let edgeColor = '';
   let factionAbility = null;
   let factionAction = null;
+  if (name === 'Generic') {
+    edgeColor = 'rgba(255, 255, 255, 80%)';
+  }
   if (name === 'Theodore Thorne') {
     edgeColor = 'rgba(255, 255, 255, 80%)';
     factionAction = <span><Funds cost={1} /> Rotate a land to any position</span>;
@@ -78,7 +87,7 @@ function FactionMat({ name }) {
     //edgeColor = 'rgba(198, 0, 252, 80%)'; purple
     edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAction = <span>
-      <Funds cost={2} /> Complete 1<Contract /> treating 1 <Facility /> owned by 
+      <Funds cost={2} /> Deliver 1<Contract /> treating 1 <Facility /> owned by 
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an opponent as though it were your <Facility />.</span>;
   }
   else if (name === 'Norman Newcastle') {
@@ -87,7 +96,7 @@ function FactionMat({ name }) {
   }
   else if (name === 'Laura Lymm') {
     edgeColor = 'rgba(83, 166, 238, 80%)';
-    factionAction = <span><Funds cost={1} /> Complete 1<Contract /></span>;
+    factionAction = <span><Funds cost={1} /> Deliver 1<Contract /></span>;
   }
   else if (name === 'Sophia St. Michael') {
     edgeColor = 'rgba(250, 142, 0, 80%)';
@@ -132,6 +141,26 @@ function FactionMat({ name }) {
           </div>
           */
 
+  const factionTitle = 
+    <>
+      <div className="faction-icon-and-title">
+        <div className="faction-title-box">
+          <h1 className="faction-title">&nbsp; &nbsp; {name}</h1>
+        </div>
+      </div>
+    </>;
+
+  const factionSpecial =
+    <>
+      <div className="overlay-box action-box">
+        <span className="action-box-title">Faction { !!factionAbility ? 'Ability' : 'Action' }</span>
+        <br />
+        <span>
+          {factionAction ? <>&nbsp;&nbsp;</> : <></>}{factionAbility}{factionAction}
+        </span>
+      </div>
+    </>;
+
   return (
     <div className='faction-mat' style={{
         backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : undefined,
@@ -166,11 +195,7 @@ function FactionMat({ name }) {
 
       <div className="faction-mat-interior">
 
-        <div className="faction-icon-and-title">
-          <div className="faction-title-box">
-            <h1 className="faction-title">&nbsp; &nbsp; {name}</h1>
-          </div>
-        </div>
+        {name === 'Generic' ? <div></div> : factionTitle}
 
         <div className="faction-info-boxes">
 
@@ -184,7 +209,7 @@ function FactionMat({ name }) {
             </span>
             <br />
             <span>
-              &nbsp;&nbsp;<Funds cost={2} /> Complete <Contracts />
+              &nbsp;&nbsp;<Funds cost={2} /> Deliver <Contracts />
             </span>
             <br />
             <span>
@@ -192,13 +217,7 @@ function FactionMat({ name }) {
             </span>
             <br />
           </div>
-          <div className="overlay-box action-box">
-            <span className="action-box-title">Faction { !!factionAbility ? 'Ability' : 'Action' }</span>
-            <br />
-            <span>
-              {factionAction ? <>&nbsp;&nbsp;</> : <></>}{factionAbility}{factionAction}
-            </span>
-          </div>
+          { factionAbility || factionAction ? factionSpecial : '' }
         </div>
       </div>
     </div>

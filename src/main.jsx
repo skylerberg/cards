@@ -36,11 +36,11 @@ cards = [
 
 reactRoot.render(
   <React.StrictMode>
+    <FactionMats />
     <CardPages cards={cards}/>
   </React.StrictMode>
 );
 
-//<FactionMats />
 //reactRoot.render(
 //  <React.StrictMode>
 //    <TableTopSimulatorPages cards={cards} page={2} side="back" />
