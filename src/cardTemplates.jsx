@@ -6,12 +6,7 @@ import turnOrderDiagramFirstPlayer from './assets/images/turn-order/diagram-firs
 import pigeon from './assets/images/icons/pigeon.svg';
 import person from './assets/images/icons/person.svg';
 import horse from './assets/images/icons/horse.svg';
-import cometIcon from './assets/images/icons/comet.png';
-import contractCardImage from './assets/images/icons/contract-card.svg';
-import allyCardImage from './assets/images/icons/ally-card.svg';
-import rocketCardImage from './assets/images/icons/rocket-card.svg';
-import factionCardImage from './assets/images/icons/faction-card.svg';
-import { Ally, Achievement, VictoryPoints, Research, Asteroid, Comet, Funds, Contracts, Person, Horse, Pigeon, Action, Facility, Rocket, Contract, Destroy } from './icons.jsx';
+import { VictoryPoints, Research, Funds, Contracts, Person, Horse, Pigeon, } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 import researchImage from './assets/images/icons/bead.png';
 
@@ -334,12 +329,6 @@ export function HelperCard() {
           <div class="legend-item double-column">
             <Person /> / <Horse /> / <Pigeon /> Courier
           </div>
-
-          {/*
-          <div class="legend-item double-column">
-            <Destroy /> Destroy <i class="legend-parenthetical">(return <Facility /> to supply)</i>
-          </div>
-          */}
 
           {/*
           <div class="legend-item double-column">

@@ -1,5 +1,5 @@
 import { FactionMatPage } from './pages.jsx';
-import { Facility, Funds, Research, Asteroid, Person, Horse, Pigeon, Contract, Contracts, Ally } from './icons.jsx';
+import { Courier, Funds, Research, Asteroid, Person, Horse, Pigeon, Contract, Contracts, Ally } from './icons.jsx';
 import backImage from './assets/images/backs/faction-mat-back-big.jpg';
 
 const factionImages = import.meta.glob('./assets/images/mats/*.jpg', { eager: true });
@@ -87,8 +87,8 @@ function FactionMat({ name }) {
     //edgeColor = 'rgba(198, 0, 252, 80%)'; purple
     edgeColor = 'rgba(250, 142, 0, 80%)';
     factionAction = <span>
-      <Funds cost={2} /> Deliver 1<Contract /> treating 1 <Facility /> owned by 
-    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an opponent as though it were your <Facility />.</span>;
+      <Funds cost={2} /> Deliver 1<Contract /> treating 1 <Courier /> owned by 
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; an opponent as though it were your <Courier />.</span>;
   }
   else if (name === 'Norman Newcastle') {
     edgeColor = 'rgba(59, 198, 59, 80%)';

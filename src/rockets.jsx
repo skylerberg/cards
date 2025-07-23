@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rotate, Research, VictoryPoints, Ally, Action, Facility, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
+import { Rotate, Research, VictoryPoints, Ally, Action, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
@@ -30,12 +30,6 @@ export const rockets = [
   (<RocketCard name="Courier Rune" cost={1} score={0} type="Rune" ability={(
     <>
       <Rotate /> a land up to 2 spaces. <br/> Hire a courier.
-    </>
-  )}/>),
-
-  (<RocketCard name="Knowledge Rune" cost={1} score={1} type="Rune" ability={(
-    <>
-      <Rotate /> a land up to 2 spaces. <br /> Collect <VictoryPoints value={1} /> and place 1 <Research />.
     </>
   )}/>),
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FactionCardIcon, Comet, Asteroid, Research, Funds, Ally, Mineral, Contracts, Horse, Person, Pigeon, Facility, Destroy, Rocket, Contract, Move, VictoryPoints,  } from './icons.jsx';
+import { Research, Contracts, Horse, Person, Pigeon, Contract, VictoryPoints,  } from './icons.jsx';
 import { AllyCard } from './cardTemplates.jsx';
 
 export let allies = [
@@ -46,11 +46,10 @@ export let allies = [
       </>
     )
   }/>),
-  //Build a <Facility />. Complete 1<Contract /> worth <VictoryPoints value={4} /> with a route using that <Facility />.
 
   (<AllyCard name="Katherine Kingsbridge" title="Jockey" score={0} type="Ally" cost={1} ability={(
     <>
-      Deliver <Contracts />.
+      Deliver up to 2<Contract />.
     </>
   )}/>),
 
@@ -68,16 +67,15 @@ export let allies = [
 
   (<AllyCard name="John Jacobstowe" title="Librarian" score={0} type="Ally" cost={1} ability={(
     <>
-      Deliver 1<Contract /> then place 1 <Research /> for each wild courier used.
+      Deliver 1<Contract /> then place 1 <Research /> if you used a wild courier.
     </>
   )}/>),
 
   (<AllyCard name="Ursula Uttoxeter" title="Outlaw" score={0} type="Ally" cost={2} ability={(
     <>
-      Replace one of your couriers. Deliver <Contracts />.
+      Replace one of your couriers, then deliver <Contracts />.
     </>
   )}/>),
-  //Replace a <Facility /> you own. Complete <Contracts />. <br /> <Destroy /> the <Facility /> you replaced.
 
   (<AllyCard name="Oliver Overthorpe" title="Pigeon Trainer" score={0} type="Ally" cost={1} ability={(
     <>
@@ -87,7 +85,6 @@ export let allies = [
 
   (<AllyCard name="Rose Rye" title="Rune Carver" score={0} type="Ally" cost={2} ability={(
     <>
-      Put a <Contract /> or <Rocket /> from your hand on the bottom of its deck to hire twice.
     </>
   )}/>),
 
@@ -111,17 +108,15 @@ export let allies = [
 
   (<AllyCard name="Violet Vale" title="Socialite" score={0} type="Ally" cost={2} ability={(
     <>
-      Move one of your couriers. Deliver <Contracts />.
+      Move one of your couriers, then deliver <Contracts />.
     </>
   )}/>),
-  //<Move /> a <Facility /> you own. Complete <Contracts />. <Destroy /> the <Facility /> you moved.
 
   (<AllyCard name="Wesley Warwick" title="Tycoon" score={0} type="Ally" cost={1} ability={(
     <>
       Deliver 1<Contract /> treating 1 courier used as 2 of that type of courier.
     </>
   )}/>),
-  //Complete 1<Contract /> treating a <Facility /> you own as 2 <Facility /> of that shape.
 
   (<AllyCard name="Warwick" title="Stamp Collector" score={0} type="Ally" cost={2} ability={(
     <>

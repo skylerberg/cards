@@ -141,8 +141,8 @@ export function Destroy() {
   return <img src={destroyImage} className={'icon-image-large'} />;
 }
 
-export function Facility() {
-  return <img src={facilityImage} className={'icon-image-large'} />;
+export function Courier() {
+  return <><Person /> / <Pigeon /> / <Horse /></>;
 }
 
 export function Action({large}) {
@@ -187,17 +187,7 @@ export function VictoryPoints({value}) {
 export function Contracts() {
   return (
     <>
-      <nobr>
-        <span className="first-contract">
-          <img src={letterCardImage} className="card-icon-image" />
-        </span>
-        <span className="second-contract">
-          <img src={letterCardImage} className="card-icon-image" />
-        </span>
-        <span className="third-contract">
-          <img src={letterCardImage} className="card-icon-image" />
-        </span>
-      </nobr>
+      up to 3<Contract />
     </>
   );
 }
