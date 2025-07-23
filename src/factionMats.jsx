@@ -17,6 +17,16 @@ export function FactionMats() {
       )} />
       <FactionMatPage factionMats={(
         <div className="faction-mat-grid">
+          <FactionMatBack />
+          <FactionMatBack />
+        </div>
+      )} />
+    </>
+  );
+}
+          {/*
+      <FactionMatPage factionMats={(
+        <div className="faction-mat-grid">
           <FactionMat name="Laura Lymm" />
           <FactionMat name="Norman Newcastle" />
         </div>
@@ -33,16 +43,6 @@ export function FactionMats() {
           <FactionMat name="Beatrice Bolton" />
         </div>
       )} />
-      <FactionMatPage factionMats={(
-        <div className="faction-mat-grid">
-          <FactionMatBack />
-          <FactionMatBack />
-        </div>
-      )} />
-    </>
-  );
-}
-          {/*
           */}
 
 function FactionMat({ name }) {
@@ -171,17 +171,6 @@ function FactionMat({ name }) {
         position: 'absolute',
       }}/>
 
-      <div className="scored-cards-arrow" style={{
-        background: edgeColor,
-      }}>
-        <span style={{
-          marginTop: 'auto',
-          marginBottom: 'auto',
-        }}>
-          ↑ Scored cards ↑
-        </span>
-      </div>
-
       <div className="allies-arrow" style={{
           background: edgeColor,
       }}>
@@ -205,7 +194,7 @@ function FactionMat({ name }) {
             <span style={{
               position: 'relative'
             }}>
-              &nbsp;&nbsp;<Funds cost={2} /> Hire <Person /> / <Horse /> / <Pigeon />
+              &nbsp;&nbsp;<Funds cost={2} /> Hire <Person /> / <Pigeon /> / <Horse />
             </span>
             <br />
             <span>
@@ -217,6 +206,15 @@ function FactionMat({ name }) {
             </span>
             <br />
           </div>
+
+          <div className="overlay-box stamp-box">
+            <span className="action-box-title">Stamp Collection</span>
+          </div>
+
+          <div className="overlay-box delivered-box">
+            <span className="action-box-title">Delivered Letters</span>
+          </div>
+
           { factionAbility || factionAction ? factionSpecial : '' }
         </div>
       </div>

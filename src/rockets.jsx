@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rotate, Research, Ally, Action, Facility, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
+import { Rotate, Research, VictoryPoints, Ally, Action, Facility, Rocket, Contract, FactionCardIcon, TakeAnotherAction } from './icons.jsx';
 import { RocketCard } from './cardTemplates.jsx';
 
 export const rockets = [
@@ -23,7 +23,7 @@ export const rockets = [
 
   (<RocketCard name="Certitude Runes" shrinkName={false} cost={1} score={1} type="Rune" ability={(
     <>
-      <Rotate /> 2 lands to any positions.
+      <Rotate /> 2 lands to any positions. Collect <VictoryPoints value={1} />.
     </>
   )}/>),
 
@@ -35,27 +35,19 @@ export const rockets = [
 
   (<RocketCard name="Knowledge Rune" cost={1} score={1} type="Rune" ability={(
     <>
-      <Rotate /> a land up to 2 spaces. <br /> Place 1 <Research />.
-    </>
-  )}/>),
-
-  (<RocketCard name="Camaraderie Rune" cost={1} score={0} type="Rune" ability={(
-    <>
-      <Rotate /> a land 1 space.
-
-      Draw 1<Ally />.
+      <Rotate /> a land up to 2 spaces. <br /> Collect <VictoryPoints value={1} /> and place 1 <Research />.
     </>
   )}/>),
 
   (<RocketCard name="Minor Runes" cost={0} score={1} type="Rune" ability={(
     <>
-      <Rotate /> up to 2 different lands<br />1 space each.
+      <Rotate /> up to 2 different lands<br />1 space each. Collect <VictoryPoints value={1} />.
     </>
   )}/>),
 
   (<RocketCard name="Major Runes" cost={1} score={2} type="Rune" ability={(
     <>
-      <Rotate /> up to 2 different lands up to <br />2 spaces each.
+      <Rotate /> up to 2 different lands up to <br />2 spaces each. Collect <VictoryPoints value={2} />.
     </>
   )}/>),
 

@@ -6,7 +6,7 @@ import victoryPointsImage from './assets/images/icons/victory-points.svg';
 import allyCardImage from './assets/images/icons/ally-card.svg';
 import runeCardImage from './assets/images/icons/rune-card.png';
 import factionCardImage from './assets/images/icons/faction-card.svg';
-import researchImage from './assets/images/icons/bead.png';
+import researchImage from './assets/images/icons/book.svg';
 import pigeon from './assets/images/icons/pigeon.svg';
 import person from './assets/images/icons/person.svg';
 import horse from './assets/images/icons/horse.svg';
@@ -62,7 +62,12 @@ export function Contract({large}) {
   }
   return <>
     <nobr>
-      <img src={letterCardImage} className={className} />
+      <img src={letterCardImage} className={className} style={{
+        transform: 'rotate(270deg)',
+        marginLeft: '4px',
+        marginRight: '4px',
+        marginBottom: '-5px',
+      }}/>
     </nobr>
   </>
 }
@@ -120,10 +125,7 @@ export function Asteroid({large}) {
 }
 
 export function Research({large}) {
-  let className = 'asteroid';
-  if (large) {
-    className += ' asteroid-large';
-  }
+  let className = 'research';
   return <img src={researchImage} className={className} />;
 }
 

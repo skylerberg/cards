@@ -23,15 +23,18 @@ for (let i = 0; i < 4; i++) {
 let cards = allies.concat(rockets).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(achievements);
 
 cards = [
-  rockets[0],
-  rockets[0],
-  rockets[0],
-  rockets[3],
-  rockets[3],
-  rockets[3],
-  rockets[4],
-  rockets[4],
-  rockets[4],
+  rockets,
+  rockets,
+  rockets,
+  contracts,
+  allies[3],
+  allies[6],
+  allies[8],
+  allies[9],
+  allies[13],
+  allies[15],
+  allies[18],
+  allies[19],
 ].flat();
 
 reactRoot.render(

@@ -123,6 +123,12 @@ export let allies = [
   )}/>),
   //Complete 1<Contract /> treating a <Facility /> you own as 2 <Facility /> of that shape.
 
+  (<AllyCard name="Warwick" title="Stamp Collector" score={0} type="Ally" cost={2} ability={(
+    <>
+      Deliver 1<Contract /> and collect <VictoryPoints value={2} />.
+    </>
+  )}/>),
+
 
   //(<AllyCard name="Reviewer" score={1} type="Ally" cost={1} ability={(
   //  <>

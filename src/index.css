@@ -260,6 +260,11 @@ body {
   height: .18in !important;
 }
 
+.research {
+  margin-bottom: -4.5px;
+  height: .18in !important;
+}
+
 .funding {
   margin-bottom: -5px;
   height: .20in;
@@ -298,7 +303,7 @@ body {
 }
 
 .card-icon-image {
-  filter: drop-shadow(0 1px 1px #000);
+  filter: drop-shadow(0 .2px .2px #000);
   margin-bottom: -4px;
   height: 18px;
   display: inline-block;
@@ -314,13 +319,19 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: auto;
   margin: auto;
-  margin-left: 0px;
+  margin-top: .58in;
   padding: 5px;
-  margin-right: 3mm
+  margin-left: 1.2mm;
 }
 
+.route-box-inner {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+/*
 .route-box::before {
   content: "";
   position: absolute;
@@ -328,12 +339,14 @@ body {
   top: 40px;
   bottom: 20px;
   border-left: 2px dashed #000;
-  /*transform: translateX(-25%);*/
 }
+*/
 
 .facility {
-  max-height: .6in;
-  margin-top: 7px;
+  max-height: .52in;
+  margin-top: 3px;
+  transform: rotate(270deg);
+  aspect-ratio: 1/1;
 }
 
 .contract-card {
@@ -341,9 +354,15 @@ body {
 
 .stamp {
   position: absolute;
-  width: .7in;
-  margin-top: 7px;
-  margin-left: 1.65in;
+  width: .55in;
+  margin-left: 0.1in;
+  transform: rotate(270deg);
+}
+
+.postmark {
+	-webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+  -webkit-mask-size: 472px 302px;
+  mix-blend-mode: multiply;
 }
 
 .overlay-box-label {
@@ -494,10 +513,32 @@ body {
 
 .action-box {
   padding: 10px;
-  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   background: #ffffffd8;
   font-size: 11pt;
   line-height: 160%;
+}
+
+.stamp-box {
+  border: solid black  1mm;
+  margin-bottom: 10px;
+  background: #ffffffd8;
+  font-size: 11pt;
+  line-height: 160%;
+  width: 2.5in;
+  height: .75in;
+  text-align: center;
+}
+
+.delivered-box {
+  border: solid black  1mm;
+  background: #ffffffd8;
+  font-size: 11pt;
+  line-height: 160%;
+  width: 3.5in;
+  height: 2.5in;
+  text-align: center;
 }
 
 .faction-mat-grid {
@@ -514,7 +555,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
 }
 
 .faction-mat {
@@ -524,15 +564,13 @@ body {
   border-color: black;
   border-style: solid;
   border-color: 4px;
-
   display: flex;
-  flex-direction: column;
 }
 
 .faction-mat-interior {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 10px;
 }
 
 faction-mat-edge {

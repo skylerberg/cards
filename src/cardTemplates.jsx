@@ -50,41 +50,7 @@ function Banner({score, cost}) {
   return (
     <>
       {costSection}
-
-      <div className="header-right">
-
-        <div className="victory-points white-shadow">
-          <img class="" src={victoryPointsImage} style={
-            {
-              width: '50px',
-            }
-          }/>
-          <span class="white-shadow victory-point-text" style={
-            {
-              position: 'absolute',
-            }
-          }>
-            {score}
-          </span>
-        </div>
-
-      </div>
     </>
-  );
-}
-
-function Newspaper({ name, text }) {
-  return (
-      <div className="card-text-box newspaper newspaper-border">
-        <h1 className="card-title">{name}</h1>
-        <hr style={
-          {
-            'marginLeft': '20px',
-            'marginRight': '20px',
-          }
-        }/>
-        {text}
-      </div>
   );
 }
 
@@ -248,7 +214,7 @@ export function RocketCard({name, score, cost, ability, shrinkName}) {
           zIndex: '-1',
         }
       }/>
-      <Banner cost={cost} score={score} />
+      <Banner cost={cost} />
       <div className="card-text-box text-box">
         <div className="title-box">
           <h1 className={'card-title' + (shrinkName ? ' small-title' : '')}>🙚 {name} 🙘</h1>
@@ -399,7 +365,7 @@ export function HelperCard() {
 export function FacilityShape({image, scale}) {
   return <img
     src={image}
-    className='facility'
+    className='facility postmark'
     style={{'scale': scale || '100%'}}
   />;
 }
@@ -433,7 +399,9 @@ export function LetterCard({route}) {
     }>
       <img class="stamp" src={stampImage} />
       <div className="route-box">
-        {routeImages}
+        <div className="route-box-inner">
+          {routeImages}
+        </div>
       </div>
     </div>
   );
