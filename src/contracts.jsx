@@ -237,21 +237,21 @@ export const contracts = [
   (<LetterCard
     name="Robot Hive"
     type="Letter"
-    route={[ 'Horse', 'Pigeon', 'Person', 'Pigeon', 'Horse']}
+    route={[ 'Horse', 'Person', 'Person', 'Person', 'Pigeon']}
     bonuses={[ 'Letter', 'Ally', ]}
   />),
 
   (<LetterCard
     name="Warp Drive"
     type="Letter"
-    route={[ 'Person', 'Horse', 'Pigeon', 'Horse', 'Person']}
+    route={[ 'Person', 'Pigeon', 'Pigeon', 'Pigeon', 'Horse']}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 
   (<LetterCard
     name="Synthetic Lifeform"
     type="Letter"
-    route={[ 'Pigeon', 'Person', 'Horse', 'Person', 'Pigeon']}
+    route={[ 'Pigeon', 'Horse', 'Horse', 'Horse', 'Person']}
     bonuses={[ 'Rocket', 'Ally', ]}
   />),
 

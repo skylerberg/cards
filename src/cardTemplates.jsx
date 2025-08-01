@@ -6,7 +6,7 @@ import turnOrderDiagramFirstPlayer from './assets/images/turn-order/diagram-firs
 import pigeon from './assets/images/icons/pigeon.svg';
 import person from './assets/images/icons/person.svg';
 import horse from './assets/images/icons/horse.svg';
-import { VictoryPoints, Research, Funds, Contracts, Person, Horse, Pigeon, } from './icons.jsx';
+import { Ally, Research, Funds, Contracts, Person, Horse, Pigeon, } from './icons.jsx';
 import starscapeImage from './assets/images/starscape.jpg';
 import researchImage from './assets/images/icons/bead.png';
 
@@ -301,50 +301,22 @@ export function HelperCard() {
 
       <div class="helper-card-section">
         <div class="card-title">
-          🙚 Icon Reference 🙘
+          🙚 <Research /> Reference 🙘
         </div>
 
-        <div class="helper-card-icon-grid">
+        <div class="card-title card-subtitle">Draw Cards</div>
+        <Ally /> cards are immediately placed above your player board.
+        <div className="research-space"> </div>
 
-          <div class="legend-item double-column">
-            <Contracts /> Any number of contracts
-          </div>
 
-          {/*
-          <div class="legend-item double-column">
-            <Asteroid /> Asteroid
-          </div>
-          */}
+        <div class="card-title card-subtitle">Hire Couriers</div>
+        Hire the courier shown
+        <div className="research-space"> </div>
 
-          {/*
-          <div class="legend-item double-column">
-            <Comet /> Comet
-          </div>
-          */}
-
-          <div class="legend-item double-column">
-            <Research /> Research marker
-          </div>
-
-          <div class="legend-item double-column">
-            <Person /> / <Horse /> / <Pigeon /> Courier
-          </div>
-
-          {/*
-          <div class="legend-item double-column">
-            <TakeAnotherAction /> Take another action
-          </div>
-          */}
-
-          <div class="legend-item double-column">
-            <Funds cost="x" /> Funding cost
-          </div>
-
-          <div class="legend-item double-column">
-            <VictoryPoints value="x" /> Victory points
-          </div>
-
-        </div>
+        <div class="card-title card-subtitle">Stamps</div>
+        <div className="research-space"> </div>
+        <div class="card-title card-subtitle">Other</div>
+        <div className="research-space"> </div>
       </div>
     </div>
   );

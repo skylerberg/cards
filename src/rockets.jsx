@@ -21,9 +21,9 @@ export const rockets = [
     </>
   )}/>),
 
-  (<RocketCard name="Certitude Runes" shrinkName={false} cost={1} score={1} type="Rune" ability={(
+  (<RocketCard name="Certainty Runes" shrinkName={false} cost={1} score={1} type="Rune" ability={(
     <>
-      <Rotate /> 2 lands to any positions. Collect <VictoryPoints value={1} />.
+      Collect <VictoryPoints value={1} />, then rotate 2 lands<br />to any positions. 
     </>
   )}/>),
 
@@ -35,13 +35,13 @@ export const rockets = [
 
   (<RocketCard name="Minor Runes" cost={0} score={1} type="Rune" ability={(
     <>
-      <Rotate /> up to 2 different lands<br />1 space each. Collect <VictoryPoints value={1} />.
+      Collect <VictoryPoints value={1} />, then rotate up to 2 different lands 1 space each. 
     </>
   )}/>),
 
   (<RocketCard name="Major Runes" cost={1} score={2} type="Rune" ability={(
     <>
-      <Rotate /> up to 2 different lands up to <br />2 spaces each. Collect <VictoryPoints value={2} />.
+      Collect <VictoryPoints value={2} />, then rotate up to 2 different lands up to 2 spaces each. 
     </>
   )}/>),
 

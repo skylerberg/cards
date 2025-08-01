@@ -180,6 +180,10 @@ body {
   font-variant-caps: small-caps;
 }
 
+.card-title.card-subtitle {
+  font-size: 10pt;
+}
+
 .white-shadow {
   filter: drop-shadow(-5px -5px 5px #ffffff88)
           drop-shadow(-5px 5px 5px #ffffff88)
@@ -843,4 +847,13 @@ faction-mat-edge {
   text-align: center;
   font-size: 18pt;
   font-weight: bold;
+}
+
+.research-space {
+  width: 9mm;
+  height: 9mm;
+  transform: rotate(45deg);
+  border-width: 1mm;
+  border-color: black;
+  border-style: solid;
 }

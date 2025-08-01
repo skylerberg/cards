@@ -1,17 +1,17 @@
 import React from 'react';
-import { Asteroid, Research, Person, Horse, Pigeon, Ally, FactionCardIcon, Comet, Contract, Rocket, Courier, VictoryPoints } from './icons.jsx';
+import { Research, Person, Horse, Pigeon, Ally, } from './icons.jsx';
 import { AchievementCard } from './cardTemplates.jsx';
 
 export const achievements = [
-  (<AchievementCard name="Fabulous" score={4} type="Achievement" text={(
+  (<AchievementCard name="Horse Tamer" score={4} type="Achievement" text={(
     <>
-      Have a <Courier /> that is adjacent to 3 non-neutral <Horse large="true" />.
+      Have a courier that is adjacent to 3 non-wild <Horse large="true" />.
     </>
   )}/>),
 
   (<AchievementCard name="Contiguous" score={4} type="Achievement" text={(
     <>
-      Have a route of 9 or more connected <Courier /> you own.
+      Have a route of 9 or more of your couriers.
     </>
   )}/>),
 
@@ -23,25 +23,25 @@ export const achievements = [
 
   (<AchievementCard name="Encompassing" score={4} type="Achievement" text={(
     <>
-      An opponent’s single <Courier /> is adjacent to 3 of your <Courier />.
+      An opponent’s courier is adjacent to 3 of your couriers.
     </>
   )}/>),
 
   (<AchievementCard name="Neighborly" score={4} type="Achievement" text={(
     <>
-      Have 5 or more <Courier /> adjacent to opponents' <Courier />.
+      Have 5 or more couriers adjacent to opponents' couriers.
     </>
   )}/>),
 
   (<AchievementCard name="Disparate" score={5} type="Achievement" text={(
     <>
-      Have at least 3 routes of 3 or more <Courier /> you own that are not connected to each other.
+      Have at least 3 routes of 3 or more of your couriers that are not connected to each other.
     </>
   )}/>),
 
   (<AchievementCard name="Meddlesome" score={3} type="Achievement" text={(
     <>
-      Have a single <Courier /> adjacent to 3 <Courier /> owned by other player(s).
+      Have a courier adjacent to 3 couriers that belong to other players.
     </>
   )}/>),
 
@@ -53,43 +53,43 @@ export const achievements = [
 
   (<AchievementCard name="Minimal" score={3} type="Achievement" text={(
     <>
-      Have 2 fewer <Courier /> on the board than each other player.
+      Have 2 fewer couriers on the board than each other player.
     </>
   )}/>),
 
   (<AchievementCard name="Centered" score={3} type="Achievement" text={(
     <>
-      Have 5 fewer <Courier /> adjacent to neutral <Courier /> than an opponent.
+      Have 5 fewer couriers adjacent to wild couriers than an opponent.
     </>
   )}/>),
 
   (<AchievementCard name="Trail Blazer" score={3} type="Achievement" text={(
     <>
-      All <Asteroid large="true" /> have at least 1 <Courier /> owned by any player(s).
+      All lands have at least 1 courier owned by any player(s).
     </>
   )}/>),
 
-  (<AchievementCard name="Extractive" score={4} type="Achievement" text={(
+  (<AchievementCard name="Personable" score={4} type="Achievement" text={(
     <>
-      Have 4 or more <Person large="true" /> you own adjacent to neutral <Courier />.
+      Have 4 or more <Person large="true" /> adjacent to wild couriers.
     </>
   )}/>),
 
-  (<AchievementCard name="Refined" score={5} type="Achievement" text={(
+  (<AchievementCard name="Scattered" score={5} type="Achievement" text={(
     <>
-      Have 5 or more <Pigeon large="true" /> you own that are not adjacent to each other.
+      Have 5 or more <Pigeon large="true" /> that are not adjacent to each other.
     </>
   )}/>),
 
   (<AchievementCard name="Learned" score={3} type="Achievement" text={(
     <>
-      Have <Research /> on all non-empty spaces on your research tree.
+      Have <Research /> on all spaces on your research tree.
     </>
   )}/>),
 
-  (<AchievementCard name="Hasty" score={3} type="Achievement" text={(
+  (<AchievementCard name="Celebratory" score={3} type="Achievement" text={(
     <>
-      Start "The Rush."
+      Start the Holiday Rush.
     </>
   )}/>),
 
@@ -98,7 +98,6 @@ export const achievements = [
       Start the final round of the game.
     </>
   )}/>),
-
 
   /*
   (<AchievementCard name="Doppelganger" score={4} type="Achievement" text={(

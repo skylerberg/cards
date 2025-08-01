@@ -19,22 +19,12 @@ for (let i = 0; i < 4; i++) {
   helperCards.push(<HelperCard type="Helper" />);
 }
 
-let cards = allies.concat(rockets).concat(contracts).concat(turnOrderCards).concat(helperCards).concat(achievements);
+let cards = allies.concat(rockets).concat(contracts).concat(helperCards).concat(achievements);
 
-//cards = [
-//  rockets,
-//  rockets,
-//  rockets,
-//  contracts,
-//  allies[3],
-//  allies[6],
-//  allies[8],
-//  allies[9],
-//  allies[13],
-//  allies[15],
-//  allies[18],
-//  allies[19],
-//].flat();
+cards = [
+  contracts,
+  allies,
+].flat();
 
 reactRoot.render(
   <React.StrictMode>

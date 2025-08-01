@@ -194,7 +194,7 @@ function FactionMat({ name }) {
             <span style={{
               position: 'relative'
             }}>
-              &nbsp;&nbsp;<Funds cost={2} /> Hire <Person /> / <Pigeon /> / <Horse />
+              &nbsp;&nbsp;<Funds cost={2} /> Hire a courier (<Person /> / <Pigeon /> / <Horse />)
             </span>
             <br />
             <span>
